@@ -1,0 +1,23 @@
+{
+  "slug": "chinchon",
+  "nombre": "Chinchón",
+  "provincia": "Madrid",
+  "web": "https://www.ciudad-chinchon.com/",
+  "telefono": "918 940 004",
+  "horario": "Lunes a viernes, de 9:00 a 15:00, con cita previa",
+  "ficha": "BORRADOR: ficha preparada a mano con fuentes públicas (buscadores, BOCM, web de turismo). Pendiente de regenerar con `npm run demo` y revisar antes de enviar.\n\n## Ayuntamiento\n- Dirección: Plaza Mayor, 3. 28370 Chinchón (Madrid).\n- Registro de entrada: en el propio ayuntamiento, Plaza Mayor, 3.\n- Teléfono: 918 940 004.\n- Horario de atención: lunes a viernes, de 9:00 a 15:00, con cita previa.\n- Web municipal: https://www.ciudad-chinchon.com/\n\n## Sede electrónica y trámites\n- El ayuntamiento tiene sede electrónica y registro electrónico para hacer trámites por internet. Se accede desde la web municipal: https://www.ciudad-chinchon.com/\n- Para trámites presenciales hay que pedir cita previa en el ayuntamiento.\n\n## Turismo\n- Oficina de Turismo: Plaza Mayor, 6 (antigua Sala de Servicios Municipales).\n- Teléfono: 91 893 53 23.\n- Email: Informacion.turistica@ciudad-chinchon.com\n- Horario: de 10:00 a 19:00.\n- Ofrece información y visitas guiadas para particulares, grupos, colegios y asociaciones.\n- Web de turismo: https://www.ciudad-chinchon.com/turismo/en/oficina-turismo/presentacion.php\n\n## Fiestas y agenda\n- Semana Santa: representación de la Pasión viviente, interpretada por los propios vecinos. Se celebra desde 1963, es la más antigua de la Comunidad de Madrid y está declarada de Interés Turístico Nacional desde 1980.\n- Fiestas patronales en honor a la Virgen de Gracia y San Roque, en la Plaza Mayor, a mediados de agosto. En 2026 fueron del 12 al 17 de agosto. Incluyen encierros y festejos taurinos en la Plaza Mayor, misa y procesión de la Virgen el 15 de agosto, misa de San Roque el 16, conciertos, gigantes y cabezudos y la tradicional Almoneda.\n- Información de fiestas: https://ciudad-chinchon.com/turismo/en/conoce-chinchon/fiestas-y-eventos/fiestas-patronales.php\n\n## Emergencias\n- Emergencias: 112.\n",
+  "sugerencias": [
+    "¿Qué horario tiene el ayuntamiento?",
+    "¿Dónde está la oficina de turismo?",
+    "¿Cuándo es la Pasión viviente?",
+    "Hay una farola rota en mi calle"
+  ],
+  "fuentes": [
+    "https://bocm.es/boletin/CM_Orden_BOCM/2012/05/18/BOCM-20120518-55.PDF",
+    "https://www.inclusion.gob.es/oberaxe/es/creadi/contenidos/fichas/madrid/459.pdf",
+    "https://www.ciudad-chinchon.com/turismo/en/oficina-turismo/presentacion.php",
+    "https://ciudad-chinchon.com/turismo/en/conoce-chinchon/fiestas-y-eventos/fiestas-patronales.php",
+    "https://www.visitmadrid.es/que-hacer/cultura/fiestas-tradicionales/semana-santa-chinchon"
+  ],
+  "generadoEl": "2026-10-04T00:00:00.000Z"
+}

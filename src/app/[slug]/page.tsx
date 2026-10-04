@@ -52,7 +52,7 @@ export default async function PuebloPage({ params }: Props) {
 
       <Chat slug={pueblo.slug} nombre={pueblo.nombre} sugerencias={pueblo.sugerencias} />
 
-      <footer className="border-t border-municipal-line bg-white px-4 pb-3 text-center text-xs text-municipal-muted">
+      <footer className="border-t border-municipal-line bg-white px-4 pb-3 pt-2 text-center text-xs text-municipal-muted">
         Asistente automático: puede equivocarse. Información extraída de{' '}
         <a href={pueblo.web} target="_blank" rel="noopener noreferrer" className="underline">
           la web municipal
