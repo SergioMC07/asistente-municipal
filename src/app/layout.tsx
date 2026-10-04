@@ -7,8 +7,6 @@ export const metadata: Metadata = {
   title: 'Atiende · Asistente municipal 24 horas',
   description:
     'Un asistente que responde a los vecinos por WhatsApp y en la web con la información de su municipio.',
-  // Las demos se comparten por enlace: no deben salir en buscadores.
-  robots: { index: false, follow: false },
 };
 
 export const viewport: Viewport = {

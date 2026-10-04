@@ -82,8 +82,14 @@ async function main() {
   await fs.writeFile(file, `${JSON.stringify(pueblo, null, 2)}\n`);
 
   const base = process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3000';
+  const link = `${base}/${slug}`;
   console.log(`\nFicha guardada en ${path.relative(process.cwd(), file)}`);
-  console.log(`Revisa la ficha y abre la demo: ${base}/${slug}`);
+  console.log(`Revisa la ficha y abre la demo: ${link}`);
+  console.log(`\nMensaje para enviar (después de llamar y tener su permiso):\n`);
+  console.log(
+    `Hola, como le comentaba, aquí tiene el asistente que he preparado para ${pueblo.nombre} ` +
+      `con la información de su web municipal. Pruébelo como un vecino: ${link}`
+  );
 }
 
 main().catch((err) => {

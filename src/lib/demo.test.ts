@@ -90,3 +90,15 @@ describe('buildSystemPrompt', () => {
     expect(prompt).toContain('teléfono 900 000 000');
   });
 });
+
+describe('isRealVisitor', () => {
+  it('ignora las vistas previas de enlaces y los bots', async () => {
+    const { isRealVisitor } = await import('./notify');
+    expect(isRealVisitor('WhatsApp/2.23.20.0')).toBe(false);
+    expect(isRealVisitor('facebookexternalhit/1.1')).toBe(false);
+    expect(isRealVisitor(null)).toBe(false);
+    expect(
+      isRealVisitor('Mozilla/5.0 (iPhone; CPU iPhone OS 17_0 like Mac OS X) AppleWebKit/605.1.15 Mobile Safari')
+    ).toBe(true);
+  });
+});

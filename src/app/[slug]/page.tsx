@@ -1,7 +1,9 @@
 import type { Metadata } from 'next';
+import { headers } from 'next/headers';
 import { notFound } from 'next/navigation';
 import { DemoApp } from '@/components/DemoApp';
 import { contactWhatsapp } from '@/lib/contact';
+import { isRealVisitor, notify } from '@/lib/notify';
 import { getPueblo } from '@/lib/pueblo';
 
 export const dynamic = 'force-dynamic';
@@ -16,6 +18,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title,
     description,
+    robots: { index: false, follow: false },
     openGraph: { title, description, type: 'website', locale: 'es_ES' },
     twitter: { card: 'summary_large_image', title, description },
   };
@@ -24,6 +27,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 export default async function PuebloPage({ params }: Props) {
   const pueblo = await getPueblo(params.slug);
   if (!pueblo) notFound();
+
+  if (isRealVisitor(headers().get('user-agent'))) {
+    await notify(`Demo de ${pueblo.nombre}`, `Alguien ha abierto la demo de ${pueblo.nombre}.`);
+  }
 
   const fecha = new Date(pueblo.generadoEl).toLocaleDateString('es-ES', {
     day: 'numeric',

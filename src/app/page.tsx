@@ -177,11 +177,19 @@ export default async function Home() {
 
       <footer className="mx-auto flex max-w-6xl flex-col gap-2 px-5 py-8 text-sm text-muted sm:flex-row sm:justify-between">
         <p>Atiende. Asistente municipal 24 horas.</p>
-        {email && (
-          <a href={`mailto:${email}`} className="underline">
-            {email}
+        <nav className="flex flex-wrap gap-x-5 gap-y-2">
+          {email && (
+            <a href={`mailto:${email}`} className="underline">
+              {email}
+            </a>
+          )}
+          <a href="/privacidad" className="underline">
+            Privacidad
           </a>
-        )}
+          <a href="/aviso-legal" className="underline">
+            Aviso legal
+          </a>
+        </nav>
       </footer>
     </div>
   );

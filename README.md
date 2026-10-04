@@ -61,6 +61,18 @@ El encargo de diseño de esta demo está en [`docs/BRIEF-DEMO.md`](docs/BRIEF-DE
 | `NEXT_PUBLIC_CONTACT_WHATSAPP` | WhatsApp comercial con prefijo (p. ej. `34600111222`); tiene prioridad sobre el email |
 | `NEXT_PUBLIC_WHATSAPP_DEMO_NUMBER` | Número del asistente de demo en WhatsApp (botón «Probar en WhatsApp») |
 | `OPENAI_CHAT_MODEL`, `OPENAI_FICHA_MODEL` | Opcionales (por defecto `gpt-4.1-mini`) |
+| `NOTIFY_URL` | Opcional: tema de [ntfy](https://ntfy.sh) para recibir en el móvil un aviso cuando alguien abre una demo o escribe su primer mensaje |
+| `NEXT_PUBLIC_TITULAR_NOMBRE`, `NEXT_PUBLIC_TITULAR_NIF`, `NEXT_PUBLIC_TITULAR_DOMICILIO` | Datos del titular para el aviso legal (`/aviso-legal`) |
+
+El WhatsApp comercial por defecto es el `34638798445` (en `src/lib/contact.ts`); `NEXT_PUBLIC_CONTACT_WHATSAPP` lo sustituye si se define.
+
+### Avisos al móvil con ntfy
+
+1. Instala la app **ntfy** (Android o iOS).
+2. Suscríbete a un tema difícil de adivinar, por ejemplo `atiende-k7p2x9`.
+3. En Vercel, añade `NOTIFY_URL=https://ntfy.sh/atiende-k7p2x9` y vuelve a desplegar.
+
+Recibirás «Alguien ha abierto la demo de Chinchón» y el primer mensaje que escriba. Las vistas previas de WhatsApp o del correo no cuentan como visita.
 
 3. Cada demo nueva se publica al hacer commit del JSON.
 

@@ -107,7 +107,10 @@ export function DemoApp({ slug, nombre, escudoUrl, web, fecha, sugerencias, cont
           <a href={web} target="_blank" rel="noopener noreferrer" className="underline">
             la web municipal
           </a>{' '}
-          ({fecha}). Emergencias: <strong className="text-ink">112</strong>.
+          ({fecha}). Emergencias: <strong className="text-ink">112</strong>.{' '}
+          <a href="/privacidad" className="underline">
+            Privacidad
+          </a>
         </p>
       </footer>
 
