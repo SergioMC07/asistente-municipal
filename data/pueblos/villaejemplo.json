@@ -1,0 +1,18 @@
+{
+  "slug": "villaejemplo",
+  "nombre": "Villaejemplo",
+  "provincia": "Ficticia",
+  "web": "https://www.villaejemplo.es/",
+  "telefono": "900 000 000",
+  "email": "info@villaejemplo.es",
+  "horario": "Lunes a viernes, de 9:00 a 14:00",
+  "ficha": "AVISO: pueblo ficticio para probar la demo. Ningún dato es real.\n\n## Ayuntamiento\n- Dirección: Plaza Mayor, 1, Villaejemplo\n- Teléfono: 900 000 000\n- Email: info@villaejemplo.es\n- Horario de atención: lunes a viernes, de 9:00 a 14:00\n\n## Sede electrónica y trámites\n- Sede electrónica: https://sede.villaejemplo.es\n- Empadronamiento: presencial en el ayuntamiento con DNI y contrato de alquiler o escritura, o por la sede electrónica con certificado digital.\n- Certificado de empadronamiento: se descarga en la sede electrónica o se pide en la oficina.\n\n## Residuos y limpieza\n- Recogida de basura orgánica: todos los días a partir de las 22:00.\n- Recogida de enseres: primer martes de cada mes. Hay que avisar antes en el 900 000 000.\n- Punto limpio: carretera de la Estación, sábados de 10:00 a 13:00.\n\n## Impuestos y tasas\n- IBI: periodo de pago voluntario del 1 de septiembre al 31 de octubre.\n\n## Deportes\n- Polideportivo municipal: lunes a viernes de 17:00 a 22:00.\n- Piscina municipal: de junio a septiembre, de 12:00 a 20:00.\n\n## Servicios sociales y mayores\n- Trabajadora social: martes y jueves de 10:00 a 13:00 en el ayuntamiento, con cita previa.\n\n## Salud y emergencias\n- Consultorio médico: calle del Médico, 3. Lunes a viernes de 8:30 a 14:30.\n- Emergencias: 112.\n\n## Fiestas y agenda\n- Fiestas patronales de San Ejemplo: segunda semana de agosto.\n",
+  "sugerencias": [
+    "¿A qué hora abre el ayuntamiento?",
+    "¿Cuándo pasa la recogida de enseres?",
+    "¿Cómo me empadrono?",
+    "Hay una farola rota en mi calle"
+  ],
+  "fuentes": [],
+  "generadoEl": "2026-10-04T00:00:00.000Z"
+}
