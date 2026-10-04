@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { DemoApp } from '@/components/DemoApp';
+import { contactWhatsapp } from '@/lib/contact';
 import { getPueblo } from '@/lib/pueblo';
 
 export const dynamic = 'force-dynamic';
@@ -40,7 +41,7 @@ export default async function PuebloPage({ params }: Props) {
       sugerencias={pueblo.sugerencias}
       contact={{
         email: process.env.NEXT_PUBLIC_CONTACT_EMAIL,
-        whatsapp: process.env.NEXT_PUBLIC_CONTACT_WHATSAPP,
+        whatsapp: contactWhatsapp(),
         whatsappDemo: process.env.NEXT_PUBLIC_WHATSAPP_DEMO_NUMBER,
       }}
     />

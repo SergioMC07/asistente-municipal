@@ -8,6 +8,20 @@ export type ContactConfig = {
   whatsappDemo?: string;
 };
 
+/** WhatsApp comercial por defecto. La variable de entorno, si existe, tiene prioridad. */
+export const DEFAULT_CONTACT_WHATSAPP = '34638798445';
+
+export function contactWhatsapp(): string {
+  return process.env.NEXT_PUBLIC_CONTACT_WHATSAPP?.trim() || DEFAULT_CONTACT_WHATSAPP;
+}
+
+/** "34638798445" → "+34 638 79 84 45" para mostrarlo a una persona. */
+export function formatPhone(phone: string): string {
+  const d = phone.replace(/\D/g, '');
+  const m = d.match(/^34(\d{3})(\d{2})(\d{2})(\d{2})$/);
+  return m ? `+34 ${m[1]} ${m[2]} ${m[3]} ${m[4]}` : `+${d}`;
+}
+
 function digits(phone: string): string {
   return phone.replace(/\D/g, '');
 }

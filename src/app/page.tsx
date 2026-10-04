@@ -2,7 +2,7 @@ import { ArrowRight } from '@phosphor-icons/react/dist/ssr';
 import { PanelSummary } from '@/components/chat/Panel';
 import type { Message } from '@/components/chat/useChat';
 import { LandingDemo } from '@/components/LandingDemo';
-import { requestDemoLink } from '@/lib/contact';
+import { contactWhatsapp, requestDemoLink } from '@/lib/contact';
 import { getPueblo } from '@/lib/pueblo';
 
 export const dynamic = 'force-dynamic';
@@ -56,7 +56,7 @@ export default async function Home() {
   const demoHref =
     requestDemoLink({
       email: process.env.NEXT_PUBLIC_CONTACT_EMAIL,
-      whatsapp: process.env.NEXT_PUBLIC_CONTACT_WHATSAPP,
+      whatsapp: contactWhatsapp(),
     }) ?? `/${EJEMPLO}`;
   const email = process.env.NEXT_PUBLIC_CONTACT_EMAIL;
 

@@ -1,5 +1,6 @@
 import OpenAI from 'openai';
 import { chatRequestSchema, prepareHistory } from '@/lib/chat';
+import { contactWhatsapp, formatPhone } from '@/lib/contact';
 import { buildSystemPrompt } from '@/lib/prompt';
 import { getPueblo } from '@/lib/pueblo';
 import { createRateLimiter } from '@/lib/rate-limit';
@@ -13,9 +14,10 @@ const CHAT_MODEL = process.env.OPENAI_CHAT_MODEL || 'gpt-4.1-mini';
 const allow = createRateLimiter(30, 10 * 60 * 1000);
 
 function contactoComercial(): string | undefined {
-  const parts = [process.env.NEXT_PUBLIC_CONTACT_EMAIL, process.env.NEXT_PUBLIC_CONTACT_WHATSAPP]
-    .map((v) => v?.trim())
-    .filter(Boolean);
+  const parts = [
+    `WhatsApp ${formatPhone(contactWhatsapp())}`,
+    process.env.NEXT_PUBLIC_CONTACT_EMAIL?.trim(),
+  ].filter(Boolean);
   return parts.length ? parts.join(' o ') : undefined;
 }
 

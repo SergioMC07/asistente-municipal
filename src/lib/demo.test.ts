@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import { parseBlocks } from '@/components/RichText';
-import { demoWhatsappLink, startLink } from './contact';
+import { demoWhatsappLink, formatPhone, startLink } from './contact';
 import { extractIncidencias, incidenciaId, splitIncidencias } from './incidencia';
 import { buildSystemPrompt } from './prompt';
 import type { Pueblo } from './pueblo';
@@ -60,6 +60,13 @@ describe('enlaces de contacto', () => {
     const link = demoWhatsappLink({ whatsappDemo: '34600111222' }, 'Chinchón');
     expect(decodeURIComponent(link!)).toContain('Hola Chinchón');
     expect(demoWhatsappLink({}, 'Chinchón')).toBeNull();
+  });
+});
+
+describe('formatPhone', () => {
+  it('formatea móviles españoles para mostrarlos', () => {
+    expect(formatPhone('34638798445')).toBe('+34 638 79 84 45');
+    expect(formatPhone('+44 7700 900123')).toBe('+447700900123');
   });
 });
 
