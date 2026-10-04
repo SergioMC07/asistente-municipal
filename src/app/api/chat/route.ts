@@ -12,6 +12,13 @@ const CHAT_MODEL = process.env.OPENAI_CHAT_MODEL || 'gpt-4.1-mini';
 // 30 mensajes cada 10 minutos por IP: de sobra para un alcalde probando.
 const allow = createRateLimiter(30, 10 * 60 * 1000);
 
+function contactoComercial(): string | undefined {
+  const parts = [process.env.NEXT_PUBLIC_CONTACT_EMAIL, process.env.NEXT_PUBLIC_CONTACT_WHATSAPP]
+    .map((v) => v?.trim())
+    .filter(Boolean);
+  return parts.length ? parts.join(' o ') : undefined;
+}
+
 function clientIp(req: Request): string {
   return req.headers.get('x-forwarded-for')?.split(',')[0]?.trim() || 'local';
 }
@@ -60,7 +67,13 @@ export async function POST(req: Request) {
       temperature: 0.2,
       max_tokens: 500,
       stream: true,
-      messages: [{ role: 'system', content: buildSystemPrompt(pueblo) }, ...history],
+      messages: [
+        {
+          role: 'system',
+          content: buildSystemPrompt(pueblo, { contactoComercial: contactoComercial() }),
+        },
+        ...history,
+      ],
     });
   } catch (err) {
     console.error('Error al llamar a OpenAI:', err);

@@ -30,10 +30,31 @@ El script:
 
 **Antes de enviar la demo, revisa la ficha**: es lo único que el asistente sabe. Corrige o completa lo que haga falta directamente en el JSON, haz commit y despliega.
 
+## Qué ve el alcalde
+
+* **Banda superior** con «Demostración para el Ayuntamiento de X» y el botón **Ponerlo en marcha** (abre tu WhatsApp o tu email).
+* **Chat** con respuestas con formato (negritas, listas, enlaces), hora de cada mensaje, indicador de «escribiendo», preguntas sugeridas y botón de reintentar si algo falla. La conversación se mantiene al recargar.
+* **Incidencias**: cuando el vecino dice qué pasa y dónde, aparece una tarjeta con número, tipo, lugar y estado, marcada como demostración.
+* **Panel**: «Vista del ayuntamiento» con las consultas y las incidencias de esa conversación (datos reales, nada inventado) y lo que incluiría el servicio real.
+* **Vista previa del enlace** con el nombre del pueblo al compartirlo por WhatsApp o email (`/<slug>/opengraph-image`).
+* **Probar en WhatsApp**: botón que aparece si configuras un número de demo.
+
+El encargo de diseño de esta demo está en [`docs/BRIEF-DEMO.md`](docs/BRIEF-DEMO.md).
+
 ## Desplegar en Vercel
 
 1. Importa el repositorio en Vercel.
-2. Variables de entorno: `OPENAI_API_KEY`, `NEXT_PUBLIC_APP_URL` (la URL pública) y, si quieres, `NEXT_PUBLIC_CONTACT_EMAIL`.
+2. Variables de entorno:
+
+| Variable | Uso |
+|----------|-----|
+| `OPENAI_API_KEY` | Obligatoria: chat y generación de fichas |
+| `NEXT_PUBLIC_APP_URL` | URL pública (para imprimir el enlace de cada demo) |
+| `NEXT_PUBLIC_CONTACT_EMAIL` | Email comercial: botón «Ponerlo en marcha» y respuesta si preguntan por el servicio |
+| `NEXT_PUBLIC_CONTACT_WHATSAPP` | WhatsApp comercial con prefijo (p. ej. `34600111222`); tiene prioridad sobre el email |
+| `NEXT_PUBLIC_WHATSAPP_DEMO_NUMBER` | Número del asistente de demo en WhatsApp (botón «Probar en WhatsApp») |
+| `OPENAI_CHAT_MODEL`, `OPENAI_FICHA_MODEL` | Opcionales (por defecto `gpt-4.1-mini`) |
+
 3. Cada demo nueva se publica al hacer commit del JSON.
 
 Las páginas no se indexan en buscadores (`robots.txt` y `noindex`): las demos se comparten por enlace.
