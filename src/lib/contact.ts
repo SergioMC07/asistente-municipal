@@ -26,6 +26,16 @@ export function startLink(cfg: ContactConfig, nombre: string): string | null {
   return null;
 }
 
+/** Enlace de la landing para pedir la demo de un municipio. */
+export function requestDemoLink(cfg: ContactConfig): string | null {
+  const text = 'Hola, me gustaría ver la demo de Atiende con mi municipio: ';
+  if (cfg.whatsapp && digits(cfg.whatsapp).length >= 9) return waLink(cfg.whatsapp, text);
+  if (cfg.email) {
+    return `mailto:${cfg.email}?subject=${encodeURIComponent('Demo de Atiende para mi municipio')}&body=${encodeURIComponent(text)}`;
+  }
+  return null;
+}
+
 /** Enlace que abre el asistente de demo en WhatsApp con el pueblo ya escrito. */
 export function demoWhatsappLink(cfg: ContactConfig, nombre: string): string | null {
   if (!cfg.whatsappDemo || digits(cfg.whatsappDemo).length < 9) return null;

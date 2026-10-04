@@ -22,25 +22,41 @@ export default async function Image({ params }: { params: { slug: string } }) {
           flexDirection: 'column',
           justifyContent: 'space-between',
           padding: '72px 80px',
-          background: 'linear-gradient(135deg, #174784 0%, #1E5AA8 60%, #2C6FC4 100%)',
+          background: '#1D4AA5',
           color: 'white',
           fontFamily: 'sans-serif',
         }}
       >
-        <div style={{ display: 'flex', fontSize: 30, opacity: 0.85 }}>Asistente 24 horas</div>
+        <div style={{ display: 'flex', alignItems: 'center', gap: 16, fontSize: 32, fontWeight: 600 }}>
+          <div
+            style={{
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              width: 52,
+              height: 52,
+              borderRadius: 14,
+              background: '#F7F8FB',
+              color: '#1D4AA5',
+            }}
+          >
+            A
+          </div>
+          Atiende
+        </div>
         <div style={{ display: 'flex', flexDirection: 'column' }}>
           <div style={{ fontSize: 40, opacity: 0.9 }}>Ayuntamiento de</div>
           <div style={{ fontSize: 96, fontWeight: 700, lineHeight: 1.05 }}>{nombre}</div>
         </div>
         <div style={{ display: 'flex', gap: 20 }}>
-          {['Horarios y trámites', 'Fiestas y servicios', 'Incidencias'].map((t) => (
+          {['Asistente 24 horas', 'WhatsApp y web', 'Incidencias'].map((t) => (
             <div
               key={t}
               style={{
                 display: 'flex',
                 padding: '12px 24px',
                 borderRadius: 999,
-                background: 'rgba(255,255,255,0.16)',
+                border: '2px solid rgba(255,255,255,0.35)',
                 fontSize: 28,
               }}
             >

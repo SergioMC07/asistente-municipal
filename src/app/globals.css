@@ -2,18 +2,172 @@
 @tailwind components;
 @tailwind utilities;
 
+/* ============================================
+   Tokens. Mundo visual: azulejo de placa de calle
+   (cobalto sobre blanco) y sello de registro.
+   ============================================ */
+:root {
+  color-scheme: light;
+  --canvas: oklch(0.982 0.004 255);
+  --surface: oklch(0.996 0.002 255);
+  --sunken: oklch(0.955 0.008 258);
+  --ink: oklch(0.24 0.035 258);
+  --muted: oklch(0.46 0.03 258);
+  --line: oklch(0.9 0.012 258);
+  --cobalt: oklch(0.44 0.16 263);
+  --cobalt-strong: oklch(0.38 0.15 263);
+  --cobalt-text: oklch(0.44 0.16 263);
+  --cobalt-soft: oklch(0.945 0.03 263);
+  --on-cobalt: oklch(0.985 0.006 263);
+  --danger: oklch(0.52 0.18 27);
+  --ok: oklch(0.6 0.14 155);
+  --shadow: 0 1px 2px oklch(0.24 0.035 258 / 0.06), 0 8px 24px oklch(0.24 0.035 258 / 0.06);
+
+  --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+  --ease-drawer: cubic-bezier(0.32, 0.72, 0, 1);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    color-scheme: dark;
+    --canvas: oklch(0.17 0.02 258);
+    --surface: oklch(0.215 0.024 258);
+    --sunken: oklch(0.145 0.018 258);
+    --ink: oklch(0.95 0.008 258);
+    --muted: oklch(0.75 0.02 258);
+    --line: oklch(0.31 0.025 258);
+    --cobalt: oklch(0.52 0.16 263);
+    --cobalt-strong: oklch(0.58 0.16 263);
+    --cobalt-text: oklch(0.78 0.11 263);
+    --cobalt-soft: oklch(0.27 0.055 263);
+    --on-cobalt: oklch(0.985 0.006 263);
+    --danger: oklch(0.72 0.15 27);
+    --ok: oklch(0.72 0.14 155);
+    --shadow: 0 1px 2px oklch(0 0 0 / 0.3), 0 8px 24px oklch(0 0 0 / 0.25);
+  }
+}
+
 html,
 body {
   height: 100%;
 }
 
 body {
-  background: #f6f7f9;
-  color: #1f2a37;
-  font-family:
-    system-ui,
-    -apple-system,
-    'Segoe UI',
-    Roboto,
-    sans-serif;
+  background: var(--canvas);
+  color: var(--ink);
+  font-family: var(--font-geist-sans), system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* Superficies del navegador también llevan el diseño. */
+::selection {
+  background: var(--cobalt-soft);
+  color: var(--ink);
+}
+
+input,
+textarea {
+  caret-color: var(--cobalt-text);
+}
+
+:focus-visible {
+  outline: 2px solid var(--cobalt-text);
+  outline-offset: 2px;
+}
+
+a {
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1px;
+}
+
+* {
+  scrollbar-color: var(--line) transparent;
+}
+
+/* Pulsar: el botón confirma que ha oído al usuario. */
+.press {
+  transition:
+    transform 160ms var(--ease-out),
+    background-color 160ms ease,
+    color 160ms ease,
+    border-color 160ms ease;
+}
+.press:active {
+  transform: scale(0.97);
+}
+
+/* Mensajes nuevos: aparecen, no saltan. */
+@keyframes msg-in {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+}
+.msg-in {
+  animation: msg-in 220ms var(--ease-out) both;
+}
+
+/* Panel lateral del ayuntamiento. */
+@keyframes drawer-in {
+  from {
+    transform: translateX(100%);
+  }
+}
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+}
+.drawer-in {
+  animation: drawer-in 280ms var(--ease-drawer) both;
+}
+.backdrop-in {
+  animation: fade-in 200ms ease both;
+}
+
+/* Indicador de escribiendo. */
+@keyframes typing {
+  0%,
+  60%,
+  100% {
+    opacity: 0.35;
+    transform: translateY(0);
+  }
+  30% {
+    opacity: 1;
+    transform: translateY(-2px);
+  }
+}
+.typing-dot {
+  animation: typing 1s ease-in-out infinite;
+}
+
+/* Sello de registro de entrada: el detalle propio del producto. */
+.sello {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1px;
+  padding: 4px 10px;
+  border: 2px solid currentColor;
+  border-radius: 6px;
+  box-shadow: inset 0 0 0 2px var(--surface), inset 0 0 0 3px currentColor;
+  color: var(--cobalt-text);
+  transform: rotate(-3deg);
+  line-height: 1.1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .msg-in,
+  .drawer-in {
+    animation: fade-in 120ms ease both;
+  }
+  .typing-dot {
+    animation: none;
+    opacity: 0.6;
+  }
+  .press:active {
+    transform: none;
+  }
 }

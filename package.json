@@ -16,7 +16,9 @@
     "preflight": "npm run typecheck && npm run lint && npm run test"
   },
   "dependencies": {
+    "@phosphor-icons/react": "^2.1.10",
     "cheerio": "^1.0.0",
+    "geist": "^1.7.2",
     "next": "14.2.35",
     "openai": "^6.18.0",
     "react": "^18",

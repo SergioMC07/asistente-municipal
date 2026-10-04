@@ -1,4 +1,4 @@
-# Asistente municipal 24 horas
+# Atiende
 
 Asistente con IA que atiende a los vecinos de un ayuntamiento a cualquier hora: horarios, trámites, servicios, fiestas e incidencias.
 
@@ -29,6 +29,13 @@ El script:
 3. La guarda en `data/pueblos/<slug>.json` y te muestra el enlace de la demo.
 
 **Antes de enviar la demo, revisa la ficha**: es lo único que el asistente sabe. Corrige o completa lo que haga falta directamente en el JSON, haz commit y despliega.
+
+## Diseño
+
+* Sistema visual en [`DESIGN.md`](DESIGN.md) y contexto de producto en [`PRODUCT.md`](PRODUCT.md).
+* La landing (`/`) enseña el chat de Villaejemplo funcionando en la primera pantalla.
+* Modo oscuro automático según el ajuste del dispositivo.
+* Skills de diseño instaladas en `.claude/skills/`: `emil-design-eng` (Emil Kowalski, MIT), `taste-skill` (Leonxlnx, MIT) e `impeccable` (Paul Bakaus, Apache 2.0).
 
 ## Qué ve el alcalde
 
