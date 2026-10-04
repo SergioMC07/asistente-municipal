@@ -19,6 +19,13 @@ export default function Home() {
         horarios de oficina.
       </p>
 
+      <a
+        href="/villaejemplo"
+        className="mt-6 inline-block rounded-full bg-municipal-brand px-5 py-2.5 font-medium text-white hover:bg-municipal-brand-dark"
+      >
+        Ver un ejemplo
+      </a>
+
       <ul className="mt-10 grid gap-4 sm:grid-cols-2">
         {ventajas.map(([titulo, texto]) => (
           <li key={titulo} className="rounded-xl border border-municipal-line bg-white p-5">
