@@ -14,24 +14,23 @@
 | | |
 |---|---|
 | Tipo | Autoescuela |
-| Teléfono | **961 138 577** |
-| Correo | No encontrado |
-| Dirección | C/ de Ramon Llull, 31. 46021 Valencia |
-| Horario | Lunes, de 10:30 a 19:30; martes a jueves, de 10:30 a 14:30 y de 17:00 a 19:00; viernes, de 10:30 a 14:00 |
+| Teléfono | **653 334 942** |
+| Correo | info@autoescuela31.com |
+| Dirección | C/ de Ramon Llull, 31, bajo. 46021 Valencia |
+| Horario | Lunes a jueves, de 10:00 a 19:30; viernes, de 10:00 a 14:00 |
 | Web | https://autoescuela31.com/ |
 | Demo | https://asistente-municipal.vercel.app/autoescuela-31-avae |
 | Precio | Tarifa 69 €/mes + IVA (web). Con WhatsApp, 99 €/mes + IVA. Primer mes gratis, sin permanencia. |
 
-**Contacto:** WhatsApp: 653 334 942 (le escribiste el 5/10 a las 12:55; apunta cuándo contestaron).
+**Contacto:** El responsable es **David Estivalis** (dirige la autoescuela desde 1998): pregunta por él. Le escribiste por WhatsApp el 5/10 a las 12:55 y contestaron a las 13:12 con mensajes reenviados y un presupuesto en PDF.
 
 **Comprueba antes:**
 
-- AVAE es una marca con varias autoescuelas: pregunta si decide el dueño del centro.
-- No publican precios en la web.
+- En directorios aparece también el fijo 961 138 577; en su web solo sale el 653 334 942.
 
 ## Cómo abordarlo
 
-**Por qué les interesa:** Ya tienen WhatsApp, pero lo contesta una persona cuando puede. El asistente contestaría al momento en ese mismo WhatsApp. Cuéntales tu prueba: a qué hora escribiste y cuándo te contestaron.
+**Por qué les interesa:** Su web promete «WhatsApp 24/7» y contestan rápido en horario, pero con mensajes reenviados. El asistente hace real ese 24/7: contesta al momento la pregunta concreta, también de noche y el fin de semana, y le deja a David la solicitud.
 
 Guion completo y respuestas a pegas: [../GUION.md](../GUION.md).
 
@@ -39,7 +38,7 @@ Guion completo y respuestas a pegas: [../GUION.md](../GUION.md).
 
 > «Hola, soy Sergio. He preparado un asistente para la web de Autoescuela 31 AVAE que contesta a la gente a cualquier hora (precios, horarios, cómo apuntarse) y os deja la solicitud para que llaméis. Lo tengo hecho con la información de vuestra web. ¿Os lo enseño en un minuto?»
 
-Saca el móvil con la demo abierta y pregunta delante de ellos: “¿Qué horario tenéis?”.
+Saca el móvil con la demo abierta y pregunta delante de ellos: “¿Cuánto cuesta el curso teórico?”.
 
 ## Mensaje después (WhatsApp o correo)
 
@@ -74,5 +73,7 @@ npm run video -- autoescuela-31-avae --url https://asistente-municipal.vercel.ap
 ## Fuentes
 
 - https://autoescuela31.com/
-- https://www.tuautoescuela.one/provincia-valencia/ciudad-valencia/autoescuela-31-avae
-- https://www.dentrotest.com/autoescuela/autoescuela-31-avae
+- https://autoescuela31.com/contacto-autoescuela-valencia/
+- https://autoescuela31.com/permiso-coche-b-valencia/
+- https://autoescuela31.com/curso-teorico-intensivo-valencia/
+- https://autoescuela31.com/matricula-online-autoescuela-valencia/

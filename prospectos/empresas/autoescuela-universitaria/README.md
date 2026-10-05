@@ -17,21 +17,21 @@
 | Teléfono | **961 051 790** |
 | Correo | hola@aeuniversitaria.com |
 | Dirección | C/ d'Albalat dels Tarongers, 30. 46021 Valencia (Algirós) |
-| Horario | Lunes a viernes, de 10:00 a 14:00 y de 16:30 a 20:30 |
+| Horario | Lunes a jueves, de 10:30 a 14:00 y de 16:30 a 20:00; viernes, de 10:30 a 14:00 y de 16:30 a 19:00 |
 | Web | https://www.aeuniversitaria.com/ |
 | Demo | https://asistente-municipal.vercel.app/autoescuela-universitaria |
 | Precio | Tarifa 69 €/mes + IVA (web). Con WhatsApp, 99 €/mes + IVA. Primer mes gratis, sin permanencia. |
 
-**Contacto:** En algunos directorios aparece un WhatsApp (677 64 10 04), pero tú no lo has encontrado: pregúntales si lo usan.
+**Contacto:** En algunos directorios aparece un WhatsApp (677 64 10 04) que no sale en su web: pregúntales si lo usan.
 
 **Comprueba antes:**
 
-- WhatsApp: no está claro que lo usen.
-- No publican precios en la web.
+- Precios: en su web hay ofertas de distintas épocas (curso teórico a 119, 139, 159 o 189 €); la demo no da cifra y remite a la autoescuela.
+- WhatsApp: no sale en su web.
 
 ## Cómo abordarlo
 
-**Por qué les interesa:** Junto a la universidad: alumnos jóvenes que preguntan de noche y por el móvil. Paran de 14:00 a 16:30, cierran el fin de semana y no publican precios: el asistente responde y recoge la solicitud.
+**Por qué les interesa:** Junto a la UPV: alumnos jóvenes que preguntan de noche y por el móvil. Paran de 14:00 a 16:30, cierran el fin de semana y sus ofertas cambian: el asistente responde y recoge la solicitud.
 
 Guion completo y respuestas a pegas: [../GUION.md](../GUION.md).
 
@@ -74,5 +74,6 @@ npm run video -- autoescuela-universitaria --url https://asistente-municipal.ver
 ## Fuentes
 
 - https://www.aeuniversitaria.com/
-- https://www.paginasamarillas.es/f/valencia/autoescuela-universitaria_234826477_000000001.html
-- https://encuentre-abierto.es/valencia/autoescuela-universitaria-1271055
+- https://www.aeuniversitaria.com/contacto/
+- https://www.aeuniversitaria.com/matricula-clave-web-0e/
+- https://www.aeuniversitaria.com/carnet-de-moto-en-valencia/

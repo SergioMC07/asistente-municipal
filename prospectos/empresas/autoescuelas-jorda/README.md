@@ -16,22 +16,21 @@
 | Tipo | Autoescuela |
 | Teléfono | **961 338 821** |
 | Correo | No encontrado |
-| Dirección | C/ de Ramon Llull, 37. 46021 Valencia (y 5 centros más) |
-| Horario | Lunes a jueves, de 10:00 a 20:00; viernes, de 10:00 a 19:00 |
+| Dirección | C/ de Ramon Llull, 37. 46021 Valencia (y varios centros más) |
+| Horario | No encontrado: pásate en horario de tarde o llama antes |
 | Web | https://autoescuelas-jorda.com/ |
 | Demo | https://asistente-municipal.vercel.app/autoescuelas-jorda |
 | Precio | Tarifa 69 €/mes + IVA (web). Con WhatsApp, 99 €/mes + IVA. Primer mes gratis, sin permanencia. |
 
-**Contacto:** Es una cadena: pregunta en el centro quién lleva atención al cliente o marketing en la central.
+**Contacto:** Es una cadena: pregunta en el centro quién lleva atención al cliente o marketing en la central. Segundo teléfono del centro: 601 066 131.
 
 **Comprueba antes:**
 
-- Decide la central, no el centro: venta más lenta, pero si entra, entran todos sus centros.
-- No publican precios en la web.
+- Horario del centro de Ramón Llull: no sale claro en su web; la demo remite a la web o al teléfono.
 
 ## Cómo abordarlo
 
-**Por qué les interesa:** Cadena con 6 centros en Valencia y muchos permisos (coche, moto, camión, dron, recuperación de puntos): muchas preguntas distintas y repartidas. Un asistente para todos sus centros a la vez.
+**Por qué les interesa:** Cadena con muchos centros en Valencia y muchos productos (permiso B a 390 €, intensivos, online, moto, dron, CAP, recuperación de puntos): muchas preguntas distintas. Un asistente para todos sus centros a la vez.
 
 Guion completo y respuestas a pegas: [../GUION.md](../GUION.md).
 
@@ -39,7 +38,7 @@ Guion completo y respuestas a pegas: [../GUION.md](../GUION.md).
 
 > «Hola, soy Sergio. He preparado un asistente para la web de Autoescuelas Jordá que contesta a la gente a cualquier hora (precios, horarios, cómo apuntarse) y os deja la solicitud para que llaméis. Lo tengo hecho con la información de vuestra web. ¿Os lo enseño en un minuto?»
 
-Saca el móvil con la demo abierta y pregunta delante de ellos: “¿Dónde tenéis centros?”.
+Saca el móvil con la demo abierta y pregunta delante de ellos: “¿Cuánto cuesta el permiso B?”.
 
 ## Mensaje después (WhatsApp o correo)
 
@@ -74,5 +73,7 @@ npm run video -- autoescuelas-jorda --url https://asistente-municipal.vercel.app
 ## Fuentes
 
 - https://autoescuelas-jorda.com/
-- https://www.cylex.es/valencia/autoescuelas-jord%C3%A1-valencia-12635335.html
-- https://www.autoescuelabuga.com/autoescuela/autoescuelas-jorda-valencia-ramon-llull-valencia/
+- https://autoescuelas-jorda.com/producto/permiso-b/
+- https://autoescuelas-jorda.com/producto/permiso-b-teorico-express/
+- https://autoescuelas-jorda.com/producto/permiso-b-curso-intensivo-online/
+- https://autoescuelas-jorda.com/?seccion=horarios
