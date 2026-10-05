@@ -57,7 +57,7 @@ function Bubble({
         <div
           className={`rounded-2xl rounded-bl-md border bg-surface px-4 py-2.5 shadow-soft ${
             // Borde visible y tintado con el color de la demo (cobalto o el de la marca).
-            message.error ? 'border-danger' : 'border-[color-mix(in_oklch,var(--cobalt)_28%,var(--line))]'
+            message.error ? 'border-danger' : 'border-line-strong'
           }`}
         >
           {segments.length === 0 ? (
@@ -83,7 +83,7 @@ function Bubble({
           <button
             type="button"
             onClick={onRetry}
-            className="press inline-flex items-center gap-1.5 rounded-full border border-line bg-surface px-3 py-1.5 text-sm font-medium text-cobalt-text"
+            className="press inline-flex items-center gap-1.5 rounded-full border-[1.5px] border-line-strong bg-surface px-3 py-1.5 text-sm font-medium text-cobalt-text shadow-btn"
           >
             <ArrowClockwise size={16} weight="bold" aria-hidden />
             Reintentar
@@ -159,7 +159,7 @@ export function Thread({
                 key={s}
                 type="button"
                 onClick={() => onSend(s)}
-                className="press rounded-full border border-line bg-surface px-3.5 py-1.5 text-left text-sm text-ink [@media(hover:hover)]:hover:border-cobalt-text [@media(hover:hover)]:hover:text-cobalt-text"
+                className="press rounded-full border-[1.5px] border-line-strong bg-surface px-3.5 py-1.5 text-left text-sm font-medium text-ink shadow-btn transition-colors duration-150 [@media(hover:hover)]:hover:border-cobalt [@media(hover:hover)]:hover:text-cobalt-text"
               >
                 {s}
               </button>

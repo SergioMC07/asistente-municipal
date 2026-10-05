@@ -143,7 +143,7 @@ export function DemoApp(props: Props) {
                       type="button"
                       onClick={() => chat.send(s)}
                       disabled={chat.loading}
-                      className="press w-full rounded-xl border border-line bg-surface px-4 py-3 text-left text-[15px] transition-colors duration-150 disabled:opacity-60 [@media(hover:hover)]:hover:border-cobalt-text [@media(hover:hover)]:hover:text-cobalt-text"
+                      className="press w-full rounded-xl border-[1.5px] border-line-strong bg-surface px-4 py-3 text-left text-[15px] font-medium shadow-btn transition-colors duration-150 disabled:opacity-60 [@media(hover:hover)]:hover:border-cobalt [@media(hover:hover)]:hover:text-cobalt-text"
                     >
                       {s}
                     </button>
@@ -159,7 +159,7 @@ export function DemoApp(props: Props) {
           </p>
         </aside>
 
-        <main className="flex min-h-0 w-full max-w-2xl flex-col bg-sunken sm:border-x sm:border-line lg:overflow-hidden lg:rounded-[22px] lg:border lg:shadow-soft">
+        <main className="flex min-h-0 w-full max-w-2xl flex-col bg-sunken sm:border-x sm:border-line lg:overflow-hidden lg:rounded-[22px] lg:border-[1.5px] lg:border-line-strong lg:shadow-soft">
           <header className="flex items-center gap-3 border-b border-line bg-surface px-4 py-3">
             <Escudo nombre={nombre} url={escudoUrl} />
             <div className="min-w-0 flex-1">
@@ -177,8 +177,8 @@ export function DemoApp(props: Props) {
                   ? `Panel: ${registros} ${registros === 1 ? `${registro} nueva` : `${registrosPlural} nuevas`}`
                   : 'Panel'
               }
-              className={`press flex shrink-0 items-center gap-1.5 rounded-full border px-3 py-1.5 text-sm font-medium text-cobalt-text transition-[border-color,box-shadow] duration-200 [@media(hover:hover)]:hover:bg-cobalt-soft ${
-                nuevos ? 'border-cobalt shadow-[0_0_0_4px_var(--cobalt-soft)]' : 'border-line'
+              className={`press flex shrink-0 items-center gap-1.5 rounded-full border-[1.5px] bg-surface px-3 py-1.5 text-sm font-semibold text-cobalt-text transition-[border-color,box-shadow] duration-200 [@media(hover:hover)]:hover:bg-cobalt-soft ${
+                nuevos ? 'border-cobalt shadow-[0_0_0_4px_var(--cobalt-soft)]' : 'border-line-strong shadow-btn'
               }`}
             >
               <ChartBar size={16} weight="bold" aria-hidden />

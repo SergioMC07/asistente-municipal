@@ -36,13 +36,13 @@ export function Composer({
         placeholder="Escribe tu pregunta"
         autoComplete="off"
         enterKeyHint="send"
-        className="min-w-0 flex-1 rounded-full border border-line bg-sunken px-4 py-2.5 text-base text-ink outline-none transition-colors duration-150 placeholder:text-muted focus:border-cobalt-text focus:bg-surface focus-visible:outline-none"
+        className="min-w-0 flex-1 rounded-full border-[1.5px] border-line-strong bg-surface px-4 py-2.5 text-base text-ink outline-none transition-colors duration-150 placeholder:text-muted focus:border-cobalt focus-visible:outline-none"
       />
       <button
         type="submit"
         disabled={!canSend}
         aria-label="Enviar"
-        className="press flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-cobalt text-cobalt-on disabled:opacity-40"
+        className="press flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-cobalt text-cobalt-on shadow-btn disabled:opacity-50 disabled:shadow-none"
       >
         <PaperPlaneRight size={20} weight="fill" aria-hidden />
       </button>
