@@ -2,7 +2,8 @@
 
 ## Estado
 
-- [ ] Llamado
+- [x] Llamado (5/10/2026: piden presentarlo por sede electrónica)
+- [x] Instancia general presentada: registro **2026-E-RE-43** (5/10/2026, 12:49)
 - [ ] Correo enviado
 - [ ] Lo ha abierto (ntfy / Loom)
 - [ ] Llamada de seguimiento
@@ -85,10 +86,10 @@ Míralo entero antes de enviarlo. Después súbelo a Loom (*Upload*) y pega el e
 
 ## Notas de la llamada
 
-- Fecha:
-- Con quién he hablado:
+- Fecha: 5/10/2026
+- Con quién he hablado: centralita (apuntar nombre la próxima vez)
 - Qué les preguntan más los vecinos:
-- Próximo paso:
+- Próximo paso: llamar el 13/10/2026 al 918 680 056 citando el registro 2026-E-RE-43
 
 ## Fuentes
 
