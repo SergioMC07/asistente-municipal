@@ -109,7 +109,16 @@ export async function POST(req: Request) {
   const encoder = new TextEncoder();
   const stream = new ReadableStream<Uint8Array>({
     async start(controller) {
-      const escribir = (t: string) => controller.enqueue(encoder.encode(t));
+      // Si la persona cierra la página a mitad, se deja de escribir sin errores.
+      let cerrado = false;
+      const escribir = (t: string) => {
+        if (cerrado) return;
+        try {
+          controller.enqueue(encoder.encode(t));
+        } catch {
+          cerrado = true;
+        }
+      };
       try {
         // Cada vuelta: el modelo responde o pide una herramienta (ver huecos,
         // reservar). Se ejecuta, se le devuelve el resultado y sigue.
@@ -152,7 +161,13 @@ export async function POST(req: Request) {
         console.error('Error durante la respuesta en streaming:', err);
         escribir('\n\n(Se ha cortado la respuesta. Inténtalo de nuevo.)');
       } finally {
-        controller.close();
+        if (!cerrado) {
+          try {
+            controller.close();
+          } catch {
+            // ya cerrado por el cliente
+          }
+        }
         await aviso;
       }
     },

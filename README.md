@@ -79,6 +79,49 @@ Una ficha con `"tipo": "negocio"` convierte la demo en el asistente de un negoci
 
 Ejemplo: `data/pueblos/autoescuela-ejemplo.json`.
 
+## Citas
+
+Si la ficha tiene un bloque `citas`, el asistente **ofrece huecos libres y reserva**. La IA usa dos herramientas (`ver_huecos` y `reservar_cita`) y nunca inventa horas: el servidor calcula los huecos y vuelve a comprobar que siguen libres antes de reservar.
+
+```json
+"citas": {
+  "tipos": ["Información y matrícula"],
+  "duracion": 15,
+  "horario": { "1": ["10:00-14:00", "17:00-20:00"], "5": ["10:00-14:00"] },
+  "capacidad": 1,
+  "antelacion": 120,
+  "dias": 14,
+  "cerrado": ["2026-10-12"],
+  "lugar": "la autoescuela, C/ Mayor, 1",
+  "modo": "demo",
+  "avisoEmail": "negocio@ejemplo.es"
+}
+```
+
+* `horario`: por día de la semana (1 = lunes … 7 = domingo), tramos en hora de España.
+* Los huecos se calculan al momento: se quitan los pasados, los que no respetan la `antelacion` (minutos), los días `cerrado`, los bloqueados y los llenos (`capacidad`). Cada día que pasa entra uno nuevo al final de la ventana de `dias`.
+* **`modo: "demo"`**: la reserva se simula (no se guarda ni avisa). Es lo que tienen todas las demos.
+* **`modo: "real"`**: se guarda en Supabase, el negocio recibe un email con la cita y un `.ics`, y la gestiona en su página.
+
+### Activar citas reales para un cliente
+
+1. **Supabase** (una sola vez): crea un proyecto en una región de la UE, abre *SQL Editor* y ejecuta [`supabase/citas.sql`](supabase/citas.sql). En *Settings → API* copia la *Project URL* y la clave *service_role* y ponlas en Vercel como `SUPABASE_URL` y `SUPABASE_SERVICE_KEY`. La clave es secreta: nunca en el chat, en el código ni en variables `NEXT_PUBLIC_`.
+2. **Resend** (una sola vez): crea la cuenta, verifica tu dominio y crea una API key. En Vercel: `RESEND_API_KEY` y `AVISOS_FROM` (por ejemplo `Atiende <avisos@tudominio.es>`).
+3. En la ficha del cliente: revisa `horario` y `cerrado`, pon `"modo": "real"` y su `avisoEmail`.
+4. Crea su enlace de gestión: `npm run gestion -- <slug>`. Sube la ficha (commit y push) y pasa el enlace **solo al negocio**.
+5. Vuelve a desplegar en Vercel si has cambiado variables.
+
+### Página de gestión del negocio
+
+`/gestion/<slug>?t=<token>` (el enlace de `npm run gestion`). Desde el móvil, el negocio:
+
+* ve las próximas citas por día, con el teléfono para llamar, y las cancela;
+* apunta las citas que le piden por teléfono, para que el asistente no ofrezca ese hueco;
+* bloquea horas o días (festivos, vacaciones, reuniones);
+* copia su **enlace de calendario** (`.ics`) para verlas en Google Calendar, Outlook o el iPhone.
+
+Generar otro enlace con `npm run gestion` invalida el anterior. Las citas y los bloqueos se borran solos 30 días después (tarea nocturna de `citas.sql`).
+
 ## Prospectos
 
 En [`prospectos/`](prospectos/README.md) hay dos listas: [`ayuntamientos/`](prospectos/ayuntamientos/README.md) (11 pueblos de Madrid) y [`empresas/`](prospectos/empresas/README.md) (5 autoescuelas y academias de Valencia). Cada carpeta tiene los datos de contacto, cómo abordarlo, el mensaje listo para pegar y su vídeo. Cada lista tiene su `GUION.md`.
@@ -115,6 +158,8 @@ El encargo de diseño de esta demo está en [`docs/BRIEF-DEMO.md`](docs/BRIEF-DE
 | `NEXT_PUBLIC_WHATSAPP_DEMO_NUMBER` | Número del asistente de demo en WhatsApp (botón «Probar en WhatsApp») |
 | `OPENAI_CHAT_MODEL`, `OPENAI_FICHA_MODEL` | Opcionales (por defecto `gpt-4.1-mini`) |
 | `NOTIFY_URL` | Opcional: tema de [ntfy](https://ntfy.sh) para recibir en el móvil un aviso cuando alguien abre una demo o escribe su primer mensaje |
+| `SUPABASE_URL`, `SUPABASE_SERVICE_KEY` | Opcional: base de datos de las citas reales (ver «Citas») |
+| `RESEND_API_KEY`, `AVISOS_FROM` | Opcional: email al negocio con cada cita nueva |
 | `NEXT_PUBLIC_TITULAR_NOMBRE`, `NEXT_PUBLIC_TITULAR_NIF`, `NEXT_PUBLIC_TITULAR_DOMICILIO` | Datos del titular para el aviso legal (`/aviso-legal`) |
 
 El WhatsApp comercial por defecto es el `34638798445` (en `src/lib/contact.ts`); `NEXT_PUBLIC_CONTACT_WHATSAPP` lo sustituye si se define.
@@ -152,6 +197,7 @@ npm run lint       # next lint
 npm run test       # vitest
 npm run preflight  # typecheck + lint + test
 npm run demo -- <url>
+npm run gestion -- <slug>   # enlace de gestión de la agenda
 ```
 
 ## Próximos pasos

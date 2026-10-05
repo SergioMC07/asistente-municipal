@@ -60,7 +60,9 @@ export async function reservar(
   pueblo: Pueblo,
   datos: { fecha: string; hora: string; nombre: string; telefono: string; tipo?: string; nota?: string },
   ahora = new Date(),
-  store?: CitasStore | null
+  store?: CitasStore | null,
+  /** Las citas que apunta el propio negocio (por teléfono) no generan aviso. */
+  origen: 'asistente' | 'manual' = 'asistente'
 ): Promise<ResultadoReserva> {
   const ctx = contexto(pueblo, store === undefined ? citasStore() : store);
   if (!ctx) return { ok: false, error: 'Este centro no tiene agenda de citas.' };
@@ -84,7 +86,7 @@ export async function reservar(
     nombre,
     telefono,
     nota: datos.nota?.trim().slice(0, 300) || null,
-    origen: 'asistente' as const,
+    origen,
   };
 
   if (!ctx.real || !ctx.store) {
@@ -94,7 +96,7 @@ export async function reservar(
 
   const cita = await ctx.store.crear(nueva, ctx.agenda.capacidad);
   if (!cita) return { ok: false, error: 'Ese hueco se acaba de ocupar.', alternativas: alternativas() };
-  await avisarCita(pueblo, cita);
+  if (origen === 'asistente') await avisarCita(pueblo, cita);
   return { ok: true, demo: false, cita };
 }
 

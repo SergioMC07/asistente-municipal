@@ -47,6 +47,21 @@ export default function Privacidad() {
         </li>
       </ul>
 
+      <h2>Citas</h2>
+      <p>
+        En las <strong>demostraciones</strong>, las citas se simulan: no se guardan y puede usar un nombre y un
+        teléfono inventados.
+      </p>
+      <p>
+        Cuando un ayuntamiento o un negocio usa el servicio real, al reservar una cita se guardan el nombre, el
+        teléfono, el día y la hora, y, si la da, una nota breve. El responsable de esos datos es ese ayuntamiento
+        o negocio, que los usa solo para gestionar la cita y avisarle si hay cambios. El titular de esta web
+        actúa como encargado del tratamiento: los guarda en servidores de la Unión Europea (Supabase) y los
+        envía por correo al responsable (Resend) para avisarle de cada cita. Se conservan hasta 30 días
+        después de la cita, salvo que el responsable indique otro plazo. Para ejercer sus derechos sobre una
+        cita, diríjase al ayuntamiento o negocio con el que la reservó.
+      </p>
+
       <h2>Base legal y conservación</h2>
       <p>
         El interés legítimo en mostrar y mejorar el servicio, y su consentimiento cuando nos contacta. Los

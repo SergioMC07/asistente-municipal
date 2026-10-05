@@ -39,3 +39,13 @@ create index if not exists bloqueos_por_negocio on bloqueos (slug, inicio);
 
 alter table citas enable row level security;
 alter table bloqueos enable row level security;
+
+-- Borrado automático, como dice la política de privacidad: cada noche se
+-- eliminan las citas y los bloqueos que terminaron hace más de 30 días.
+create extension if not exists pg_cron;
+select cron.schedule(
+  'borrar-citas-antiguas',
+  '0 4 * * *',
+  $$delete from citas where fin < now() - interval '30 days';
+    delete from bloqueos where fin < now() - interval '30 days';$$
+);
