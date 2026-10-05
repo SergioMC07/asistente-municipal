@@ -32,6 +32,6 @@ export async function GET() {
       panel: secreto && secreto.length >= 32 ? 'OK' : 'Falta: PANEL_SECRET (32 caracteres o más)',
       asistente: process.env.OPENAI_API_KEY ? 'OK' : 'Falta: OPENAI_API_KEY',
     },
-    { headers: { 'Cache-Control': 'no-store' } }
+    { headers: { 'Cache-Control': 'no-store', 'Content-Type': 'application/json; charset=utf-8' } }
   );
 }

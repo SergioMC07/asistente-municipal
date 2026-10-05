@@ -21,7 +21,8 @@ export function Hecho({ api, hecho }: { api: string; hecho: boolean }) {
         body: JSON.stringify({ estado: nuevo ? 'hecho' : 'pendiente' }),
       });
       if (!res.ok) throw new Error();
-      router.refresh();
+      // En la demostración no se guarda: se queda solo el cambio en pantalla.
+      if (!((await res.json()) as { demo?: boolean }).demo) router.refresh();
     } catch {
       setEstado(!nuevo);
     } finally {

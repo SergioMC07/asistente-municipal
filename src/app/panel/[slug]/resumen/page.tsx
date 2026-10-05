@@ -5,7 +5,7 @@ import Link from 'next/link';
 import { Cabecera, SinPanel, Vacio } from '@/components/panel/Piezas';
 import { citasStore } from '@/lib/citas/store';
 import { textos } from '@/lib/entidad';
-import { panelStore } from '@/lib/panel/datos';
+import { almacen } from '@/lib/panel/acceso';
 import { cuando, hace30 } from '@/lib/panel/formato';
 import { resumir } from '@/lib/panel/resumen';
 import { negocioDeSesion } from '@/lib/panel/sesion';
@@ -27,22 +27,20 @@ export default async function Resumen({ params }: { params: { slug: string } }) 
   if (!acceso) return null;
   const { negocio } = acceso;
   const t = textos(negocio);
-  const store = panelStore();
+  const store = almacen(acceso);
   if (!store) return <SinPanel />;
 
   const desde = hace30();
-  const citas = negocio.citas?.modo === 'real' ? citasStore() : null;
+  const citas = !acceso.demo && negocio.citas?.modo === 'real' ? citasStore() : null;
   const [conversaciones, registros, citasMes] = await Promise.all([
     store.conversaciones(negocio.slug, desde, 1000),
     store.registros(negocio.slug, desde),
     citas ? citas.confirmadas(negocio.slug, desde, new Date(Date.now() + 120 * 86_400_000)) : Promise.resolve([]),
   ]);
-  const r = resumir(
-    conversaciones,
-    registros,
-    citasMes.filter((c) => c.origen === 'asistente').length,
-    negocio.tipo
-  );
+  const citasAsistente = acceso.demo
+    ? conversaciones.filter((c) => c.tiene_cita).length
+    : citasMes.filter((c) => c.origen === 'asistente').length;
+  const r = resumir(conversaciones, registros, citasAsistente, negocio.tipo);
 
   if (r.conversaciones === 0) {
     return (

@@ -47,7 +47,7 @@ export function GestionApp({
 }: {
   /** Ruta de las acciones (con el token del enlace secreto o con la sesión del panel). */
   api: string;
-  /** Ruta del calendario suscribible. */
+  /** Ruta del calendario suscribible (vacía en la demostración: no hay calendario que suscribir). */
   feed: string;
   datos: Real;
   className?: string;
@@ -276,6 +276,7 @@ export function GestionApp({
         )}
       </Bloque>
 
+      {rutaFeed && (
       <Bloque titulo="Ver las citas en tu calendario">
         <p className="leading-relaxed text-muted">
           Añade este enlace a tu Google Calendar (Otros calendarios → + → Desde URL), Outlook o iPhone y las citas
@@ -297,6 +298,7 @@ export function GestionApp({
           </button>
         </div>
       </Bloque>
+      )}
     </div>
   );
 }

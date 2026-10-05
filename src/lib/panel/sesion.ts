@@ -8,9 +8,11 @@
 
 import { createHmac, timingSafeEqual } from 'node:crypto';
 import { cookies } from 'next/headers';
-import { listarPueblos, type Pueblo } from '@/lib/pueblo';
+import { getPueblo, listarPueblos, type Pueblo } from '@/lib/pueblo';
 
 export const COOKIE = 'atentia_panel';
+/** Panel de demostración: guarda el slug de la demo, sin firma (solo da acceso a datos de ejemplo). */
+export const COOKIE_DEMO = 'atentia_panel_demo';
 export const DURACION_ENLACE = 15 * 60 * 1000;
 export const DURACION_SESION = 30 * 24 * 60 * 60 * 1000;
 
@@ -79,9 +81,19 @@ export async function sesionActual(): Promise<{ email: string; negocios: Pueblo[
   return negocios.length ? { email: datos.email, negocios } : null;
 }
 
-/** El negocio si la sesión tiene acceso a él; si no, null. */
-export async function negocioDeSesion(slug: string): Promise<{ email: string; negocio: Pueblo } | null> {
+export type Acceso = { email: string | null; negocio: Pueblo; demo: boolean };
+
+/**
+ * El negocio si la sesión tiene acceso a él; si no, null. La sesión de
+ * demostración solo abre fichas sin panel (demos), y con datos de ejemplo.
+ */
+export async function negocioDeSesion(slug: string): Promise<Acceso | null> {
   const s = await sesionActual();
   const negocio = s?.negocios.find((p) => p.slug === slug);
-  return s && negocio ? { email: s.email, negocio } : null;
+  if (s && negocio) return { email: s.email, negocio, demo: false };
+  if (cookies().get(COOKIE_DEMO)?.value === slug) {
+    const demo = await getPueblo(slug);
+    if (demo && !demo.panel) return { email: null, negocio: demo, demo: true };
+  }
+  return null;
 }

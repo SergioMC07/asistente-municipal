@@ -6,7 +6,8 @@ import { ChatCircleText, Phone } from '@phosphor-icons/react/dist/ssr';
 import { Hecho } from '@/components/panel/Hecho';
 import { Cabecera, SinPanel, Vacio } from '@/components/panel/Piezas';
 import { textos } from '@/lib/entidad';
-import { panelStore, type Registro } from '@/lib/panel/datos';
+import { almacen } from '@/lib/panel/acceso';
+import type { Registro } from '@/lib/panel/datos';
 import { cuando, hace30 } from '@/lib/panel/formato';
 import { negocioDeSesion } from '@/lib/panel/sesion';
 
@@ -79,7 +80,7 @@ export default async function Solicitudes({ params }: { params: { slug: string }
   const t = textos(acceso.negocio);
   const solicitud = t.clase === 'solicitud';
   const titulo = solicitud ? 'Solicitudes' : 'Incidencias';
-  const store = panelStore();
+  const store = almacen(acceso);
   if (!store) return <SinPanel />;
 
   const registros = await store.registros(params.slug, hace30());

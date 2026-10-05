@@ -5,7 +5,8 @@ import Link from 'next/link';
 import { ChatCircleText, WhatsappLogo } from '@phosphor-icons/react/dist/ssr';
 import { Cabecera, Senal, SinPanel, Vacio } from '@/components/panel/Piezas';
 import { textos } from '@/lib/entidad';
-import { panelStore, type Conversacion } from '@/lib/panel/datos';
+import { almacen } from '@/lib/panel/acceso';
+import type { Conversacion } from '@/lib/panel/datos';
 import { cuando, hace30 } from '@/lib/panel/formato';
 import { negocioDeSesion } from '@/lib/panel/sesion';
 
@@ -30,7 +31,7 @@ export default async function Conversaciones({
   const acceso = await negocioDeSesion(params.slug);
   if (!acceso) return null;
   const t = textos(acceso.negocio);
-  const store = panelStore();
+  const store = almacen(acceso);
   if (!store) return <SinPanel />;
 
   const todas = await store.conversaciones(params.slug, hace30());

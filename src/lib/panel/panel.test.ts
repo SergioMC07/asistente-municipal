@@ -177,3 +177,35 @@ describe('Excel y fechas', () => {
     expect(cuando('2026-10-04T18:00:00Z', ahora)).toBe('Ayer, 20:00');
   });
 });
+
+describe('panel de demostración', () => {
+  it('genera conversaciones, solicitudes y citas con la agenda de la demo', async () => {
+    const { puebloSchema } = await import('@/lib/pueblo');
+    const { agendaDemo, panelDemo } = await import('./demo');
+    const p = puebloSchema.parse({
+      slug: 'demo',
+      tipo: 'negocio',
+      sector: 'autoescuela',
+      nombre: 'Autoescuela Demo',
+      web: 'https://example.com/',
+      ficha: '-',
+      generadoEl: '2026-10-05T00:00:00.000Z',
+      citas: { tipos: ['Información'], duracion: 15, horario: { '1': ['10:00-14:00'], '2': ['10:00-14:00'], '3': ['10:00-14:00'], '4': ['10:00-14:00'], '5': ['10:00-14:00'] } },
+    });
+    const ahora = new Date('2026-10-05T08:00:00Z');
+    const store = panelDemo(p, ahora);
+    const convs = await store.conversaciones('demo', new Date(ahora.getTime() - 30 * 86_400_000));
+    expect(convs.length).toBeGreaterThan(8);
+    expect(convs.some((c) => c.tiene_cita)).toBe(true);
+    expect(convs.some((c) => c.sin_respuesta)).toBe(true);
+    const regs = await store.registros('demo', new Date(0));
+    expect(regs.some((r) => r.estado === 'pendiente' && r.telefono)).toBe(true);
+    const agenda = agendaDemo(p, ahora);
+    expect(agenda.estado === 'real' && agenda.citas.length).toBeGreaterThan(0);
+    // Ninguna respuesta de ejemplo inventa precios.
+    for (const c of convs) {
+      const d = await store.conversacion('demo', c.id);
+      expect(d?.mensajes.some((m) => /\d+\s?€/.test(m.contenido))).toBe(false);
+    }
+  });
+});

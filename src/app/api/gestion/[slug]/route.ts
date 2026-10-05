@@ -32,8 +32,12 @@ export async function POST(req: Request, { params }: { params: { slug: string } 
   const pueblo = await getPueblo(params.slug);
   const token = new URL(req.url).searchParams.get('t');
   // Con el enlace secreto de gestión o con la sesión del panel.
-  if (!pueblo || !(tokenValido(pueblo, token) || (await negocioDeSesion(pueblo.slug)))) {
+  const sesion = pueblo && !tokenValido(pueblo, token) ? await negocioDeSesion(pueblo.slug) : null;
+  if (!pueblo || !(tokenValido(pueblo, token) || sesion)) {
     return Response.json({ error: 'Enlace no válido.' }, { status: 403 });
+  }
+  if (sesion?.demo) {
+    return Response.json({ error: 'Es una demostración: los cambios no se guardan.' }, { status: 409 });
   }
   const store = citasStore();
   if (!store || pueblo.citas?.modo !== 'real') {

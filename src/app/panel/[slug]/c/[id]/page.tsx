@@ -11,7 +11,7 @@ import { IncidenciaCard } from '@/components/chat/IncidenciaCard';
 import { Senal, SinPanel } from '@/components/panel/Piezas';
 import { textos } from '@/lib/entidad';
 import { splitIncidencias } from '@/lib/incidencia';
-import { panelStore } from '@/lib/panel/datos';
+import { almacen } from '@/lib/panel/acceso';
 import { cuando, hace30, horaMadrid } from '@/lib/panel/formato';
 import { negocioDeSesion } from '@/lib/panel/sesion';
 
@@ -22,7 +22,7 @@ const UUID = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
 export default async function ConversacionPage({ params }: { params: { slug: string; id: string } }) {
   const acceso = await negocioDeSesion(params.slug);
   if (!acceso) return null;
-  const store = panelStore();
+  const store = almacen(acceso);
   if (!store) return <SinPanel />;
   if (!UUID.test(params.id)) notFound();
   const datos = await store.conversacion(params.slug, params.id);

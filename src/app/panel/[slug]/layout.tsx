@@ -4,7 +4,7 @@ import { Escudo } from '@/components/chat/Escudo';
 import { Pestanas } from '@/components/panel/Pestanas';
 import { textos } from '@/lib/entidad';
 import { marcaStyle } from '@/lib/marca';
-import { panelStore } from '@/lib/panel/datos';
+import { almacen } from '@/lib/panel/acceso';
 import { hace30 } from '@/lib/panel/formato';
 import { negocioDeSesion } from '@/lib/panel/sesion';
 
@@ -22,19 +22,25 @@ export default async function NegocioLayout({
   const { negocio, email } = acceso;
   const t = textos(negocio);
 
-  const store = panelStore();
+  const store = almacen(acceso);
   const pendientes = store
     ? (await store.registros(negocio.slug, hace30())).filter((r) => r.estado === 'pendiente').length
     : 0;
 
   return (
     <div style={marcaStyle(negocio.color)} className="min-h-[100dvh] bg-[var(--fondo)]">
+      {acceso.demo && (
+        // Banda de Atentia, en neutro como la de las demos del chat.
+        <p className="bg-ink px-4 py-2 text-center text-[13px] leading-snug text-canvas">
+          Panel de demostración con datos de ejemplo. Así verá {t.titulo} lo que pasa con su asistente.
+        </p>
+      )}
       <header className="sticky top-0 z-10 border-b border-line bg-surface/95 backdrop-blur">
         <div className="mx-auto flex max-w-3xl items-center gap-3 px-4 pt-3.5">
           <Escudo nombre={negocio.nombre} url={negocio.escudoUrl} />
           <div className="min-w-0 flex-1">
             <p className="truncate font-semibold leading-tight">{t.titulo}</p>
-            <p className="truncate text-sm text-muted">{email}</p>
+            <p className="truncate text-sm text-muted">{email ?? 'Demostración'}</p>
           </div>
           <form action="/api/panel/salir" method="post">
             <button

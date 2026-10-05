@@ -1,6 +1,6 @@
 'use client';
 
-import { X } from '@phosphor-icons/react/dist/ssr';
+import { ArrowRight, X } from '@phosphor-icons/react/dist/ssr';
 import { useEffect } from 'react';
 import { Hora } from '@/components/chat/Hora';
 import { CitaCard } from '@/components/chat/CitaCard';
@@ -118,11 +118,14 @@ const EXTRAS = {
 } as const;
 
 export function Panel({
+  slug,
   textos,
   messages,
   onClose,
   onReset,
 }: {
+  /** Para abrir el panel completo de demostración. */
+  slug: string;
   textos: Textos;
   messages: Message[];
   onClose: () => void;
@@ -180,7 +183,15 @@ export function Panel({
           </section>
         </div>
 
-        <div className="border-t border-line bg-surface px-5 py-3 text-right">
+        <div className="flex items-center justify-between gap-3 border-t border-line bg-surface px-5 py-3">
+          <a
+            href={`/panel/demo/${slug}`}
+            target="_blank"
+            className="press inline-flex items-center gap-1.5 rounded-full bg-cobalt px-4 py-2 text-sm font-semibold text-cobalt-on shadow-btn"
+          >
+            Ver el panel completo
+            <ArrowRight size={16} weight="bold" aria-hidden />
+          </a>
           <button
             type="button"
             onClick={onReset}

@@ -134,6 +134,14 @@ Generar otro enlace con `npm run gestion` invalida el anterior. Las citas y los 
 
 Solo se guardan las conversaciones de las fichas con `panel`; las demos nunca. Con panel, el chat no lleva la banda de demostración ni el botón *Panel*, avisa de que la conversación se guarda 30 días y, para una solicitud, pide nombre y teléfono. Todo se borra solo a los 30 días (tarea nocturna de `citas.sql`).
 
+### Panel de demostración
+
+`/panel/demo/<slug>` abre el panel de cualquier demo con **datos de ejemplo**: conversaciones, solicitudes, citas en huecos reales de su agenda y el resumen, con su nombre y su color. Sirve para enseñárselo a un negocio antes de contratar. No pide email, una banda avisa de que es una demostración y los cambios (marcar hecho, apuntar o cancelar citas) no se guardan. Desde el chat de la demo se llega con «Ver el panel completo» en el botón *Panel*. Las fichas con `panel` (clientes reales) no tienen demostración.
+
+### Comprobar la configuración
+
+`/api/estado` dice si Supabase, el email, `PANEL_SECRET` y OpenAI están configurados, sin mostrar claves ni datos.
+
 ### Dar acceso a un cliente
 
 1. Supabase y Resend configurados (ver *Activar citas reales*) y, en Vercel, `PANEL_SECRET`: una cadena aleatoria de 32 caracteres o más (por ejemplo, `openssl rand -base64 48`). Si cambia, se cierran todas las sesiones.

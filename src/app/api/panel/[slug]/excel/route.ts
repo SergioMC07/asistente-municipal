@@ -1,7 +1,8 @@
 // Descarga en Excel de las citas, las solicitudes o incidencias, o las conversaciones.
 
 import { citasStore } from '@/lib/citas/store';
-import { panelStore } from '@/lib/panel/datos';
+import { almacen } from '@/lib/panel/acceso';
+import { agendaDemo } from '@/lib/panel/demo';
 import { csv, fechaHora } from '@/lib/panel/excel';
 import { negocioDeSesion } from '@/lib/panel/sesion';
 
@@ -16,9 +17,10 @@ export async function GET(req: Request, { params }: { params: { slug: string } }
   let texto: string;
 
   if (tipo === 'citas') {
-    const store = citasStore();
+    const store = acceso.demo ? null : citasStore();
     const hasta = new Date(Date.now() + 120 * 86_400_000);
-    const citas = store ? await store.confirmadas(params.slug, hace30, hasta) : [];
+    const demo = acceso.demo ? agendaDemo(acceso.negocio) : null;
+    const citas = demo?.estado === 'real' ? demo.citas : store ? await store.confirmadas(params.slug, hace30, hasta) : [];
     texto = csv(
       ['Fecha', 'Hora', 'Nombre', 'Teléfono', 'Motivo', 'Nota', 'Origen'],
       citas.map((c) => [
@@ -31,7 +33,7 @@ export async function GET(req: Request, { params }: { params: { slug: string } }
       ])
     );
   } else if (tipo === 'registros') {
-    const store = panelStore();
+    const store = almacen(acceso);
     const registros = store ? await store.registros(params.slug, hace30) : [];
     texto = csv(
       ['Fecha', 'Hora', 'Tipo', 'Qué', 'Dónde o cuándo', 'Detalle', 'Nombre', 'Teléfono', 'Estado'],
@@ -47,7 +49,7 @@ export async function GET(req: Request, { params }: { params: { slug: string } }
       ])
     );
   } else if (tipo === 'conversaciones') {
-    const store = panelStore();
+    const store = almacen(acceso);
     const lista = store ? await store.conversaciones(params.slug, hace30, 1000) : [];
     texto = csv(
       ['Fecha', 'Hora', 'Canal', 'Primera pregunta', 'Mensajes', 'Cita', 'Solicitud o incidencia', 'Sin respuesta'],

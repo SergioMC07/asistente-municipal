@@ -8,7 +8,10 @@ export const runtime = 'nodejs';
 export const dynamic = 'force-dynamic';
 
 export async function PATCH(req: Request, { params }: { params: { slug: string; id: string } }) {
-  if (!(await negocioDeSesion(params.slug))) return Response.json({ error: 'Sin acceso.' }, { status: 403 });
+  const acceso = await negocioDeSesion(params.slug);
+  if (!acceso) return Response.json({ error: 'Sin acceso.' }, { status: 403 });
+  // En la demostración el botón cambia en pantalla, pero no se guarda nada.
+  if (acceso.demo) return Response.json({ ok: true, demo: true });
   const store = panelStore();
   if (!store) return Response.json({ error: 'Panel no activado.' }, { status: 409 });
   const parsed = z.object({ estado: z.enum(['pendiente', 'hecho']) }).safeParse(await req.json().catch(() => null));

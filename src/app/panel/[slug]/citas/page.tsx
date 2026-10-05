@@ -3,7 +3,7 @@
 
 import { GestionApp } from '@/components/GestionApp';
 import { Cabecera, Vacio } from '@/components/panel/Piezas';
-import { datosAgenda } from '@/lib/citas/vista';
+import { agendaDe } from '@/lib/panel/acceso';
 import { negocioDeSesion, tokenCalendario } from '@/lib/panel/sesion';
 
 export const dynamic = 'force-dynamic';
@@ -11,7 +11,7 @@ export const dynamic = 'force-dynamic';
 export default async function Citas({ params }: { params: { slug: string } }) {
   const acceso = await negocioDeSesion(params.slug);
   if (!acceso) return null;
-  const datos = await datosAgenda(acceso.negocio);
+  const datos = await agendaDe(acceso);
 
   if (datos.estado !== 'real') {
     return (
@@ -35,7 +35,7 @@ export default async function Citas({ params }: { params: { slug: string } }) {
       />
       <GestionApp
         api={`/api/gestion/${params.slug}`}
-        feed={`/api/gestion/${params.slug}/calendario?t=${tokenCalendario(params.slug)}`}
+        feed={acceso.demo ? '' : `/api/gestion/${params.slug}/calendario?t=${tokenCalendario(params.slug)}`}
         datos={datos}
         className=""
       />

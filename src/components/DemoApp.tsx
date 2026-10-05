@@ -248,6 +248,7 @@ export function DemoApp(props: Props) {
 
       {panelOpen && (
         <Panel
+          slug={slug}
           textos={textos}
           messages={chat.messages}
           onClose={() => setPanelOpen(false)}
