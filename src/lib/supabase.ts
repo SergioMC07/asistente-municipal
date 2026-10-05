@@ -5,7 +5,8 @@
 // políticas, así que nadie más puede leerlas ni escribirlas.
 
 export function supabaseConfig(): { url: string; key: string } | null {
-  const url = process.env.SUPABASE_URL?.replace(/\/$/, '');
+  // Acepta la Project URL tal cual o con /rest/v1 al final.
+  const url = process.env.SUPABASE_URL?.trim().replace(/\/+$/, '').replace(/\/rest\/v1$/, '');
   const key = process.env.SUPABASE_SERVICE_KEY;
   return url && key ? { url, key } : null;
 }
