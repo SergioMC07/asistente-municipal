@@ -5,10 +5,22 @@ import { useEffect } from 'react';
 import { Hora } from '@/components/chat/Hora';
 import { IncidenciaCard } from '@/components/chat/IncidenciaCard';
 import type { Message } from '@/components/chat/useChat';
+import type { Textos } from '@/lib/entidad';
 import { extractIncidencias } from '@/lib/incidencia';
 
-/** Resumen de la conversación tal como lo vería el ayuntamiento. */
-export function PanelSummary({ messages }: { messages: Message[] }) {
+const REGISTROS = { incidencia: 'Incidencias', solicitud: 'Solicitudes' } as const;
+
+/** Resumen de la conversación tal como lo vería el ayuntamiento o el negocio. */
+export function PanelSummary({
+  messages,
+  clase = 'incidencia',
+  ejemplo = '«Hay una farola fundida en la calle Mayor»',
+}: {
+  messages: Message[];
+  clase?: Textos['clase'];
+  ejemplo?: string;
+}) {
+  const registros = REGISTROS[clase];
   const consultas = messages.filter((m) => m.role === 'user');
   const incidencias = messages
     .filter((m) => m.role === 'assistant' && !m.error)
@@ -24,7 +36,7 @@ export function PanelSummary({ messages }: { messages: Message[] }) {
           </dd>
         </div>
         <div className="bg-surface p-4">
-          <dt className="text-sm text-muted">Incidencias</dt>
+          <dt className="text-sm text-muted">{registros}</dt>
           <dd className="mt-1 font-mono text-3xl font-semibold tabular-nums text-cobalt-text">
             {incidencias.length}
           </dd>
@@ -48,11 +60,9 @@ export function PanelSummary({ messages }: { messages: Message[] }) {
       </section>
 
       <section>
-        <h3 className="mb-3 font-semibold">Incidencias</h3>
+        <h3 className="mb-3 font-semibold">{registros}</h3>
         {incidencias.length === 0 ? (
-          <p className="text-sm text-muted">
-            Ninguna todavía. Pruebe con «Hay una farola fundida en la calle Mayor».
-          </p>
+          <p className="text-sm text-muted">Ninguna todavía. Pruebe con {ejemplo}.</p>
         ) : (
           <div className="space-y-3">
             {incidencias.map((data, i) => (
@@ -65,13 +75,28 @@ export function PanelSummary({ messages }: { messages: Message[] }) {
   );
 }
 
+const EXTRAS = {
+  ayuntamiento: [
+    'Informe mensual con los temas más consultados y las dudas sin respuesta.',
+    'Incidencias con foto y ubicación, y aviso al responsable.',
+    'El ayuntamiento edita la información que usa el asistente.',
+    'El mismo asistente en WhatsApp y en la web municipal.',
+  ],
+  negocio: [
+    'Cada solicitud llega al momento por email o WhatsApp, con el teléfono del cliente.',
+    'Informe mensual con lo que más preguntan y las dudas sin respuesta.',
+    'Tú editas los precios, horarios y ofertas que usa el asistente.',
+    'El mismo asistente en WhatsApp y en su web.',
+  ],
+} as const;
+
 export function Panel({
-  nombre,
+  textos,
   messages,
   onClose,
   onReset,
 }: {
-  nombre: string;
+  textos: Textos;
   messages: Message[];
   onClose: () => void;
   onReset: () => void;
@@ -94,10 +119,10 @@ export function Panel({
         <div className="flex items-start justify-between gap-3 border-b border-line bg-surface px-5 py-4">
           <div>
             <h2 id="panel-title" className="text-lg font-semibold">
-              Panel del ayuntamiento
+              {textos.tipo === 'negocio' ? 'Tu panel' : 'Panel del ayuntamiento'}
             </h2>
             <p className="text-sm text-muted">
-              Lo que vería el Ayuntamiento de {nombre}, con los datos de esta conversación.
+              Lo que vería {textos.titulo}, con los datos de esta conversación.
             </p>
           </div>
           <button
@@ -111,15 +136,14 @@ export function Panel({
         </div>
 
         <div className="flex-1 overflow-y-auto px-5 py-6">
-          <PanelSummary messages={messages} />
+          <PanelSummary messages={messages} clase={textos.clase} ejemplo={textos.ejemplo} />
 
           <section className="mt-7 border-t border-line pt-5 text-sm">
             <h3 className="mb-2 font-semibold">En el servicio real, además</h3>
             <ul className="list-disc space-y-1.5 pl-5 text-muted">
-              <li>Informe mensual con los temas más consultados y las dudas sin respuesta.</li>
-              <li>Incidencias con foto y ubicación, y aviso al responsable.</li>
-              <li>El ayuntamiento edita la información que usa el asistente.</li>
-              <li>El mismo asistente en WhatsApp y en la web municipal.</li>
+              {EXTRAS[textos.tipo].map((t) => (
+                <li key={t}>{t}</li>
+              ))}
             </ul>
           </section>
         </div>

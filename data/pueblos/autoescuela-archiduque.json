@@ -1,0 +1,27 @@
+{
+  "slug": "autoescuela-archiduque",
+  "tipo": "negocio",
+  "nombre": "Autoescuela Archiduque",
+  "sector": "autoescuela",
+  "ciudad": "Valencia",
+  "saludo": "¡Hola! Soy el asistente de **Autoescuela Archiduque** y te atiendo a cualquier hora.\n\nPregúntame por precios, permisos o prácticas, y si quieres apuntarte te ayudo a dejar tu solicitud.",
+  "web": "https://autoescuelaarchiduque.es/",
+  "telefono": "658 169 423",
+  "email": "hola@autoescuelaarchiduque.es",
+  "ficha": "## Autoescuela\n- Dirección: C/ de l'Arxiduc Carles, 111. 46014 Valencia (barrio de Patraix).\n- Teléfono: 658 169 423.\n- Email: hola@autoescuelaarchiduque.es\n- Web: https://autoescuelaarchiduque.es/\n\n## Carné B (coche)\n- Curso completo: 380 €. Incluye matrícula, libros, acceso al aula virtual durante 2 meses, 2 meses de clases teóricas, gestión del expediente, traslado al primer examen, examen teórico y 10 prácticas de 45 minutos.\n- Tasas de Tráfico (DGT), aparte: 97,40 €.\n\n## Prácticas sueltas\n- Práctica de 45 minutos: 31 €.\n- Bono de 4 prácticas: 120 €.\n- Bono de 10 prácticas: 290 €.\n\n## Otros permisos\n- Los precios del resto de permisos están en https://autoescuelaarchiduque.es/precios/\n",
+  "sugerencias": [
+    "¿Cuánto cuesta el carné B?",
+    "¿Cuánto cuesta una práctica suelta?",
+    "¿Dónde estáis?",
+    "Quiero apuntarme"
+  ],
+  "fuentes": [
+    "https://autoescuelaarchiduque.es/precios/",
+    "https://autoescuelaarchiduque.es/contacto/"
+  ],
+  "generadoEl": "2026-10-05T00:00:00.000Z",
+  "demo": {
+    "desconocida": "¿Tenéis clases en coche automático?",
+    "incidencia": "Quiero sacarme el carné B. ¿Me podéis llamar el lunes por la tarde?"
+  }
+}

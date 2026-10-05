@@ -12,7 +12,14 @@ export const SLUG_RE = /^[a-z0-9]+(?:-[a-z0-9]+)*$/;
 
 export const puebloSchema = z.object({
   slug: z.string().regex(SLUG_RE),
+  /** Ayuntamiento (vecinos e incidencias) o negocio (clientes y solicitudes). */
+  tipo: z.enum(['ayuntamiento', 'negocio']).default('ayuntamiento'),
   nombre: z.string().min(1),
+  /** Solo negocios: a qué se dedica, p. ej. "autoescuela" o "academia de inglés". */
+  sector: z.string().optional(),
+  ciudad: z.string().optional(),
+  /** Solo negocios: primer mensaje del chat. */
+  saludo: z.string().optional(),
   provincia: z.string().optional(),
   web: z.string().url(),
   escudoUrl: z.string().url().optional(),

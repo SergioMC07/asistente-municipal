@@ -1,0 +1,27 @@
+{
+  "slug": "autoescuela-blay",
+  "tipo": "negocio",
+  "nombre": "Autoescuela Blay",
+  "sector": "autoescuela",
+  "ciudad": "Valencia",
+  "saludo": "¡Hola! Soy el asistente de **Autoescuela Blay** y te atiendo a cualquier hora.\n\nPregúntame por precios, permisos o prácticas, y si quieres apuntarte te ayudo a dejar tu solicitud.",
+  "web": "https://autoescuelablay.com/",
+  "telefono": "963 809 663",
+  "horario": "Lunes a jueves, de 11:00 a 13:00 y de 17:00 a 20:00; viernes, de 11:00 a 13:00",
+  "ficha": "## Autoescuela\n- Dirección: C/ Honorat Juan, 9. 46007 Valencia.\n- Teléfono: 963 809 663.\n- WhatsApp: 667 229 743.\n- Horario: lunes a jueves, de 11:00 a 13:00 y de 17:00 a 20:00; viernes, de 11:00 a 13:00. Sábados y domingos, cerrado.\n- Web: https://autoescuelablay.com/\n- Más de 60 años formando conductores: «la autoescuela de barrio de toda la vida».\n\n## Permisos\n- Moto y ciclomotor: AM, A1, A2 y A.\n- Coche: B y B+E (con remolque).\n- Camión: C1 y C.\n- Autobús: D1 y D.\n\n## Precios\n- Los precios de matrícula, teórico y prácticas se consultan directamente con la autoescuela.\n",
+  "sugerencias": [
+    "¿Qué horario tenéis?",
+    "¿Qué permisos dais?",
+    "¿Dais el carné de camión?",
+    "Quiero apuntarme"
+  ],
+  "fuentes": [
+    "https://autoescuelablay.com/",
+    "https://trustlocal.es/valencia/valencia/autoescuela/autoescuela-blay/"
+  ],
+  "generadoEl": "2026-10-05T00:00:00.000Z",
+  "demo": {
+    "desconocida": "¿Cuánto cuesta el carné B?",
+    "incidencia": "Quiero sacarme el carné de moto A2. ¿Me podéis llamar el jueves por la tarde?"
+  }
+}

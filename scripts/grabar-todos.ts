@@ -5,15 +5,16 @@
 //   npm run videos -- --url https://tu-proyecto.vercel.app
 //   npm run videos -- --url https://tu-proyecto.vercel.app manzanares-el-real cercedilla
 //
-// Sin nombres, graba todos los pueblos de data/pueblos/ menos el de ejemplo.
-// Cada vídeo queda en prospectos/<slug>/video/.
+// Sin nombres, graba todas las demos de data/pueblos/ menos los ejemplos.
+// Cada vídeo queda en prospectos/ayuntamientos/<slug>/video/ o prospectos/empresas/<slug>/video/.
 
 import { spawnSync } from 'node:child_process';
 import { promises as fs } from 'node:fs';
 import path from 'node:path';
 import { PUEBLOS_DIR } from '../src/lib/pueblo';
 
-const EJEMPLO = 'villaejemplo';
+// Ejemplos ficticios de las landings: no se graban.
+const EJEMPLOS = new Set(['villaejemplo', 'autoescuela-ejemplo']);
 
 async function main() {
   const argv = process.argv.slice(2);
@@ -31,7 +32,8 @@ async function main() {
   if (!slugs.length) {
     const files = await fs.readdir(PUEBLOS_DIR);
     for (const f of files.sort()) {
-      if (f.endsWith('.json') && f !== `${EJEMPLO}.json`) slugs.push(f.replace(/\.json$/, ''));
+      const slug = f.replace(/\.json$/, '');
+      if (f.endsWith('.json') && !EJEMPLOS.has(slug)) slugs.push(slug);
     }
   }
 

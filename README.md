@@ -5,7 +5,8 @@ Asistente con IA que atiende a los vecinos de un ayuntamiento a cualquier hora: 
 Esta primera versión sirve para **hacer demos**: lees la web de un ayuntamiento, generas su ficha y le envías al alcalde un enlace con el chat de su propio pueblo.
 
 * **Stack**: Next.js 14 (App Router) · OpenAI · Tailwind. Sin base de datos: cada demo es un JSON en `data/pueblos/`.
-* **Demo de prueba**: `/villaejemplo` (pueblo ficticio).
+* **Demos de prueba**: `/villaejemplo` (pueblo ficticio) y `/autoescuela-ejemplo` (negocio ficticio).
+* **Dos líneas de venta**: ayuntamientos (landing en `/`) y autoescuelas y academias (landing en `/empresas`).
 
 ## Puesta en marcha
 
@@ -46,7 +47,7 @@ Graba la demo en un móvil simulado con las respuestas reales del asistente:
 3. Una incidencia.
 4. El panel.
 
-Deja en `prospectos/<slug>/video/` (no se sube a GitHub):
+Deja en `prospectos/ayuntamientos/<slug>/video/` o `prospectos/empresas/<slug>/video/` (no se sube a GitHub):
 
 * `atiende-<slug>.mp4`: el vídeo, de algo más de un minuto, con rótulos, portada y cierre con tu WhatsApp.
 * `miniatura.gif`: 7 segundos animados para poner en el correo.
@@ -68,9 +69,19 @@ Cada ficha puede llevar un bloque `demo` con la incidencia del vídeo (`"demo": 
 
 **Míralo entero antes de enviarlo**: las respuestas son las reales y pueden variar. Súbelo a Loom (*Upload*) o a Google Drive y enlázalo desde la portada en el correo. La grabación no dispara los avisos de ntfy.
 
-## Pueblos para llamar
+## Modo negocio
 
-En [`prospectos/`](prospectos/README.md) hay una carpeta por ayuntamiento con sus datos de contacto, el guion adaptado, el correo listo para pegar y su vídeo. El guion general está en [`prospectos/GUION.md`](prospectos/GUION.md).
+Una ficha con `"tipo": "negocio"` convierte la demo en el asistente de un negocio:
+
+* Cabecera, banda y panel con el nombre del negocio, sin «Ayuntamiento de» ni el 112.
+* Las instrucciones de la IA hablan a clientes y alumnos, y en vez de incidencias recogen **solicitudes** (`[[SOLICITUD: qué | cuándo | detalle]]`) para que el centro llame.
+* Campos propios: `sector` (p. ej. `"autoescuela"`), `ciudad` y `saludo` (primer mensaje del chat).
+
+Ejemplo: `data/pueblos/autoescuela-ejemplo.json`.
+
+## Prospectos
+
+En [`prospectos/`](prospectos/README.md) hay dos listas: [`ayuntamientos/`](prospectos/ayuntamientos/README.md) (11 pueblos de Madrid) y [`empresas/`](prospectos/empresas/README.md) (5 autoescuelas y academias de Valencia). Cada carpeta tiene los datos de contacto, cómo abordarlo, el mensaje listo para pegar y su vídeo. Cada lista tiene su `GUION.md`.
 
 ## Diseño
 

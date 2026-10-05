@@ -13,12 +13,8 @@ export type Message = {
   error?: boolean;
 };
 
-function greeting(nombre: string): Message {
-  return {
-    role: 'assistant',
-    content: `¡Hola! Soy el asistente del **Ayuntamiento de ${nombre}** y te atiendo a cualquier hora.\n\nPregúntame por horarios, trámites, servicios o fiestas, o avísame de una incidencia en la calle.`,
-    at: Date.now(),
-  };
+function greeting(saludo: string): Message {
+  return { role: 'assistant', content: saludo, at: Date.now() };
 }
 
 function load(key: string): Message[] | null {
@@ -39,8 +35,8 @@ function save(key: string, messages: Message[]) {
   }
 }
 
-export function useChat(slug: string, nombre: string, storageKey = `atiende:${slug}`) {
-  const [messages, setMessages] = useState<Message[]>(() => [greeting(nombre)]);
+export function useChat(slug: string, saludo: string, storageKey = `atiende:${slug}`) {
+  const [messages, setMessages] = useState<Message[]>(() => [greeting(saludo)]);
   const [loading, setLoading] = useState(false);
   const [restored, setRestored] = useState(false);
 
@@ -114,7 +110,7 @@ export function useChat(slug: string, nombre: string, storageKey = `atiende:${sl
     send(messages[idx].content, messages.slice(0, idx));
   }, [messages, send]);
 
-  const reset = useCallback(() => setMessages([greeting(nombre)]), [nombre]);
+  const reset = useCallback(() => setMessages([greeting(saludo)]), [saludo]);
 
   return { messages, loading, send, retry, reset };
 }

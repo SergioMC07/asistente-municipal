@@ -8,6 +8,7 @@ import { Panel } from '@/components/chat/Panel';
 import { Thread } from '@/components/chat/Thread';
 import { useChat } from '@/components/chat/useChat';
 import { demoWhatsappLink, startLink, type ContactConfig } from '@/lib/contact';
+import type { Textos } from '@/lib/entidad';
 
 type Props = {
   slug: string;
@@ -17,10 +18,12 @@ type Props = {
   fecha: string;
   sugerencias: string[];
   contact: ContactConfig;
+  textos: Textos;
 };
 
-export function DemoApp({ slug, nombre, escudoUrl, web, fecha, sugerencias, contact }: Props) {
-  const chat = useChat(slug, nombre);
+export function DemoApp({ slug, nombre, escudoUrl, web, fecha, sugerencias, contact, textos }: Props) {
+  const chat = useChat(slug, textos.saludo);
+  const negocio = textos.tipo === 'negocio';
   const [panelOpen, setPanelOpen] = useState(false);
   const [bannerOpen, setBannerOpen] = useState(true);
 
@@ -32,8 +35,10 @@ export function DemoApp({ slug, nombre, escudoUrl, web, fecha, sugerencias, cont
       {bannerOpen && (
         <div className="flex items-center gap-3 bg-cobalt px-4 py-2 text-[13px] text-cobalt-on">
           <p className="min-w-0 flex-1 leading-snug">
-            Demostración para el Ayuntamiento de {nombre}
-            <span className="hidden sm:inline">. Pruébela como lo haría un vecino.</span>
+            Demostración para {textos.titulo}
+            <span className="hidden sm:inline">
+              . {negocio ? 'Pruébala como lo haría un cliente.' : 'Pruébela como lo haría un vecino.'}
+            </span>
           </p>
           {start && (
             <a
@@ -59,9 +64,7 @@ export function DemoApp({ slug, nombre, escudoUrl, web, fecha, sugerencias, cont
       <header className="flex items-center gap-3 border-b border-line bg-surface px-4 py-3">
         <Escudo nombre={nombre} url={escudoUrl} />
         <div className="min-w-0 flex-1">
-          <h1 className="text-[15px] font-semibold leading-tight sm:text-base">
-            Ayuntamiento de {nombre}
-          </h1>
+          <h1 className="text-[15px] font-semibold leading-tight sm:text-base">{textos.titulo}</h1>
           <p className="mt-0.5 flex items-center gap-1.5 text-[13px] text-muted">
             <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-ok" aria-hidden />
             Asistente 24 horas
@@ -105,9 +108,14 @@ export function DemoApp({ slug, nombre, escudoUrl, web, fecha, sugerencias, cont
         <p>
           Asistente automático: puede equivocarse. Información de{' '}
           <a href={web} target="_blank" rel="noopener noreferrer" className="underline">
-            la web municipal
+            {textos.fuente}
           </a>{' '}
-          ({fecha}). Emergencias: <strong className="text-ink">112</strong>.{' '}
+          ({fecha}).{' '}
+          {!negocio && (
+            <>
+              Emergencias: <strong className="text-ink">112</strong>.{' '}
+            </>
+          )}
           <a href="/privacidad" className="underline">
             Privacidad
           </a>
@@ -116,7 +124,7 @@ export function DemoApp({ slug, nombre, escudoUrl, web, fecha, sugerencias, cont
 
       {panelOpen && (
         <Panel
-          nombre={nombre}
+          textos={textos}
           messages={chat.messages}
           onClose={() => setPanelOpen(false)}
           onReset={() => {

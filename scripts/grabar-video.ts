@@ -6,7 +6,7 @@
 //
 // Abre la demo en un móvil simulado, escribe las preguntas, espera las
 // respuestas reales del asistente, registra una incidencia y abre el panel.
-// Deja en prospectos/<slug>/video/ el MP4, una miniatura GIF y una portada para el correo.
+// Deja en prospectos/ayuntamientos/<slug>/video/ (o prospectos/empresas/…) el MP4, una miniatura GIF y una portada para el correo.
 //
 // Opciones:
 //   --url          dirección de la web (por defecto NEXT_PUBLIC_APP_URL o localhost:3000)
@@ -21,6 +21,7 @@ import { promises as fs } from 'node:fs';
 import path from 'node:path';
 import { chromium, type FrameLocator, type Locator, type Page } from 'playwright';
 import { contactWhatsapp, formatPhone } from '../src/lib/contact';
+import { textos } from '../src/lib/entidad';
 import { getPueblo } from '../src/lib/pueblo';
 
 const W = 1280;
@@ -70,7 +71,7 @@ const esc = (s: string) =>
 const sleep = (ms: number) => new Promise((r) => setTimeout(r, ms));
 
 /** Página que rodea a la demo: rótulos a la izquierda, móvil a la derecha. */
-function escenario(o: { nombre: string; demoUrl: string; telefono: string; pasos: number; marca?: string }) {
+function escenario(o: { titulo: string; lema: string; demoUrl: string; telefono: string; pasos: number; marca?: string }) {
   const host = o.demoUrl.replace(/^https?:\/\//, '');
   return `<!doctype html><html lang="es"><head><meta charset="utf-8"><style>
 @font-face{font-family:Geist;src:url(fonts/Geist-Regular.woff2) format('woff2');font-weight:400}
@@ -108,7 +109,7 @@ h1{font-size:46px;line-height:1.08;letter-spacing:-.035em;font-weight:600;margin
 <div class="brand"><span class="mono">A</span>Atiende</div>
 <div class="stage">
   <div class="copy" id="copy">
-    <div class="who">Ayuntamiento de ${esc(o.nombre)}</div>
+    <div class="who">${esc(o.titulo)}</div>
     <h1 id="title">Asistente 24 horas</h1>
     <p id="text"></p>
     <div class="steps">${'<i></i>'.repeat(o.pasos)}</div>
@@ -119,8 +120,8 @@ h1{font-size:46px;line-height:1.08;letter-spacing:-.035em;font-weight:600;margin
 <div id="cursor"><svg width="22" height="26" viewBox="0 0 22 26"><path d="M2 2l17 12.5-7.6 1.3 4.4 8.2-3.3 1.6-4.3-8.3L2 22.6z" fill="#fff" stroke="#111" stroke-width="1.6" stroke-linejoin="round"/></svg></div>
 <div class="card" id="intro">
   <span class="mono">A</span>
-  <h1>Ayuntamiento de ${esc(o.nombre)}</h1>
-  <p>Asistente 24 horas para vecinos y visitantes</p>
+  <h1>${esc(o.titulo)}</h1>
+  <p>${esc(o.lema)}</p>
 </div>
 <div class="card hide" id="outro">
   <span class="mono">A</span>
@@ -161,35 +162,67 @@ async function main() {
   // deje cargarla dentro (sin bloqueos entre orígenes ni de red local).
   const ESCENARIO = `${base}/__escenario__/`;
   const [p1, p2] = pueblo.sugerencias;
-  const pasos = [
-    {
-      titulo: 'Responde con la información de su web.',
-      texto: 'Horarios, trámites y servicios, a cualquier hora del día.',
-      mensaje: p1 || '¿Qué horario tiene el ayuntamiento?',
-    },
-    {
-      titulo: 'También a visitantes y en fin de semana.',
-      texto: 'Cuando la oficina está cerrada, los vecinos siguen teniendo respuesta.',
-      mensaje: p2 || '¿Qué puedo visitar en el pueblo?',
-    },
-    {
-      titulo: 'Si no lo sabe, no se lo inventa.',
-      texto: 'Deriva al teléfono o al horario de la oficina.',
-      mensaje: args.desconocida || pueblo.demo?.desconocida || '¿Qué día pasa el camión de recogida de muebles viejos?',
-    },
-    {
-      titulo: 'Recoge incidencias con número de registro.',
-      texto: 'En el servicio real se avisa al responsable municipal.',
-      mensaje: args.incidencia || pueblo.demo?.incidencia || 'La farola de la Plaza Mayor, junto al número 5, no se enciende por la noche',
-      incidencia: true,
-    },
-    {
-      titulo: 'Y usted sabe qué preguntan sus vecinos.',
-      texto: 'Consultas e incidencias, ordenadas en el panel del ayuntamiento.',
-    },
-  ];
+  const negocio = pueblo.tipo === 'negocio';
+  const t = textos(pueblo);
+  const desconocida = args.desconocida || pueblo.demo?.desconocida;
+  const registro = args.incidencia || pueblo.demo?.incidencia;
+  const pasos = negocio
+    ? [
+        {
+          titulo: 'Responde con la información de su web.',
+          texto: 'Precios, horarios y cómo apuntarse, a cualquier hora del día.',
+          mensaje: p1 || '¿Cuánto cuesta?',
+        },
+        {
+          titulo: 'También de noche y en fin de semana.',
+          texto: 'Cuando el centro está cerrado, tus futuros alumnos siguen teniendo respuesta.',
+          mensaje: p2 || '¿Qué horario tenéis?',
+        },
+        {
+          titulo: 'Si no lo sabe, no se lo inventa.',
+          texto: 'Remite al teléfono del centro o propone que le llamen.',
+          mensaje: desconocida || '¿Tenéis algún descuento para estudiantes?',
+        },
+        {
+          titulo: 'Convierte preguntas en alumnos.',
+          texto: 'Recoge la solicitud para que el centro llame.',
+          mensaje: registro || 'Me gustaría apuntarme. ¿Me podéis llamar el lunes por la tarde?',
+          incidencia: true,
+        },
+        {
+          titulo: 'Y tú ves qué te preguntan.',
+          texto: 'Consultas y solicitudes, ordenadas en tu panel.',
+        },
+      ]
+    : [
+        {
+          titulo: 'Responde con la información de su web.',
+          texto: 'Horarios, trámites y servicios, a cualquier hora del día.',
+          mensaje: p1 || '¿Qué horario tiene el ayuntamiento?',
+        },
+        {
+          titulo: 'También a visitantes y en fin de semana.',
+          texto: 'Cuando la oficina está cerrada, los vecinos siguen teniendo respuesta.',
+          mensaje: p2 || '¿Qué puedo visitar en el pueblo?',
+        },
+        {
+          titulo: 'Si no lo sabe, no se lo inventa.',
+          texto: 'Deriva al teléfono o al horario de la oficina.',
+          mensaje: desconocida || '¿Qué día pasa el camión de recogida de muebles viejos?',
+        },
+        {
+          titulo: 'Recoge incidencias con número de registro.',
+          texto: 'En el servicio real se avisa al responsable municipal.',
+          mensaje: registro || 'La farola de la Plaza Mayor, junto al número 5, no se enciende por la noche',
+          incidencia: true,
+        },
+        {
+          titulo: 'Y usted sabe qué preguntan sus vecinos.',
+          texto: 'Consultas e incidencias, ordenadas en el panel del ayuntamiento.',
+        },
+      ];
 
-  const outDir = path.join(process.cwd(), 'prospectos', pueblo.slug, 'video');
+  const outDir = path.join(process.cwd(), 'prospectos', negocio ? 'empresas' : 'ayuntamientos', pueblo.slug, 'video');
   const rawDir = path.join(outDir, '.grabacion');
   await fs.rm(rawDir, { recursive: true, force: true });
   await fs.mkdir(rawDir, { recursive: true });
@@ -216,7 +249,8 @@ async function main() {
     return route.fulfill({
       contentType: 'text/html; charset=utf-8',
       body: escenario({
-        nombre: pueblo.nombre,
+        titulo: t.titulo,
+        lema: negocio ? 'Asistente 24 horas para tus alumnos' : 'Asistente 24 horas para vecinos y visitantes',
         demoUrl,
         telefono: formatPhone(contactWhatsapp()),
         pasos: pasos.length,
@@ -293,8 +327,8 @@ async function main() {
 
     if (paso.mensaje) {
       const texto = await preguntar(page, paso.mensaje);
-      if (paso.incidencia && !(await demo.getByText(/^INC-\d{4}$/).isVisible())) {
-        console.warn('  ! No ha salido la tarjeta de incidencia: revisa el vídeo o cambia --incidencia');
+      if (paso.incidencia && !(await demo.getByText(/^(INC|SOL)-\d{4}$/).isVisible())) {
+        console.warn('  ! No ha salido la tarjeta de incidencia o solicitud: revisa el vídeo o cambia --incidencia');
       }
       await sleep(Math.min(7500, Math.max(2800, 1800 + texto.length * 28)));
     } else {

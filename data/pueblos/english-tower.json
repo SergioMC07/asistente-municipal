@@ -1,0 +1,28 @@
+{
+  "slug": "english-tower",
+  "tipo": "negocio",
+  "nombre": "English Tower",
+  "sector": "academia de inglés",
+  "ciudad": "Valencia",
+  "saludo": "¡Hola! Soy el asistente de **English Tower** y te atiendo a cualquier hora.\n\nPregúntame por cursos, precios o exámenes de Cambridge, y si quieres apuntarte te ayudo a dejar tu solicitud.",
+  "web": "https://englishtower.com/",
+  "telefono": "963 478 927",
+  "email": "administracion@englishtower.com",
+  "ficha": "## Academia\n- Sede de Campanar: C/ Ciutat de Bolonya, 6, bajo. 46015 Valencia.\n- Sede de Nou Campanar: C/ Terrateig, 1, bajo 16. Valencia.\n- Teléfonos: 963 478 927 y 961 935 068.\n- Email: administracion@englishtower.com\n- Web: https://englishtower.com/\n\n## Cursos\n- Inglés para niños, adultos y empresas.\n- Preparación de los exámenes oficiales de Cambridge y cursos intensivos.\n- Grupos reducidos con profesores nativos y con experiencia, y actividades complementarias.\n- Precio: desde 5,5 € la hora en grupos reducidos.\n",
+  "sugerencias": [
+    "¿Cuánto cuestan las clases?",
+    "¿Dónde tenéis las academias?",
+    "¿Tenéis clases para niños?",
+    "Quiero apuntar a mi hijo"
+  ],
+  "fuentes": [
+    "https://englishtower.com/",
+    "https://www.paginasamarillas.es/f/valencia/english-tower_018625699_000000001.html",
+    "https://www.fecei.org/listings/english-tower-i/"
+  ],
+  "generadoEl": "2026-10-05T00:00:00.000Z",
+  "demo": {
+    "desconocida": "¿Qué horario tienen las clases de los sábados?",
+    "incidencia": "Quiero apuntar a mi hijo de 10 años. ¿Me podéis llamar el jueves por la tarde?"
+  }
+}

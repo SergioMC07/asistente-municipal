@@ -1,0 +1,28 @@
+{
+  "slug": "autoescuela-zebra",
+  "tipo": "negocio",
+  "nombre": "Autoescuela Zebra",
+  "sector": "autoescuela",
+  "ciudad": "Valencia",
+  "saludo": "¡Hola! Soy el asistente de **Autoescuela Zebra** y te atiendo a cualquier hora.\n\nPregúntame por precios, permisos o prácticas, y si quieres apuntarte te ayudo a dejar tu solicitud.",
+  "web": "https://autoescuelazebra.com/",
+  "telefono": "961 072 246",
+  "email": "autoescuelazebra@gmail.com",
+  "ficha": "## Autoescuela\n- Dirección: Av. de la Constitució, 10. 46009 Valencia.\n- Teléfonos: 961 072 246 y 662 480 508.\n- Email: autoescuelazebra@gmail.com\n- Web: https://autoescuelazebra.com/\n\n## Ofertas del carné B (coche)\n- Con 3 prácticas: 239 €.\n- Con 5 prácticas: 289 €.\n- Con 10 prácticas: 429 €.\n- Con 20 prácticas: 699 €.\n- Todas incluyen matrícula, teórico, manual, placa L y claves para los test online.\n- Ofertas actualizadas: https://autoescuelazebra.com/ofertas-carnet-conducir-en-valencia/\n",
+  "sugerencias": [
+    "¿Qué ofertas tenéis para el carné B?",
+    "¿Qué incluye el precio?",
+    "¿Dónde estáis?",
+    "Quiero apuntarme"
+  ],
+  "fuentes": [
+    "https://autoescuelazebra.com/",
+    "https://autoescuelazebra.com/ofertas-carnet-conducir-en-valencia/",
+    "https://www.expirit.es/empresas/autoescuela-zebra-valencia"
+  ],
+  "generadoEl": "2026-10-05T00:00:00.000Z",
+  "demo": {
+    "desconocida": "¿Tenéis clases en coche automático?",
+    "incidencia": "Me interesa el pack de 10 prácticas. ¿Me podéis llamar el miércoles por la mañana?"
+  }
+}

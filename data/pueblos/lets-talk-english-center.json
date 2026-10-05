@@ -1,0 +1,27 @@
+{
+  "slug": "lets-talk-english-center",
+  "tipo": "negocio",
+  "nombre": "Let's Talk English Center",
+  "sector": "academia de inglés",
+  "ciudad": "Valencia",
+  "saludo": "¡Hola! Soy el asistente de **Let's Talk English Center** y te atiendo a cualquier hora.\n\nPregúntame por cursos, precios o exámenes de Cambridge, y si quieres apuntarte te ayudo a dejar tu solicitud.",
+  "web": "https://www.letstalk.es/",
+  "telefono": "960 000 130",
+  "ficha": "## Academia\n- Dirección: Av. del Regne de València, 13 izq. 46005 Valencia.\n- Teléfono: 960 000 130.\n- Web: https://www.letstalk.es/\n- Centro preparador oficial de exámenes de Cambridge y British Council Examinations Partner.\n- Grupos reducidos, de un máximo de 10 alumnos, con profesorado bilingüe cualificado.\n\n## Cursos\n- English 365: inglés general durante todo el año, sin enfocarlo a un examen. 75 € al mes.\n- Preparación del B1 (PET): intensivo de 2 meses o semiacadémico de 6 meses. 89 € al mes.\n- También preparan el B2 (First) y el C1 (Advanced). Precios en https://www.letstalk.es/cursos-de-ingles\n",
+  "sugerencias": [
+    "¿Cuánto cuesta preparar el B1?",
+    "¿Cuántos alumnos hay por clase?",
+    "¿Dónde estáis?",
+    "Quiero hacer una prueba de nivel"
+  ],
+  "fuentes": [
+    "https://www.letstalk.es/",
+    "https://www.letstalk.es/cursos-de-ingles",
+    "https://www.emagister.com/cursos-let-talk-english-center-cen-126878.htm"
+  ],
+  "generadoEl": "2026-10-05T00:00:00.000Z",
+  "demo": {
+    "desconocida": "¿Tenéis clases de alemán?",
+    "incidencia": "Quiero preparar el First. ¿Me podéis llamar el martes por la mañana?"
+  }
+}

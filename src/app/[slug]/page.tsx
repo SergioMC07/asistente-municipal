@@ -3,6 +3,7 @@ import { headers } from 'next/headers';
 import { notFound } from 'next/navigation';
 import { DemoApp } from '@/components/DemoApp';
 import { contactWhatsapp } from '@/lib/contact';
+import { textos } from '@/lib/entidad';
 import { isRealVisitor, notify } from '@/lib/notify';
 import { getPueblo } from '@/lib/pueblo';
 
@@ -13,8 +14,12 @@ type Props = { params: { slug: string } };
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const pueblo = await getPueblo(params.slug);
   if (!pueblo) return { title: 'Asistente no encontrado' };
-  const title = `Asistente 24 horas · Ayuntamiento de ${pueblo.nombre}`;
-  const description = `Pregunte lo que quiera sobre ${pueblo.nombre}: horarios, trámites, servicios, fiestas o incidencias. Responde al momento, a cualquier hora.`;
+  const t = textos(pueblo);
+  const title = `Asistente 24 horas · ${t.titulo}`;
+  const description =
+    t.tipo === 'negocio'
+      ? `Pregunte lo que quiera a ${pueblo.nombre}: precios, horarios o cómo apuntarse. Responde al momento, a cualquier hora.`
+      : `Pregunte lo que quiera sobre ${pueblo.nombre}: horarios, trámites, servicios, fiestas o incidencias. Responde al momento, a cualquier hora.`;
   return {
     title,
     description,
@@ -46,6 +51,7 @@ export default async function PuebloPage({ params }: Props) {
       web={pueblo.web}
       fecha={fecha}
       sugerencias={pueblo.sugerencias}
+      textos={textos(pueblo)}
       contact={{
         email: process.env.NEXT_PUBLIC_CONTACT_EMAIL,
         whatsapp: contactWhatsapp(),

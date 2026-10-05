@@ -13,8 +13,26 @@ describe('splitIncidencias', () => {
     const segments = splitIncidencias(reply);
     expect(segments.map((s) => s.kind)).toEqual(['text', 'incidencia', 'text']);
     expect(extractIncidencias(reply)).toEqual([
-      { tipo: 'Farola fundida', lugar: 'Calle Mayor, 12', detalle: 'No se enciende desde ayer' },
+      {
+        clase: 'incidencia',
+        tipo: 'Farola fundida',
+        lugar: 'Calle Mayor, 12',
+        detalle: 'No se enciende desde ayer',
+      },
     ]);
+  });
+
+  it('reconoce las solicitudes de los negocios', () => {
+    const [data] = extractIncidencias(
+      'Perfecto.\n[[SOLICITUD: Carné B | Lunes por la tarde | Quiere empezar las prácticas]]\nQueda registrada.'
+    );
+    expect(data).toEqual({
+      clase: 'solicitud',
+      tipo: 'Carné B',
+      lugar: 'Lunes por la tarde',
+      detalle: 'Quiere empezar las prácticas',
+    });
+    expect(incidenciaId(data)).toMatch(/^SOL-\d{4}$/);
   });
 
   it('oculta la etiqueta a medio escribir durante el streaming', () => {
@@ -23,7 +41,7 @@ describe('splitIncidencias', () => {
   });
 
   it('da siempre el mismo número a la misma incidencia', () => {
-    const data = { tipo: 'Bache', lugar: 'Plaza', detalle: 'Grande' };
+    const data = { clase: 'incidencia' as const, tipo: 'Bache', lugar: 'Plaza', detalle: 'Grande' };
     expect(incidenciaId(data)).toBe(incidenciaId({ ...data }));
     expect(incidenciaId(data)).toMatch(/^INC-\d{4}$/);
   });
@@ -73,6 +91,7 @@ describe('formatPhone', () => {
 describe('buildSystemPrompt', () => {
   const pueblo: Pueblo = {
     slug: 'villaejemplo',
+    tipo: 'ayuntamiento',
     nombre: 'Villaejemplo',
     web: 'https://www.villaejemplo.es/',
     telefono: '900 000 000',
@@ -88,6 +107,17 @@ describe('buildSystemPrompt', () => {
     expect(prompt).toContain('[[INCIDENCIA: tipo breve | lugar | detalle en una frase]]');
     expect(prompt).toContain('hola@demo.es');
     expect(prompt).toContain('teléfono 900 000 000');
+  });
+
+  it('en un negocio recoge solicitudes en vez de incidencias', () => {
+    const prompt = buildSystemPrompt(
+      { ...pueblo, tipo: 'negocio', nombre: 'Autoescuela Ejemplo', sector: 'autoescuela', ciudad: 'Valencia' },
+      { contactoComercial: 'hola@demo.es' }
+    );
+    expect(prompt).toContain('Eres el asistente virtual de Autoescuela Ejemplo, autoescuela en Valencia.');
+    expect(prompt).toContain('[[SOLICITUD: qué le interesa | cuándo le viene bien | detalle en una frase]]');
+    expect(prompt).not.toContain('[[INCIDENCIA');
+    expect(prompt).not.toContain('112');
   });
 });
 

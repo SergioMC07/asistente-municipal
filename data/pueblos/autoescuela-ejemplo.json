@@ -1,0 +1,20 @@
+{
+  "slug": "autoescuela-ejemplo",
+  "tipo": "negocio",
+  "nombre": "Autoescuela Ejemplo",
+  "sector": "autoescuela",
+  "ciudad": "Valencia",
+  "web": "https://www.autoescuelaejemplo.es/",
+  "telefono": "960 000 000",
+  "horario": "Lunes a viernes, de 10:00 a 14:00 y de 17:00 a 21:00",
+  "ficha": "## Autoescuela (negocio ficticio de ejemplo)\n- Dirección: Calle Mayor, 1. Valencia.\n- Teléfono: 960 000 000.\n- Horario: lunes a viernes, de 10:00 a 14:00 y de 17:00 a 21:00.\n\n## Carné B (coche)\n- Matrícula y teórico: 150 €.\n- Práctica de 45 minutos: 32 €.\n- Pack de 10 prácticas: 300 €.\n- Tasas de Tráfico, aparte: 97,40 €.\n- Clases teóricas: lunes, miércoles y viernes a las 19:00, y test online las 24 horas.\n\n## Otros permisos\n- Moto: A1 y A2. Precios: consultar en la autoescuela.\n\n## Matrícula\n- Se puede empezar cualquier semana. Hace falta el DNI y una foto de carné.\n",
+  "sugerencias": [
+    "¿Cuánto cuesta el carné B?",
+    "¿Qué horario tienen las clases teóricas?",
+    "¿Qué necesito para matricularme?",
+    "Quiero apuntarme"
+  ],
+  "fuentes": [],
+  "generadoEl": "2026-10-05T00:00:00.000Z",
+  "saludo": "¡Hola! Soy el asistente de **Autoescuela Ejemplo** y te atiendo a cualquier hora.\n\nPregúntame por precios, horarios o cómo matricularte, y si quieres apuntarte te ayudo a dejar tu solicitud."
+}
