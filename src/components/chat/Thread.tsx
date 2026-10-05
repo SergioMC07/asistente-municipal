@@ -39,7 +39,7 @@ function Bubble({
   if (message.role === 'user') {
     return (
       <div className="msg-in flex justify-end">
-        <div className="max-w-[82%] rounded-2xl rounded-br-md bg-cobalt px-4 py-2.5 text-cobalt-on">
+        <div className="max-w-[82%] rounded-2xl rounded-br-md border border-cobalt-strong bg-cobalt px-4 py-2.5 text-cobalt-on">
           <p className="whitespace-pre-wrap break-words">{message.content}</p>
           <p className="mt-1 text-right text-[11px] opacity-75">
             <Hora at={message.at} />
@@ -56,7 +56,8 @@ function Bubble({
       <div className="min-w-0 max-w-[85%] space-y-2">
         <div
           className={`rounded-2xl rounded-bl-md border bg-surface px-4 py-2.5 shadow-soft ${
-            message.error ? 'border-danger' : 'border-line'
+            // Borde visible y tintado con el color de la demo (cobalto o el de la marca).
+            message.error ? 'border-danger' : 'border-[color-mix(in_oklch,var(--cobalt)_28%,var(--line))]'
           }`}
         >
           {segments.length === 0 ? (
