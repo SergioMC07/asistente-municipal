@@ -37,6 +37,11 @@ export default async function PuebloPage({ params }: Props) {
     await notify(`Demo de ${pueblo.nombre}`, `Alguien ha abierto la demo de ${pueblo.nombre}.`);
   }
 
+  const subtitulo =
+    pueblo.tipo === 'negocio' && pueblo.sector
+      ? `${pueblo.sector.charAt(0).toUpperCase()}${pueblo.sector.slice(1)}${pueblo.ciudad ? ` en ${pueblo.ciudad}` : ''}`
+      : 'Asistente 24 horas para vecinos y visitantes';
+
   const fecha = new Date(pueblo.generadoEl).toLocaleDateString('es-ES', {
     day: 'numeric',
     month: 'long',
@@ -47,7 +52,11 @@ export default async function PuebloPage({ params }: Props) {
     <DemoApp
       slug={pueblo.slug}
       nombre={pueblo.nombre}
+      subtitulo={subtitulo}
       escudoUrl={pueblo.escudoUrl}
+      color={pueblo.color}
+      telefono={pueblo.telefono}
+      horario={pueblo.horario}
       web={pueblo.web}
       fecha={fecha}
       sugerencias={pueblo.sugerencias}

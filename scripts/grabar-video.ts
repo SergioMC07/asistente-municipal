@@ -71,13 +71,21 @@ const esc = (s: string) =>
 const sleep = (ms: number) => new Promise((r) => setTimeout(r, ms));
 
 /** Página que rodea a la demo: rótulos a la izquierda, móvil a la derecha. */
-function escenario(o: { titulo: string; lema: string; demoUrl: string; telefono: string; pasos: number; marca?: string }) {
+function escenario(o: {
+  titulo: string;
+  lema: string;
+  color: string;
+  demoUrl: string;
+  telefono: string;
+  pasos: number;
+  marca?: string;
+}) {
   const host = o.demoUrl.replace(/^https?:\/\//, '');
   return `<!doctype html><html lang="es"><head><meta charset="utf-8"><style>
 @font-face{font-family:Geist;src:url(fonts/Geist-Regular.woff2) format('woff2');font-weight:400}
 @font-face{font-family:Geist;src:url(fonts/Geist-Medium.woff2) format('woff2');font-weight:500}
 @font-face{font-family:Geist;src:url(fonts/Geist-SemiBold.woff2) format('woff2');font-weight:600}
-:root{--cobalt:#1D4AA5;--ink:#15171c;--muted:#5b616d;--canvas:#f4f3ef;--line:#dedcd4;--ease:cubic-bezier(.22,1,.36,1)}
+:root{--cobalt:${o.color};--ink:#15171c;--muted:#5b616d;--canvas:#f4f3ef;--line:#dedcd4;--ease:cubic-bezier(.22,1,.36,1)}
 *{box-sizing:border-box}
 body{margin:0;width:${W}px;height:${H}px;overflow:hidden;background:var(--canvas);color:var(--ink);font-family:Geist,system-ui,sans-serif;-webkit-font-smoothing:antialiased}
 .brand{position:absolute;top:44px;left:104px;display:flex;align-items:center;gap:10px;font-weight:600;font-size:17px}
@@ -250,6 +258,7 @@ async function main() {
       contentType: 'text/html; charset=utf-8',
       body: escenario({
         titulo: t.titulo,
+        color: pueblo.color ?? '#1D4AA5',
         lema: negocio ? 'Asistente 24 horas para tus alumnos' : 'Asistente 24 horas para vecinos y visitantes',
         demoUrl,
         telefono: formatPhone(contactWhatsapp()),

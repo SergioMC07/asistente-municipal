@@ -12,6 +12,7 @@ export default async function Image({ params }: { params: { slug: string } }) {
   const pueblo = await getPueblo(params.slug);
   const nombre = pueblo?.nombre ?? 'tu municipio';
   const negocio = pueblo?.tipo === 'negocio';
+  const color = pueblo?.color ?? '#1D4AA5';
   const etiquetas = negocio
     ? ['Asistente 24 horas', 'WhatsApp y web', 'Solicitudes']
     : ['Asistente 24 horas', 'WhatsApp y web', 'Incidencias'];
@@ -26,7 +27,7 @@ export default async function Image({ params }: { params: { slug: string } }) {
           flexDirection: 'column',
           justifyContent: 'space-between',
           padding: '72px 80px',
-          background: '#1D4AA5',
+          background: color,
           color: 'white',
           fontFamily: 'sans-serif',
         }}
@@ -41,7 +42,7 @@ export default async function Image({ params }: { params: { slug: string } }) {
               height: 52,
               borderRadius: 14,
               background: '#F7F8FB',
-              color: '#1D4AA5',
+              color,
             }}
           >
             A

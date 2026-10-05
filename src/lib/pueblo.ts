@@ -22,7 +22,16 @@ export const puebloSchema = z.object({
   saludo: z.string().optional(),
   provincia: z.string().optional(),
   web: z.string().url(),
-  escudoUrl: z.string().url().optional(),
+  /** Escudo o logo: URL absoluta o ruta en /public (p. ej. /logos/avae.png). */
+  escudoUrl: z
+    .string()
+    .refine((v) => v.startsWith('/') || /^https?:\/\//.test(v), 'URL o ruta de /public')
+    .optional(),
+  /** Color de marca en hex (#1E7B34). Debe dar contraste AA con texto blanco. */
+  color: z
+    .string()
+    .regex(/^#[0-9a-fA-F]{6}$/)
+    .optional(),
   telefono: z.string().optional(),
   email: z.string().optional(),
   horario: z.string().optional(),

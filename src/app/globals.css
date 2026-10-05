@@ -20,6 +20,8 @@
   --cobalt-text: oklch(0.44 0.16 263);
   --cobalt-soft: oklch(0.945 0.03 263);
   --on-cobalt: oklch(0.985 0.006 263);
+  /* Fondo de la demo en ordenador: un tinte muy suave del color de la demo. */
+  --fondo: oklch(0.965 0.016 263);
   --danger: oklch(0.52 0.18 27);
   --ok: oklch(0.6 0.14 155);
   --shadow: 0 1px 2px oklch(0.24 0.035 258 / 0.06), 0 8px 24px oklch(0.24 0.035 258 / 0.06);
@@ -139,9 +141,25 @@ a {
   line-height: 1.1;
 }
 
+/* Contador del panel: aparece con un pequeño salto cuando llega una solicitud. */
+.badge-pop {
+  animation: badge-pop 260ms var(--ease-out) both;
+}
+@keyframes badge-pop {
+  from {
+    transform: scale(0.5);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .msg-in,
-  .drawer-in {
+  .drawer-in,
+  .badge-pop {
     animation: fade-in 120ms ease both;
   }
   .typing-dot {

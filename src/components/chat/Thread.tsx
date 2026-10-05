@@ -102,6 +102,7 @@ export function Thread({
   onSend,
   onRetry,
   className = '',
+  chipsClassName = '',
 }: {
   messages: Message[];
   loading: boolean;
@@ -111,6 +112,8 @@ export function Thread({
   onSend: (text: string) => void;
   onRetry: () => void;
   className?: string;
+  /** Clases para las preguntas sugeridas (p. ej. ocultarlas si ya están en la ficha lateral). */
+  chipsClassName?: string;
 }) {
   const scrollRef = useRef<HTMLDivElement>(null);
 
@@ -147,7 +150,7 @@ export function Thread({
       ))}
 
       {!loading && chips.length > 0 && (
-        <div className="pl-9">
+        <div className={`pl-9 ${chipsClassName}`}>
           {!firstTurn && <p className="mb-2 text-xs text-muted">Otras preguntas</p>}
           <div className="flex flex-wrap gap-2">
             {chips.map((s) => (
