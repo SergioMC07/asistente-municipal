@@ -1,0 +1,29 @@
+{
+  "slug": "autoescuela-universitaria",
+  "tipo": "negocio",
+  "nombre": "Autoescuela Universitaria",
+  "sector": "autoescuela",
+  "ciudad": "Valencia",
+  "saludo": "¡Hola! Soy el asistente de **Autoescuela Universitaria** y te atiendo a cualquier hora.\n\nPregúntame por precios, permisos o prácticas, y si quieres apuntarte te ayudo a dejar tu solicitud.",
+  "web": "https://www.aeuniversitaria.com/",
+  "telefono": "961 051 790",
+  "email": "hola@aeuniversitaria.com",
+  "horario": "Lunes a viernes, de 10:00 a 14:00 y de 16:30 a 20:30",
+  "ficha": "## Autoescuela\n- Dirección: C/ d'Albalat dels Tarongers, 30. 46021 Valencia (barrio de Algirós, junto a la universidad).\n- Teléfono: 961 051 790.\n- Email: hola@aeuniversitaria.com\n- Horario: lunes a viernes, de 10:00 a 14:00 y de 16:30 a 20:30. Sábados y domingos, cerrado.\n- Web: https://www.aeuniversitaria.com/\n- 18 años de experiencia preparando el carné de conducir, con clases flexibles.\n\n## Precios\n- Los precios se consultan directamente con la autoescuela, por teléfono o email.\n",
+  "sugerencias": [
+    "¿Qué horario tenéis?",
+    "¿Dónde estáis?",
+    "¿Cuánto cuesta el carné B?",
+    "Quiero apuntarme"
+  ],
+  "fuentes": [
+    "https://www.aeuniversitaria.com/",
+    "https://www.paginasamarillas.es/f/valencia/autoescuela-universitaria_234826477_000000001.html",
+    "https://encuentre-abierto.es/valencia/autoescuela-universitaria-1271055"
+  ],
+  "generadoEl": "2026-10-05T00:00:00.000Z",
+  "demo": {
+    "desconocida": "¿Cuánto cuesta el carné B?",
+    "incidencia": "Quiero sacarme el carné B. ¿Me podéis llamar mañana por la tarde?"
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "slug": "autoescuelas-jorda",
+  "tipo": "negocio",
+  "nombre": "Autoescuelas Jordá",
+  "sector": "autoescuela",
+  "ciudad": "Valencia",
+  "saludo": "¡Hola! Soy el asistente de **Autoescuelas Jordá** y te atiendo a cualquier hora.\n\nPregúntame por precios, permisos o prácticas, y si quieres apuntarte te ayudo a dejar tu solicitud.",
+  "web": "https://autoescuelas-jorda.com/",
+  "telefono": "961 338 821",
+  "horario": "Lunes a jueves, de 10:00 a 20:00; viernes, de 10:00 a 19:00",
+  "ficha": "## Autoescuela\n- Centro de Ramón Llull: C/ de Ramon Llull, 37. 46021 Valencia. Teléfono 961 338 821.\n- Horario del centro de Ramón Llull: lunes a jueves, de 10:00 a 20:00; viernes, de 10:00 a 19:00.\n- Web: https://autoescuelas-jorda.com/\n\n## Otros centros en Valencia\n- Avenida de Blasco Ibáñez, 25.\n- Universidad Politécnica de Valencia, edificio 5S.\n- Calle Pintor Maella, 37 (centro comercial El Corte Inglés).\n- Calle San Vicente, 110.\n- Calle del Doctor Vicent Zaragoza, 13.\n\n## Permisos y cursos\n- Coche, moto, camión y dron.\n- Cursos de recuperación de puntos.\n- También tienen autoescuela online: https://autoescuelas-jorda.com/autoescuela-online-valencia/\n\n## Precios\n- Los precios se consultan directamente con la autoescuela.\n",
+  "sugerencias": [
+    "¿Dónde tenéis centros?",
+    "¿Dais el carné de dron?",
+    "¿Cuánto cuesta el carné B?",
+    "Quiero apuntarme"
+  ],
+  "fuentes": [
+    "https://autoescuelas-jorda.com/",
+    "https://www.cylex.es/valencia/autoescuelas-jord%C3%A1-valencia-12635335.html",
+    "https://www.autoescuelabuga.com/autoescuela/autoescuelas-jorda-valencia-ramon-llull-valencia/"
+  ],
+  "generadoEl": "2026-10-05T00:00:00.000Z",
+  "demo": {
+    "desconocida": "¿Cuánto cuesta el carné B?",
+    "incidencia": "Quiero sacarme el carné B en el centro de Ramón Llull. ¿Me llamáis el jueves por la mañana?"
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "slug": "autoescuela-31-avae",
+  "tipo": "negocio",
+  "nombre": "Autoescuela 31 AVAE",
+  "sector": "autoescuela",
+  "ciudad": "Valencia",
+  "saludo": "¡Hola! Soy el asistente de **Autoescuela 31 AVAE** y te atiendo a cualquier hora.\n\nPregúntame por precios, permisos o prácticas, y si quieres apuntarte te ayudo a dejar tu solicitud.",
+  "web": "https://autoescuela31.com/",
+  "telefono": "961 138 577",
+  "horario": "Lunes, de 10:30 a 19:30; martes a jueves, de 10:30 a 14:30 y de 17:00 a 19:00; viernes, de 10:30 a 14:00",
+  "ficha": "## Autoescuela\n- Dirección: C/ de Ramon Llull, 31. 46021 Valencia.\n- Teléfono: 961 138 577.\n- WhatsApp: 653 334 942.\n- Horario: lunes, de 10:30 a 19:30; de martes a jueves, de 10:30 a 14:30 y de 17:00 a 19:00; viernes, de 10:30 a 14:00.\n- Web: https://autoescuela31.com/\n- Forma parte de AVAE.\n\n## Permisos\n- Coche: B.\n- Ciclomotor y moto: AM, A1, A2 y A.\n\n## Cómo son las clases\n- Clases teóricas online y test para comprobar cómo vas.\n- Formación personalizada, con profesor en el aula todo el día y horarios flexibles para la teórica y las prácticas.\n\n## Precios\n- Los precios se consultan directamente con la autoescuela, por teléfono o WhatsApp.\n",
+  "sugerencias": [
+    "¿Qué horario tenéis?",
+    "¿Qué permisos dais?",
+    "¿Cuánto cuesta el carné B?",
+    "Quiero apuntarme"
+  ],
+  "fuentes": [
+    "https://autoescuela31.com/",
+    "https://www.tuautoescuela.one/provincia-valencia/ciudad-valencia/autoescuela-31-avae",
+    "https://www.dentrotest.com/autoescuela/autoescuela-31-avae"
+  ],
+  "generadoEl": "2026-10-05T00:00:00.000Z",
+  "demo": {
+    "desconocida": "¿Cuánto cuesta el carné B?",
+    "incidencia": "Quiero sacarme el carné de moto A2. ¿Me podéis llamar el miércoles por la tarde?"
+  }
+}
