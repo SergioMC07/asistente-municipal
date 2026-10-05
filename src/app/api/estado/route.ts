@@ -10,10 +10,10 @@ async function estadoSupabase(): Promise<string> {
   const cfg = supabaseConfig();
   if (!cfg) return 'Falta: añade SUPABASE_URL y SUPABASE_SERVICE_KEY en Vercel';
   try {
-    const tablas = ['citas', 'bloqueos', 'conversaciones', 'mensajes', 'registros'];
+    const tablas = ['citas', 'bloqueos', 'conversaciones', 'mensajes', 'registros', 'informacion'];
     const respuestas = await Promise.all(tablas.map((t) => supabase(cfg, `${t}?select=*&limit=0`)));
     const fallo = respuestas.findIndex((r) => !r.ok);
-    if (fallo === -1) return 'OK: conectado y con las 5 tablas';
+    if (fallo === -1) return 'OK: conectado y con las 6 tablas';
     const r = respuestas[fallo];
     if (r.status === 401 || r.status === 403) return 'Error: la clave no es válida (usa la service_role)';
     if (r.status === 404) return `Error: falta la tabla «${tablas[fallo]}» (ejecuta citas.sql)`;

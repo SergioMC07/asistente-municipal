@@ -2,6 +2,7 @@
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+import { useEffect, useRef } from 'react';
 
 export function Pestanas({
   base,
@@ -15,15 +16,21 @@ export function Pestanas({
   pendientes: number;
 }) {
   const ruta = usePathname();
+  const nav = useRef<HTMLElement>(null);
+  // En el móvil no caben todas: la pestaña activa se desplaza a la vista.
+  useEffect(() => {
+    nav.current?.querySelector('[aria-current="page"]')?.scrollIntoView({ block: 'nearest', inline: 'nearest' });
+  }, [ruta]);
   const pestanas = [
     { href: base, texto: 'Conversaciones', activa: ruta === base || ruta.startsWith(`${base}/c/`) },
     ...(citas ? [{ href: `${base}/citas`, texto: 'Citas', activa: ruta === `${base}/citas` }] : []),
     { href: `${base}/solicitudes`, texto: registros, activa: ruta === `${base}/solicitudes`, cuenta: pendientes },
     { href: `${base}/resumen`, texto: 'Resumen', activa: ruta === `${base}/resumen` },
+    { href: `${base}/informacion`, texto: 'Mi información', activa: ruta === `${base}/informacion` },
   ];
 
   return (
-    <nav aria-label="Secciones del panel" className="mx-auto max-w-3xl overflow-x-auto px-1.5">
+    <nav ref={nav} aria-label="Secciones del panel" className="mx-auto max-w-3xl overflow-x-auto px-1.5">
       <ul className="flex">
         {pestanas.map((p) => (
           <li key={p.href} className="shrink-0">

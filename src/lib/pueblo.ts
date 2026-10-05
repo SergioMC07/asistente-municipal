@@ -8,6 +8,7 @@ import { promises as fs } from 'node:fs';
 import path from 'node:path';
 import { z } from 'zod';
 import { agendaSchema } from '@/lib/citas/agenda';
+import { aplicarInformacion, informacionDe } from '@/lib/panel/informacion';
 
 export const SLUG_RE = /^[a-z0-9]+(?:-[a-z0-9]+)*$/;
 
@@ -71,8 +72,18 @@ export function isValidSlug(slug: string): boolean {
   return SLUG_RE.test(slug);
 }
 
-/** Devuelve la ficha del pueblo o null si no existe o no es válida. */
+/**
+ * La ficha que usa el asistente. En los clientes con panel, con los cambios
+ * que el negocio ha hecho en «Mi información» aplicados encima.
+ */
 export async function getPueblo(slug: string): Promise<Pueblo | null> {
+  const base = await getPuebloBase(slug);
+  if (!base?.panel) return base;
+  return aplicarInformacion(base, await informacionDe(slug));
+}
+
+/** La ficha tal como la preparó Atentia, o null si no existe o no es válida. */
+export async function getPuebloBase(slug: string): Promise<Pueblo | null> {
   // El slug llega de la URL: validarlo evita leer rutas fuera de la carpeta.
   if (!isValidSlug(slug)) return null;
   try {
@@ -88,7 +99,7 @@ export async function getPueblo(slug: string): Promise<Pueblo | null> {
 export async function listarPueblos(): Promise<Pueblo[]> {
   const files = await fs.readdir(PUEBLOS_DIR).catch(() => [] as string[]);
   const pueblos = await Promise.all(
-    files.filter((f) => f.endsWith('.json')).map((f) => getPueblo(f.replace(/\.json$/, '')))
+    files.filter((f) => f.endsWith('.json')).map((f) => getPuebloBase(f.replace(/\.json$/, '')))
   );
   return pueblos.filter((p): p is Pueblo => p !== null);
 }

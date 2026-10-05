@@ -111,3 +111,22 @@ select cron.schedule(
   $$delete from conversaciones where actualizada < now() - interval '30 days';
     delete from registros where creado < now() - interval '30 days';$$
 );
+
+-- ============================================
+-- «Mi información»: los cambios que el negocio hace desde su panel
+-- ============================================
+-- La ficha original no se toca: esto se aplica encima.
+
+create table if not exists informacion (
+  slug text primary key,
+  ficha text,
+  telefono text,
+  email text,
+  horario text,
+  enlaces jsonb not null default '[]'::jsonb,
+  anterior text,
+  actualizada timestamptz not null default now(),
+  editada_por text
+);
+
+alter table informacion enable row level security;
