@@ -10,7 +10,7 @@ import { getPueblo } from '@/lib/pueblo';
 export const dynamic = 'force-dynamic';
 
 export const metadata: Metadata = {
-  title: 'Atiende · Asistente 24 horas para autoescuelas y academias',
+  title: 'Atentia · Asistente 24 horas para autoescuelas y academias',
   description:
     'Un asistente que contesta precios, horarios y matrícula por WhatsApp y en tu web, a cualquier hora, y te pasa cada interesado para que le llames.',
 };
@@ -64,7 +64,7 @@ export default async function Empresas() {
           >
             A
           </span>
-          Atiende
+          Atentia
         </a>
         <Cta href={demoHref} className="bg-ink px-4 py-2 text-sm text-canvas" />
       </header>
@@ -175,7 +175,7 @@ export default async function Empresas() {
       </main>
 
       <footer className="mx-auto flex max-w-6xl flex-col gap-2 px-5 py-8 text-sm text-muted sm:flex-row sm:justify-between">
-        <p>Atiende. Asistente 24 horas para autoescuelas y academias.</p>
+        <p>Atentia. Asistente 24 horas para autoescuelas y academias.</p>
         <nav className="flex flex-wrap gap-x-5 gap-y-2">
           <a href="/" className="underline">
             Para ayuntamientos

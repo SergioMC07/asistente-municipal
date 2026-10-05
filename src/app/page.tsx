@@ -57,7 +57,7 @@ export default async function Home() {
           >
             A
           </span>
-          Atiende
+          Atentia
         </a>
         <Cta href={demoHref} className="bg-ink px-4 py-2 text-sm text-canvas" />
       </header>
@@ -168,7 +168,7 @@ export default async function Home() {
       </main>
 
       <footer className="mx-auto flex max-w-6xl flex-col gap-2 px-5 py-8 text-sm text-muted sm:flex-row sm:justify-between">
-        <p>Atiende. Asistente municipal 24 horas.</p>
+        <p>Atentia. Asistente municipal 24 horas.</p>
         <nav className="flex flex-wrap gap-x-5 gap-y-2">
           {email && (
             <a href={`mailto:${email}`} className="underline">

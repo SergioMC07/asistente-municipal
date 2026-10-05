@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { LegalPage } from '@/components/LegalPage';
 import { titular } from '@/lib/legal';
 
-export const metadata: Metadata = { title: 'Aviso legal · Atiende' };
+export const metadata: Metadata = { title: 'Aviso legal · Atentia' };
 
 export default function AvisoLegal() {
   const t = titular();
@@ -29,7 +29,7 @@ export default function AvisoLegal() {
 
       <h2>Uso de la web</h2>
       <p>
-        Esta web presenta Atiende, un asistente para ayuntamientos, y ofrece demostraciones. Las respuestas de
+        Esta web presenta Atentia, un asistente para ayuntamientos, y ofrece demostraciones. Las respuestas de
         las demostraciones se generan de forma automática a partir de información pública de cada
         ayuntamiento y pueden contener errores. No sustituyen la información oficial ni a los servicios de
         emergencia (112).

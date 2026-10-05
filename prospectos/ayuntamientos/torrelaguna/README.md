@@ -69,7 +69,7 @@ Si le parece, le llamo el [día] y me cuenta qué le ha parecido.
 Un saludo,
 
 Sergio Mengo Cornejo
-Atiende · Asistente municipal 24 horas
+Atentia · Asistente municipal 24 horas
 WhatsApp: +34 638 79 84 45
 
 Si no desea recibir más correos sobre este servicio, responda «baja» y no volveré a escribirle.

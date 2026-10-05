@@ -242,12 +242,12 @@ export class MemoryPanel implements PanelStore {
   }
 }
 
-const global = globalThis as unknown as { __atiendePanel?: MemoryPanel };
+const global = globalThis as unknown as { __atentiaPanel?: MemoryPanel };
 
 /** Supabase si está configurado; en desarrollo, memoria; en producción sin Supabase, null. */
 export function panelStore(): PanelStore | null {
   const cfg = supabaseConfig();
   if (cfg) return new SupabasePanel(cfg);
-  if (process.env.NODE_ENV !== 'production') return (global.__atiendePanel ??= new MemoryPanel());
+  if (process.env.NODE_ENV !== 'production') return (global.__atentiaPanel ??= new MemoryPanel());
   return null;
 }

@@ -10,7 +10,7 @@ import { createHmac, timingSafeEqual } from 'node:crypto';
 import { cookies } from 'next/headers';
 import { listarPueblos, type Pueblo } from '@/lib/pueblo';
 
-export const COOKIE = 'atiende_panel';
+export const COOKIE = 'atentia_panel';
 export const DURACION_ENLACE = 15 * 60 * 1000;
 export const DURACION_SESION = 30 * 24 * 60 * 60 * 1000;
 

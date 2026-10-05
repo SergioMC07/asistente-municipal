@@ -1,4 +1,4 @@
-# Diseño de Atiende
+# Diseño de Atentia
 
 Institucional y cercano. El mundo visual sale del **azulejo de las placas de calle españolas** (cobalto sobre blanco) y el detalle propio es el **sello de «registro de entrada»** en las incidencias.
 
@@ -10,7 +10,7 @@ Tokens en `src/app/globals.css` (OKLCH), siempre en modo claro (`color-scheme: l
 * **Neutros fríos**, tintados hacia el cobalto. Nada de crema ni de negro puro.
 * **Color con trabajo:** la banda de cierre de la landing es cobalto entero; el resto es neutro.
 * **Color de marca por demo:** si la ficha trae `color` (hex con contraste AA sobre blanco), `src/lib/marca.ts` redefine las variables `--cobalt*` y `--fondo` en el contenedor de la demo. El negocio ve su color en burbujas, botones, sello, panel, vista previa del enlace y vídeo. Sin `color`, se queda el cobalto.
-* **La banda de «Demostración para…» es de Atiende**, en `ink`, para no confundirse con la marca del negocio.
+* **La banda de «Demostración para…» es de Atentia**, en `ink`, para no confundirse con la marca del negocio.
 * `ok` solo para el punto de «asistente disponible» y el botón «Hecho» del panel; `danger` solo para errores.
 
 ## Tipografía

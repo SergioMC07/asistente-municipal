@@ -10,7 +10,7 @@ import { getPueblo } from '@/lib/pueblo';
 export const dynamic = 'force-dynamic';
 
 export const metadata: Metadata = {
-  title: 'Agenda de citas · Atiende',
+  title: 'Agenda de citas · Atentia',
   robots: { index: false, follow: false },
   referrer: 'no-referrer',
 };

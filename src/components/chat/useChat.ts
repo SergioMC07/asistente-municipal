@@ -59,7 +59,7 @@ function idConversacion(key: string, nueva = false): string {
   }
 }
 
-export function useChat(slug: string, saludo: string, storageKey = `atiende:${slug}`) {
+export function useChat(slug: string, saludo: string, storageKey = `atentia:${slug}`) {
   const [messages, setMessages] = useState<Message[]>(() => [greeting(saludo)]);
   const [loading, setLoading] = useState(false);
   const [restored, setRestored] = useState(false);

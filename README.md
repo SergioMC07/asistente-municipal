@@ -1,4 +1,4 @@
-# Atiende
+# Atentia
 
 Asistente con IA que atiende a los vecinos de un ayuntamiento a cualquier hora: horarios, trámites, servicios, fiestas e incidencias.
 
@@ -49,7 +49,7 @@ Graba la demo en un móvil simulado con las respuestas reales del asistente:
 
 Deja en `prospectos/ayuntamientos/<slug>/video/` o `prospectos/empresas/<slug>/video/` (no se sube a GitHub):
 
-* `atiende-<slug>.mp4`: el vídeo, de algo más de un minuto, con rótulos, portada y cierre con tu WhatsApp.
+* `atentia-<slug>.mp4`: el vídeo, de algo más de un minuto, con rótulos, portada y cierre con tu WhatsApp.
 * `miniatura.gif`: 7 segundos animados para poner en el correo.
 * `portada.png`: imagen con botón de reproducir.
 
@@ -106,7 +106,7 @@ Si la ficha tiene un bloque `citas`, el asistente **ofrece huecos libres y reser
 ### Activar citas reales para un cliente
 
 1. **Supabase** (una sola vez): crea un proyecto en una región de la UE, abre *SQL Editor* y ejecuta [`supabase/citas.sql`](supabase/citas.sql). En *Settings → API* copia la *Project URL* y la clave *service_role* y ponlas en Vercel como `SUPABASE_URL` y `SUPABASE_SERVICE_KEY`. La clave es secreta: nunca en el chat, en el código ni en variables `NEXT_PUBLIC_`.
-2. **Resend** (una sola vez): crea la cuenta, verifica tu dominio y crea una API key. En Vercel: `RESEND_API_KEY` y `AVISOS_FROM` (por ejemplo `Atiende <avisos@tudominio.es>`).
+2. **Resend** (una sola vez): crea la cuenta, verifica tu dominio y crea una API key. En Vercel: `RESEND_API_KEY` y `AVISOS_FROM` (por ejemplo `Atentia <avisos@tudominio.es>`).
 3. En la ficha del cliente: revisa `horario` y `cerrado`, pon `"modo": "real"` y su `avisoEmail`.
 4. Crea su enlace de gestión: `npm run gestion -- <slug>`. Sube la ficha (commit y push) y pasa el enlace **solo al negocio**.
 5. Vuelve a desplegar en Vercel si has cambiado variables.
@@ -192,8 +192,8 @@ El WhatsApp comercial por defecto es el `34638798445` (en `src/lib/contact.ts`);
 ### Avisos al móvil con ntfy
 
 1. Instala la app **ntfy** (Android o iOS).
-2. Suscríbete a un tema difícil de adivinar, por ejemplo `atiende-k7p2x9`.
-3. En Vercel, añade `NOTIFY_URL=https://ntfy.sh/atiende-k7p2x9` y vuelve a desplegar.
+2. Suscríbete a un tema difícil de adivinar, por ejemplo `atentia-k7p2x9`.
+3. En Vercel, añade `NOTIFY_URL=https://ntfy.sh/atentia-k7p2x9` y vuelve a desplegar.
 
 Recibirás «Alguien ha abierto la demo de Chinchón» y el primer mensaje que escriba. Las vistas previas de WhatsApp o del correo no cuentan como visita.
 

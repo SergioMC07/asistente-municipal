@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import { LegalPage } from '@/components/LegalPage';
 import { titular } from '@/lib/legal';
 
-export const metadata: Metadata = { title: 'Privacidad · Atiende' };
+export const metadata: Metadata = { title: 'Privacidad · Atentia' };
 
 export default function Privacidad() {
   const t = titular();

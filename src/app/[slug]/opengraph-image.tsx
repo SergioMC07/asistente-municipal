@@ -47,7 +47,7 @@ export default async function Image({ params }: { params: { slug: string } }) {
           >
             A
           </div>
-          Atiende
+          Atentia
         </div>
         <div style={{ display: 'flex', flexDirection: 'column' }}>
           <div style={{ fontSize: 40, opacity: 0.9 }}>

@@ -4,7 +4,7 @@ import { GeistSans } from 'geist/font/sans';
 import './globals.css';
 
 export const metadata: Metadata = {
-  title: 'Atiende · Asistente municipal 24 horas',
+  title: 'Atentia · Asistente municipal 24 horas',
   description:
     'Un asistente que responde a los vecinos por WhatsApp y en la web con la información de su municipio.',
 };

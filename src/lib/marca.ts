@@ -3,7 +3,7 @@
 // ============================================
 // Toda la interfaz usa las variables --cobalt*. Con un color de marca se
 // redefinen en el contenedor de la demo y el negocio ve sus colores en
-// burbujas, botones, sello y panel. Sin color, se queda el cobalto de Atiende.
+// burbujas, botones, sello y panel. Sin color, se queda el cobalto de Atentia.
 
 import type { CSSProperties } from 'react';
 

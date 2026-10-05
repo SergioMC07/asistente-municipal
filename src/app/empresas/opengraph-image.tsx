@@ -2,7 +2,7 @@
 
 import { ImageResponse } from 'next/og';
 
-export const alt = 'Atiende, asistente 24 horas para autoescuelas y academias';
+export const alt = 'Atentia, asistente 24 horas para autoescuelas y academias';
 export const size = { width: 1200, height: 630 };
 export const contentType = 'image/png';
 
@@ -38,7 +38,7 @@ export default function Image() {
           >
             A
           </div>
-          Atiende
+          Atentia
         </div>
         <div style={{ display: 'flex', flexDirection: 'column' }}>
           <div style={{ fontSize: 72, fontWeight: 700, lineHeight: 1.05 }}>Tu autoescuela o academia,</div>

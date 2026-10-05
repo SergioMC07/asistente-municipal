@@ -114,7 +114,7 @@ h1{font-size:46px;line-height:1.08;letter-spacing:-.035em;font-weight:600;margin
 @keyframes ring{from{transform:scale(.4);opacity:1}to{transform:scale(1.7);opacity:0}}
 .marca{position:absolute;top:40px;left:230px;z-index:40;background:#b4410e;color:#fff;font-size:13px;font-weight:600;padding:6px 12px;border-radius:99px}
 </style></head><body>
-<div class="brand"><span class="mono">A</span>Atiende</div>
+<div class="brand"><span class="mono">A</span>Atentia</div>
 <div class="stage">
   <div class="copy" id="copy">
     <div class="who">${esc(o.titulo)}</div>
@@ -360,7 +360,7 @@ async function main() {
   await context.close();
   const webm = await video!.path();
 
-  const mp4 = path.join(outDir, `atiende-${pueblo.slug}.mp4`);
+  const mp4 = path.join(outDir, `atentia-${pueblo.slug}.mp4`);
   const gif = path.join(outDir, 'miniatura.gif');
   const png = path.join(outDir, 'portada.png');
   const ffmpeg = ffmpegPath();

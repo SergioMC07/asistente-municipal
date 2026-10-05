@@ -11,7 +11,7 @@ export function LegalPage({ title, children }: { title: string; children: React.
           >
             A
           </span>
-          Atiende
+          Atentia
         </Link>
       </header>
       <main className="mx-auto max-w-3xl px-5 pb-20 pt-8">

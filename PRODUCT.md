@@ -1,4 +1,4 @@
-# Atiende
+# Atentia
 
 Asistente con IA que atiende a los vecinos de un ayuntamiento a cualquier hora, por WhatsApp y en la web, con la información del propio municipio.
 

@@ -1,5 +1,5 @@
 -- ============================================
--- Citas de Atiende. Ejecutar una vez en Supabase → SQL Editor.
+-- Citas de Atentia. Ejecutar una vez en Supabase → SQL Editor.
 -- ============================================
 -- Solo el servidor accede (con la service key), por eso RLS está activado
 -- y sin políticas: nadie más puede leer ni escribir.

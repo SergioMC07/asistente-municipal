@@ -19,7 +19,7 @@ const escapar = (s: string) =>
 function vevent(e: Evento, ahora: string): string[] {
   return [
     'BEGIN:VEVENT',
-    `UID:${e.uid}@atiende`,
+    `UID:${e.uid}@atentia`,
     `DTSTAMP:${fecha(ahora)}`,
     `DTSTART:${fecha(e.inicio)}`,
     `DTEND:${fecha(e.fin)}`,
@@ -35,7 +35,7 @@ export function ics(eventos: Evento[], nombre?: string, ahora = new Date().toISO
   return [
     'BEGIN:VCALENDAR',
     'VERSION:2.0',
-    'PRODID:-//Atiende//Citas//ES',
+    'PRODID:-//Atentia//Citas//ES',
     'CALSCALE:GREGORIAN',
     'METHOD:PUBLISH',
     ...(nombre ? [`X-WR-CALNAME:${escapar(nombre)}`] : []),

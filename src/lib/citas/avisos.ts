@@ -29,7 +29,7 @@ export async function avisarCita(pueblo: Pueblo, cita: Cita): Promise<void> {
         fin: cita.fin,
         titulo: `${cita.tipo}: ${cita.nombre}`,
         lugar: pueblo.citas?.lugar,
-        descripcion: `Teléfono: ${cita.telefono}${cita.nota ? `\n${cita.nota}` : ''}\nReservada con el asistente de Atiende.`,
+        descripcion: `Teléfono: ${cita.telefono}${cita.nota ? `\n${cita.nota}` : ''}\nReservada con el asistente de Atentia.`,
       },
     ],
     pueblo.nombre

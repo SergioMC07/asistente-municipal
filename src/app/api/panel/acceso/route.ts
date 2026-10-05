@@ -26,7 +26,7 @@ export async function POST(req: Request) {
   const nombres = negocios.map((n) => n.nombre).join(', ');
   const enviado = await enviarEmail({
     to: email,
-    subject: 'Tu enlace para entrar en el panel de Atiende',
+    subject: 'Tu enlace para entrar en el panel de Atentia',
     html: `<p>Hola:</p>
       <p>Para entrar en el panel de <strong>${escHtml(nombres)}</strong>, pulsa este enlace. Caduca en 15 minutos.</p>
       <p><a href="${escHtml(enlace)}">Entrar en el panel</a></p>

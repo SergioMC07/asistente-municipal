@@ -158,7 +158,7 @@ export class MemoryStore implements CitasStore {
 
 // En desarrollo cada ruta puede cargar su propia copia del módulo: la agenda en
 // memoria se guarda en globalThis para que todas vean las mismas citas.
-const global = globalThis as unknown as { __atiendeCitas?: MemoryStore };
+const global = globalThis as unknown as { __atentiaCitas?: MemoryStore };
 
 /**
  * Supabase si están SUPABASE_URL y SUPABASE_SERVICE_KEY; si no, en desarrollo
@@ -168,6 +168,6 @@ const global = globalThis as unknown as { __atiendeCitas?: MemoryStore };
 export function citasStore(): CitasStore | null {
   const cfg = supabaseConfig();
   if (cfg) return new SupabaseStore(cfg.url, cfg.key);
-  if (process.env.NODE_ENV !== 'production') return (global.__atiendeCitas ??= new MemoryStore());
+  if (process.env.NODE_ENV !== 'production') return (global.__atentiaCitas ??= new MemoryStore());
   return null;
 }

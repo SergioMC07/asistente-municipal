@@ -52,7 +52,7 @@ Y aquí un vídeo de un minuto: [enlace de Loom]
 El primer mes es gratis y sin permanencia. Si te encaja, lo dejamos funcionando en tu web en un par de días.
 
 Un saludo,
-Sergio Mengó · Atiende
+Sergio Mengó · Atentia
 WhatsApp: +34 638 79 84 45
 ```
 

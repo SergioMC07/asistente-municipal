@@ -42,10 +42,10 @@ export function startLink(cfg: ContactConfig, nombre: string): string | null {
 
 /** Enlace de la landing para pedir la demo de un municipio o de un negocio. */
 export function requestDemoLink(cfg: ContactConfig, para: 'municipio' | 'negocio' = 'municipio'): string | null {
-  const text = `Hola, me gustaría ver la demo de Atiende con mi ${para}: `;
+  const text = `Hola, me gustaría ver la demo de Atentia con mi ${para}: `;
   if (cfg.whatsapp && digits(cfg.whatsapp).length >= 9) return waLink(cfg.whatsapp, text);
   if (cfg.email) {
-    return `mailto:${cfg.email}?subject=${encodeURIComponent(`Demo de Atiende para mi ${para}`)}&body=${encodeURIComponent(text)}`;
+    return `mailto:${cfg.email}?subject=${encodeURIComponent(`Demo de Atentia para mi ${para}`)}&body=${encodeURIComponent(text)}`;
   }
   return null;
 }

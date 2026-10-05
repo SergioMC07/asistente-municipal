@@ -74,7 +74,7 @@ export function DemoApp(props: Props) {
 
   return (
     <div style={marcaStyle(color)} className="flex h-[100dvh] flex-col bg-canvas lg:bg-[var(--fondo)]">
-      {/* Banda de Atiende, en neutro para no confundirse con la marca del negocio. */}
+      {/* Banda de Atentia, en neutro para no confundirse con la marca del negocio. */}
       {bannerOpen && (
         <div className="flex items-center gap-3 bg-ink px-4 py-2 text-[13px] text-canvas">
           <p className="min-w-0 flex-1 leading-snug">

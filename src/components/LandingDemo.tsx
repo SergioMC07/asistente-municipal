@@ -19,7 +19,7 @@ export function LandingDemo({
   sugerencias: string[];
   textos: Textos;
 }) {
-  const chat = useChat(slug, textos.saludo, `atiende:landing:${slug}`);
+  const chat = useChat(slug, textos.saludo, `atentia:landing:${slug}`);
 
   return (
     <div className="flex h-[min(600px,78dvh)] flex-col overflow-hidden rounded-[22px] border border-line bg-canvas shadow-soft">
