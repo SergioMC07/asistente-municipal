@@ -14,7 +14,8 @@
     "test": "vitest run",
     "demo": "tsx scripts/generar-demo.ts",
     "preflight": "npm run typecheck && npm run lint && npm run test",
-    "video": "tsx scripts/grabar-video.ts"
+    "video": "tsx scripts/grabar-video.ts",
+    "videos": "tsx scripts/grabar-todos.ts"
   },
   "dependencies": {
     "@phosphor-icons/react": "^2.1.10",

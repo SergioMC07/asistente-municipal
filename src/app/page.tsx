@@ -31,7 +31,7 @@ const pasos = [
 ] as const;
 
 const garantias = [
-  ['Contrato menor', 'Desde 99 € al mes, sin licitación ni permanencia. Dos meses de prueba.'],
+  ['Contrato menor', 'Desde 99 € al mes, sin licitación ni permanencia. Un mes de prueba gratis.'],
   ['Datos en Europa', 'Contrato de encargado de tratamiento y conversaciones guardadas en la UE.'],
   ['Sabe cuándo callar', 'No da asesoramiento jurídico ni inventa datos. En emergencias, remite al 112.'],
   ['Su información, su control', 'El ayuntamiento revisa y corrige lo que responde el asistente.'],

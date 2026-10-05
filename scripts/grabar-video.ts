@@ -6,7 +6,7 @@
 //
 // Abre la demo en un móvil simulado, escribe las preguntas, espera las
 // respuestas reales del asistente, registra una incidencia y abre el panel.
-// Deja en videos/<slug>/ el MP4, una miniatura GIF y una portada para el correo.
+// Deja en prospectos/<slug>/video/ el MP4, una miniatura GIF y una portada para el correo.
 //
 // Opciones:
 //   --url          dirección de la web (por defecto NEXT_PUBLIC_APP_URL o localhost:3000)
@@ -175,12 +175,12 @@ async function main() {
     {
       titulo: 'Si no lo sabe, no se lo inventa.',
       texto: 'Deriva al teléfono o al horario de la oficina.',
-      mensaje: args.desconocida || '¿Qué día pasa el camión de recogida de muebles viejos?',
+      mensaje: args.desconocida || pueblo.demo?.desconocida || '¿Qué día pasa el camión de recogida de muebles viejos?',
     },
     {
       titulo: 'Recoge incidencias con número de registro.',
       texto: 'En el servicio real se avisa al responsable municipal.',
-      mensaje: args.incidencia || 'La farola de la Plaza Mayor, junto al número 5, no se enciende por la noche',
+      mensaje: args.incidencia || pueblo.demo?.incidencia || 'La farola de la Plaza Mayor, junto al número 5, no se enciende por la noche',
       incidencia: true,
     },
     {
@@ -189,7 +189,7 @@ async function main() {
     },
   ];
 
-  const outDir = path.join(process.cwd(), 'videos', pueblo.slug);
+  const outDir = path.join(process.cwd(), 'prospectos', pueblo.slug, 'video');
   const rawDir = path.join(outDir, '.grabacion');
   await fs.rm(rawDir, { recursive: true, force: true });
   await fs.mkdir(rawDir, { recursive: true });

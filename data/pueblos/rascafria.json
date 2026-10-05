@@ -1,0 +1,28 @@
+{
+  "slug": "rascafria",
+  "nombre": "Rascafría",
+  "provincia": "Madrid",
+  "web": "https://www.rascafria.org/",
+  "telefono": "918 691 117",
+  "email": "rascafria@rascafria.org",
+  "ficha": "## Ayuntamiento\n- Dirección: Plaza de la Villa, 1. 28740 Rascafría (Madrid).\n- Teléfono: 918 691 117.\n- Email: rascafria@rascafria.org\n- Web municipal: https://www.rascafria.org/\n\n## Turismo\n- Oficina de Turismo: Avenida del Paular, 32. Teléfono 918 691 804. Email turismo@rascafria.org\n\n## Monasterio de Santa María de El Paular\n- Monasterio benedictino junto al pueblo.\n- Centro de visitantes: de miércoles a domingo, de 11:00 a 14:00 y de 16:00 a 18:00. Lunes y martes, cerrado.\n- Hay visitas guiadas a la zona monástica y visita libre al claustro principal. Horarios actualizados en https://monasteriopaular.com/horarios/\n\n## Cómo llegar\n- En autobús: línea 194, desde el intercambiador de Plaza de Castilla (Madrid), operada por ALSA. Unos 2 horas y cuarto de viaje. Horarios en crtm.es o alsa.es.\n\n## Fiestas\n- Fiestas patronales de la Virgen de Gracia y San Roque: en 2026, del 12 al 17 de agosto.\n- Fiestas de San Andrés Apóstol: en 2026, del 28 al 30 de noviembre, con misa, procesión, orquesta y mercado de artesanía.\n\n## Emergencias\n- Emergencias: 112.\n",
+  "sugerencias": [
+    "¿Qué horario tiene el monasterio de El Paular?",
+    "¿Cuándo son las fiestas de San Andrés?",
+    "¿Cómo llego en autobús desde Madrid?",
+    "Hay una farola rota en mi calle"
+  ],
+  "fuentes": [
+    "https://www.rascafria.org/tu-ayuntamiento/",
+    "https://www.rascafria.org/informacion-turistica/",
+    "https://monasteriopaular.com/horarios/",
+    "https://es.wikipedia.org/wiki/L%C3%ADnea_194_(Interurbanos_Madrid)",
+    "https://www.festivalesdeespana.com/festival/fiestas-patronales-san-andres-rascafria",
+    "https://www.festivalesdeespana.com/festival/fiestas-virgen-gracia-san-roque-rascafria",
+    "https://www.bocm.es/boletin/CM_Orden_BOCM/2024/05/10/BOCM-20240510-77.PDF"
+  ],
+  "generadoEl": "2026-10-05T00:00:00.000Z",
+  "demo": {
+    "incidencia": "La farola de la Plaza de la Villa, junto al número 2, no se enciende por la noche"
+  }
+}

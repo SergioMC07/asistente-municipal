@@ -1,0 +1,27 @@
+{
+  "slug": "villarejo-de-salvanes",
+  "nombre": "Villarejo de Salvanés",
+  "provincia": "Madrid",
+  "web": "https://www.villarejodesalvanes.es/",
+  "telefono": "918 744 002",
+  "email": "info@villarejodesalvanes.es",
+  "horario": "Lunes a viernes, de 9:00 a 14:00",
+  "ficha": "## Ayuntamiento\n- Dirección: Plaza de España, 1. 28590 Villarejo de Salvanés (Madrid).\n- Teléfono: 918 744 002.\n- Email: info@villarejodesalvanes.es\n- Horario de atención: lunes a viernes, de 9:00 a 14:00.\n- Web municipal: https://www.villarejodesalvanes.es/\n\n## Qué visitar\n- Torre del Homenaje (castillo de Villarejo): en su interior está el Museo de los Tercios Españoles y la historia del municipio.\n- Conjunto histórico-artístico declarado en 1974: Torre del Homenaje, Casa de la Tercia e iglesia de San Andrés.\n- Web de turismo: https://turismovillarejodesalvanes.com/\n\n## Cómo llegar\n- En autobús: líneas 351, 352 y 353 desde Madrid. Conviene confirmar la parada de salida y los horarios en crtm.es.\n\n## Fiestas\n- Las fechas de las fiestas se publican en la web municipal.\n\n## Emergencias\n- Emergencias: 112.\n",
+  "sugerencias": [
+    "¿Qué horario tiene el ayuntamiento?",
+    "¿Qué hay en la Torre del Homenaje?",
+    "¿Cómo llego en autobús desde Madrid?",
+    "Hay una farola rota en mi calle"
+  ],
+  "fuentes": [
+    "https://www.villarejodesalvanes.es/contacto/",
+    "https://turismovillarejodesalvanes.com/puntos-de-interes-turistico/la-torre-del-homenaje/",
+    "https://www.redtransporte.com/madrid/transporte-publico-villarejo-de-salvanes.html",
+    "https://elresurgirdemadrid.com/alcalde-de-villarejo-de-salvanes-jesus-diaz/",
+    "https://www.moncloa.com/2026/08/25/protesta-villarejo-salvanes-fiestas-3420605/"
+  ],
+  "generadoEl": "2026-10-05T00:00:00.000Z",
+  "demo": {
+    "incidencia": "La farola de la Plaza de España, junto al número 3, no se enciende por la noche"
+  }
+}

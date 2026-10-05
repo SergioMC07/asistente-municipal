@@ -1,0 +1,27 @@
+{
+  "slug": "buitrago-del-lozoya",
+  "nombre": "Buitrago del Lozoya",
+  "provincia": "Madrid",
+  "web": "https://www.buitrago.org/",
+  "telefono": "918 680 056",
+  "horario": "Registro y atención al público: lunes a viernes, de 10:00 a 13:00",
+  "ficha": "## Ayuntamiento\n- Dirección: Plaza Picasso, 1. 28730 Buitrago del Lozoya (Madrid).\n- Teléfono: 918 680 056.\n- Registro y atención al público: lunes a viernes, de 10:00 a 13:00.\n- Web municipal: https://www.buitrago.org/\n\n## Turismo\n- Oficina de Turismo: teléfonos 918 680 056 y 674 381 244.\n- Horario: martes a viernes, de 10:00 a 14:00 y de 16:00 a 18:00; sábados, de 10:00 a 14:00 y de 16:00 a 19:00; domingos, de 10:00 a 14:00.\n- Web de turismo: https://turismo.buitrago.org/\n\n## Qué visitar\n- Museo Picasso – Colección Eugenio Arias. Horario: martes a viernes, de 11:00 a 13:45 y de 16:00 a 18:00; sábados, de 10:00 a 14:00 y de 16:00 a 19:00; domingos y festivos, de 10:00 a 14:00.\n- Muralla (paseo de ronda): martes a viernes, de 12:00 a 12:45; sábados y festivos, de 12:00 a 13:45 y de 16:00 a 17:45; domingos, de 12:00 a 13:45.\n- Castillo de Buitrago.\n\n## Cómo llegar\n- En autobús: línea 191, desde el intercambiador de Plaza de Castilla (Madrid), operada por ALSA. Billetes en el propio autobús. Horarios en crtm.es.\n\n## Fiestas\n- Fiestas patronales en honor a Nuestra Señora de la Asunción y San Roque: en 2026, del 11 al 16 de agosto.\n\n## Emergencias\n- Emergencias: 112.\n",
+  "sugerencias": [
+    "¿Qué horario tiene el Museo Picasso?",
+    "¿Cuándo se puede subir a la muralla?",
+    "¿Cómo llego en autobús desde Madrid?",
+    "Hay una farola rota en mi calle"
+  ],
+  "fuentes": [
+    "https://turismo.buitrago.org/museo-picasso/",
+    "https://www.comunidad.madrid/centros/oficina-turismo-municipal-buitrago-lozoya",
+    "https://www.buitrago.org/servicios/servicios-municipales",
+    "https://es.wikipedia.org/wiki/L%C3%ADnea_191_(Interurbanos_Madrid)",
+    "https://www.planinfantil.es/eventos/fiestas-de-buitrago-del-lozoya-2025/",
+    "https://www.bocm.es/boletin/CM_Orden_BOCM/2024/10/11/BOCM-20241011-65.PDF"
+  ],
+  "generadoEl": "2026-10-05T00:00:00.000Z",
+  "demo": {
+    "incidencia": "La farola de la Plaza Picasso, junto al número 2, no se enciende por la noche"
+  }
+}

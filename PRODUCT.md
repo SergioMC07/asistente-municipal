@@ -21,7 +21,7 @@ Asistente con IA que atiende a los vecinos de un ayuntamiento a cualquier hora, 
 
 ## Verdades que no se pueden inventar
 
-* Precio orientativo: desde 99 € al mes, contratable como contrato menor. Dos meses de prueba sin permanencia.
+* Precio orientativo: desde 99 € al mes, contratable como contrato menor. Un mes de prueba gratis, sin permanencia.
 * En la demo, el registro de incidencias es simulado y se dice.
 * No hay clientes ni cifras de uso todavía: no se muestran testimonios, logos ni estadísticas.
 

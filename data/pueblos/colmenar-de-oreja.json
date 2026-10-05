@@ -1,0 +1,26 @@
+{
+  "slug": "colmenar-de-oreja",
+  "nombre": "Colmenar de Oreja",
+  "provincia": "Madrid",
+  "web": "https://aytocdo.es/",
+  "telefono": "918 943 030",
+  "horario": "Lunes a viernes, de 9:00 a 14:00",
+  "ficha": "## Ayuntamiento\n- Dirección: Plaza Mayor, 1. 28380 Colmenar de Oreja (Madrid).\n- Teléfono: 918 943 030.\n- Horario de atención: lunes a viernes, de 9:00 a 14:00.\n- Web municipal: https://aytocdo.es/\n- Web de turismo: https://turismo.aytocdo.com/\n\n## Qué visitar\n- Plaza Mayor porticada, dentro del casco histórico declarado Bien de Interés Cultural.\n- Museo Ulpiano Checa: museo dedicado al pintor nacido en Colmenar, abierto en 1960 en su casa natal, la «casa de los siete patios». Calle María Teresa Freire, 2. Teléfono 918 089 332. Tiene audioguía en la web de turismo.\n\n## Cómo llegar\n- En autobús: línea 337 (Madrid – Colmenar de Oreja – Chinchón – Valdelaguna). Por las obras del intercambiador de Conde de Casal, la cabecera en Madrid está en la zona de Pavones (avenida de la Fuente Carrantona). Conviene confirmar parada y horarios en crtm.es.\n\n## Fiestas\n- Fiestas patronales del Santísimo Cristo del Humilladero: a finales de abril y comienzos de mayo. En 2026, del 24 de abril al 3 de mayo.\n\n## Emergencias\n- Emergencias: 112.\n",
+  "sugerencias": [
+    "¿Qué horario tiene el ayuntamiento?",
+    "¿Dónde está el Museo Ulpiano Checa?",
+    "¿Cómo llego en autobús desde Madrid?",
+    "Hay una farola rota en mi calle"
+  ],
+  "fuentes": [
+    "https://aytocdo.es/lugares/directorio-instalaciones-municipales/ayuntamiento",
+    "http://turismo.aytocdo.com/museoulpianocheca/",
+    "http://turismo.aytocdo.com/transporte-publico/",
+    "https://www.planinfantil.es/eventos/fiestas-de-colmenar-de-oreja-2026-santisimo-cristo-del-humilladero/",
+    "https://elresurgirdemadrid.com/alcalde-de-colmenar-de-oreja-miguel-angel-pulido/"
+  ],
+  "generadoEl": "2026-10-05T00:00:00.000Z",
+  "demo": {
+    "incidencia": "La farola de la Plaza Mayor, junto al número 5, no se enciende por la noche"
+  }
+}

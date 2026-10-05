@@ -26,6 +26,15 @@ export const puebloSchema = z.object({
   /** Páginas de la web municipal de las que salió la ficha. */
   fuentes: z.array(z.string()).default([]),
   generadoEl: z.string(),
+  /** Mensajes del vídeo de la demo (`npm run video`), adaptados al pueblo. */
+  demo: z
+    .object({
+      /** Pregunta que NO está en la ficha, para enseñar que no inventa. */
+      desconocida: z.string().optional(),
+      /** Aviso de incidencia con un lugar real del pueblo. */
+      incidencia: z.string().optional(),
+    })
+    .optional(),
 });
 
 export type Pueblo = z.infer<typeof puebloSchema>;

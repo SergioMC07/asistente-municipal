@@ -46,7 +46,7 @@ Graba la demo en un móvil simulado con las respuestas reales del asistente:
 3. Una incidencia.
 4. El panel.
 
-Deja en `videos/<slug>/` (no se sube a GitHub):
+Deja en `prospectos/<slug>/video/` (no se sube a GitHub):
 
 * `atiende-<slug>.mp4`: el vídeo, de algo más de un minuto, con rótulos, portada y cierre con tu WhatsApp.
 * `miniatura.gif`: 7 segundos animados para poner en el correo.
@@ -58,7 +58,19 @@ Opciones:
 * `--incidencia "..."`: aviso con qué pasa y dónde.
 * `--marca "..."`: etiqueta fija, por ejemplo «Borrador».
 
+Para grabar todos los pueblos de una vez:
+
+```bash
+npm run videos -- --url https://tu-proyecto.vercel.app
+```
+
+Cada ficha puede llevar un bloque `demo` con la incidencia del vídeo (`"demo": { "incidencia": "La farola de la Plaza Real, junto al número 3, no se enciende" }`), para usar una calle real del pueblo.
+
 **Míralo entero antes de enviarlo**: las respuestas son las reales y pueden variar. Súbelo a Loom (*Upload*) o a Google Drive y enlázalo desde la portada en el correo. La grabación no dispara los avisos de ntfy.
+
+## Pueblos para llamar
+
+En [`prospectos/`](prospectos/README.md) hay una carpeta por ayuntamiento con sus datos de contacto, el guion adaptado, el correo listo para pegar y su vídeo. El guion general está en [`prospectos/GUION.md`](prospectos/GUION.md).
 
 ## Diseño
 
