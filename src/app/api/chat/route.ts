@@ -2,7 +2,7 @@ import OpenAI from 'openai';
 import { chatRequestSchema, prepareHistory } from '@/lib/chat';
 import { contactWhatsapp, formatPhone } from '@/lib/contact';
 import { buildSystemPrompt } from '@/lib/prompt';
-import { notify } from '@/lib/notify';
+import { isRealVisitor, notify } from '@/lib/notify';
 import { getPueblo } from '@/lib/pueblo';
 import { createRateLimiter } from '@/lib/rate-limit';
 
@@ -63,7 +63,8 @@ export async function POST(req: Request) {
 
   // Primer mensaje de una conversación: aviso al comercial (si está configurado).
   const aviso =
-    history.filter((m) => m.role === 'user').length === 1
+    history.filter((m) => m.role === 'user').length === 1 &&
+    isRealVisitor(req.headers.get('user-agent'))
       ? notify(`Demo de ${pueblo.nombre}`, `Primer mensaje: ${history[history.length - 1].content}`)
       : Promise.resolve();
 

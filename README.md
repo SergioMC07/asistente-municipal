@@ -30,6 +30,36 @@ El script:
 
 **Antes de enviar la demo, revisa la ficha**: es lo único que el asistente sabe. Corrige o completa lo que haga falta directamente en el JSON, haz commit y despliega.
 
+## Vídeo para el correo
+
+Con la demo publicada (o con `npm run dev` en marcha):
+
+```bash
+npx playwright install chromium   # solo la primera vez
+npm run video -- chinchon --url https://tu-proyecto.vercel.app
+```
+
+Graba la demo en un móvil simulado con las respuestas reales del asistente:
+
+1. Dos preguntas sugeridas de la ficha.
+2. Una pregunta que no está en la ficha, para enseñar que no se inventa nada.
+3. Una incidencia.
+4. El panel.
+
+Deja en `videos/<slug>/` (no se sube a GitHub):
+
+* `atiende-<slug>.mp4`: el vídeo, de algo más de un minuto, con rótulos, portada y cierre con tu WhatsApp.
+* `miniatura.gif`: 7 segundos animados para poner en el correo.
+* `portada.png`: imagen con botón de reproducir.
+
+Opciones:
+
+* `--desconocida "..."`: pregunta que no está en la ficha. Por defecto, la recogida de muebles.
+* `--incidencia "..."`: aviso con qué pasa y dónde.
+* `--marca "..."`: etiqueta fija, por ejemplo «Borrador».
+
+**Míralo entero antes de enviarlo**: las respuestas son las reales y pueden variar. Súbelo a Loom (*Upload*) o a Google Drive y enlázalo desde la portada en el correo. La grabación no dispara los avisos de ntfy.
+
 ## Diseño
 
 * Sistema visual en [`DESIGN.md`](DESIGN.md) y contexto de producto en [`PRODUCT.md`](PRODUCT.md).

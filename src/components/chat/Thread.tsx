@@ -129,7 +129,12 @@ export function Thread({
   const chips = firstTurn ? pending : pending.slice(0, 2);
 
   return (
-    <div ref={scrollRef} className={`space-y-4 overflow-y-auto px-4 py-5 ${className}`} aria-live="polite">
+    <div
+      ref={scrollRef}
+      className={`space-y-4 overflow-y-auto px-4 py-5 ${className}`}
+      aria-live="polite"
+      aria-busy={loading}
+    >
       {messages.map((m, i) => (
         <Bubble
           key={i}

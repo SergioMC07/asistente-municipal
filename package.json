@@ -13,7 +13,8 @@
     "typecheck": "tsc --noEmit",
     "test": "vitest run",
     "demo": "tsx scripts/generar-demo.ts",
-    "preflight": "npm run typecheck && npm run lint && npm run test"
+    "preflight": "npm run typecheck && npm run lint && npm run test",
+    "video": "tsx scripts/grabar-video.ts"
   },
   "dependencies": {
     "@phosphor-icons/react": "^2.1.10",
@@ -26,11 +27,13 @@
     "zod": "^3.23.8"
   },
   "devDependencies": {
+    "@ffmpeg-installer/ffmpeg": "^1.1.0",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
     "eslint": "^8",
     "eslint-config-next": "14.2.35",
+    "playwright": "^1.63.0",
     "postcss": "^8",
     "tailwindcss": "^3.4.1",
     "tsx": "^4.19.2",
