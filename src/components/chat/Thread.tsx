@@ -5,6 +5,7 @@ import { useEffect, useMemo, useRef } from 'react';
 import { RichText } from '@/components/RichText';
 import { Escudo } from '@/components/chat/Escudo';
 import { Hora } from '@/components/chat/Hora';
+import { CitaCard } from '@/components/chat/CitaCard';
 import { IncidenciaCard } from '@/components/chat/IncidenciaCard';
 import type { Message } from '@/components/chat/useChat';
 import { splitIncidencias } from '@/lib/incidencia';
@@ -67,6 +68,8 @@ function Bubble({
               {segments.map((s, i) =>
                 s.kind === 'text' ? (
                   <RichText key={i} text={s.text} />
+                ) : s.kind === 'cita' ? (
+                  <CitaCard key={i} data={s.data} negocio={nombre} />
                 ) : (
                   <IncidenciaCard key={i} data={s.data} />
                 )

@@ -7,6 +7,7 @@
 import { promises as fs } from 'node:fs';
 import path from 'node:path';
 import { z } from 'zod';
+import { agendaSchema } from '@/lib/citas/agenda';
 
 export const SLUG_RE = /^[a-z0-9]+(?:-[a-z0-9]+)*$/;
 
@@ -42,6 +43,8 @@ export const puebloSchema = z.object({
   /** Páginas de la web municipal de las que salió la ficha. */
   fuentes: z.array(z.string()).default([]),
   generadoEl: z.string(),
+  /** Agenda de citas: si existe, el asistente ofrece huecos libres y reserva. */
+  citas: agendaSchema.optional(),
   /** Mensajes del vídeo de la demo (`npm run video`), adaptados al pueblo. */
   demo: z
     .object({

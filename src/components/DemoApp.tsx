@@ -9,7 +9,7 @@ import { Thread } from '@/components/chat/Thread';
 import { useChat } from '@/components/chat/useChat';
 import { demoWhatsappLink, startLink, type ContactConfig } from '@/lib/contact';
 import type { Textos } from '@/lib/entidad';
-import { extractIncidencias } from '@/lib/incidencia';
+import { extractCitas, extractIncidencias } from '@/lib/incidencia';
 import { marcaStyle } from '@/lib/marca';
 
 type Props = {
@@ -54,7 +54,7 @@ export function DemoApp(props: Props) {
     () =>
       chat.messages
         .filter((m) => m.role === 'assistant' && !m.error)
-        .flatMap((m) => extractIncidencias(m.content)).length,
+        .flatMap((m) => [...extractIncidencias(m.content), ...extractCitas(m.content)]).length,
     [chat.messages]
   );
   const nuevos = registros > vistos;

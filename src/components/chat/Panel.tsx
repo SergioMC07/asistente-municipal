@@ -3,10 +3,11 @@
 import { X } from '@phosphor-icons/react/dist/ssr';
 import { useEffect } from 'react';
 import { Hora } from '@/components/chat/Hora';
+import { CitaCard } from '@/components/chat/CitaCard';
 import { IncidenciaCard } from '@/components/chat/IncidenciaCard';
 import type { Message } from '@/components/chat/useChat';
 import type { Textos } from '@/lib/entidad';
-import { extractIncidencias } from '@/lib/incidencia';
+import { extractCitas, extractIncidencias } from '@/lib/incidencia';
 
 const REGISTROS = { incidencia: 'Incidencias', solicitud: 'Solicitudes' } as const;
 
@@ -15,12 +16,17 @@ export function PanelSummary({
   messages,
   clase = 'incidencia',
   ejemplo = '«Hay una farola fundida en la calle Mayor»',
+  nombre = '',
 }: {
   messages: Message[];
   clase?: Textos['clase'];
   ejemplo?: string;
+  nombre?: string;
 }) {
   const registros = REGISTROS[clase];
+  const citas = messages
+    .filter((m) => m.role === 'assistant' && !m.error)
+    .flatMap((m) => extractCitas(m.content));
   const consultas = messages.filter((m) => m.role === 'user');
   const incidencias = messages
     .filter((m) => m.role === 'assistant' && !m.error)
@@ -28,13 +34,23 @@ export function PanelSummary({
 
   return (
     <div className="space-y-7">
-      <dl className="grid grid-cols-2 gap-px overflow-hidden rounded-xl border border-line bg-line">
+      <dl
+        className={`grid gap-px overflow-hidden rounded-xl border border-line bg-line ${
+          citas.length > 0 ? 'grid-cols-3' : 'grid-cols-2'
+        }`}
+      >
         <div className="bg-surface p-4">
           <dt className="text-sm text-muted">Consultas atendidas</dt>
           <dd className="mt-1 font-mono text-3xl font-semibold tabular-nums text-cobalt-text">
             {consultas.length}
           </dd>
         </div>
+        {citas.length > 0 && (
+          <div className="bg-surface p-4">
+            <dt className="text-sm text-muted">Citas</dt>
+            <dd className="mt-1 font-mono text-3xl font-semibold tabular-nums text-cobalt-text">{citas.length}</dd>
+          </div>
+        )}
         <div className="bg-surface p-4">
           <dt className="text-sm text-muted">{registros}</dt>
           <dd className="mt-1 font-mono text-3xl font-semibold tabular-nums text-cobalt-text">
@@ -58,6 +74,17 @@ export function PanelSummary({
           </ol>
         )}
       </section>
+
+      {citas.length > 0 && (
+        <section>
+          <h3 className="mb-3 font-semibold">Citas</h3>
+          <div className="space-y-3">
+            {citas.map((data) => (
+              <CitaCard key={data.id + data.inicio} data={data} negocio={nombre} />
+            ))}
+          </div>
+        </section>
+      )}
 
       <section>
         <h3 className="mb-3 font-semibold">{registros}</h3>
@@ -136,7 +163,12 @@ export function Panel({
         </div>
 
         <div className="flex-1 overflow-y-auto px-5 py-6">
-          <PanelSummary messages={messages} clase={textos.clase} ejemplo={textos.ejemplo} />
+          <PanelSummary
+            messages={messages}
+            clase={textos.clase}
+            ejemplo={textos.ejemplo}
+            nombre={textos.titulo}
+          />
 
           <section className="mt-7 border-t border-line pt-5 text-sm">
             <h3 className="mb-2 font-semibold">En el servicio real, además</h3>
