@@ -23,7 +23,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title,
     description,
-    robots: { index: false, follow: false },
+    // Las demos no se indexan; el asistente de un cliente real, sí.
+    robots: pueblo.panel ? undefined : { index: false, follow: false },
     openGraph: { title, description, type: 'website', locale: 'es_ES' },
     twitter: { card: 'summary_large_image', title, description },
   };
@@ -33,7 +34,8 @@ export default async function PuebloPage({ params }: Props) {
   const pueblo = await getPueblo(params.slug);
   if (!pueblo) notFound();
 
-  if (isRealVisitor(headers().get('user-agent'))) {
+  // Aviso al comercial solo en las demos: con clientes reales serían sus clientes.
+  if (!pueblo.panel && isRealVisitor(headers().get('user-agent'))) {
     await notify(`Demo de ${pueblo.nombre}`, `Alguien ha abierto la demo de ${pueblo.nombre}.`);
   }
 
@@ -61,6 +63,7 @@ export default async function PuebloPage({ params }: Props) {
       fecha={fecha}
       sugerencias={pueblo.sugerencias}
       textos={textos(pueblo)}
+      real={!!pueblo.panel}
       contact={{
         email: process.env.NEXT_PUBLIC_CONTACT_EMAIL,
         whatsapp: contactWhatsapp(),

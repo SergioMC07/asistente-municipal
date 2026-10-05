@@ -11,7 +11,7 @@ Tokens en `src/app/globals.css` (OKLCH), siempre en modo claro (`color-scheme: l
 * **Color con trabajo:** la banda de cierre de la landing es cobalto entero; el resto es neutro.
 * **Color de marca por demo:** si la ficha trae `color` (hex con contraste AA sobre blanco), `src/lib/marca.ts` redefine las variables `--cobalt*` y `--fondo` en el contenedor de la demo. El negocio ve su color en burbujas, botones, sello, panel, vista previa del enlace y vídeo. Sin `color`, se queda el cobalto.
 * **La banda de «Demostración para…» es de Atiende**, en `ink`, para no confundirse con la marca del negocio.
-* `ok` solo para el punto de «asistente disponible»; `danger` solo para errores.
+* `ok` solo para el punto de «asistente disponible» y el botón «Hecho» del panel; `danger` solo para errores.
 
 ## Tipografía
 
@@ -36,6 +36,7 @@ Curvas propias (`--ease-out`, `--ease-drawer`), siempre por debajo de 300 ms:
 
 * **Landing (`/`, persuadir):** primera pantalla con el chat de ejemplo funcionando. Secciones con estructuras distintas: lista de tres verbos, panel real con datos de ejemplo, garantías en cuadrícula de dos columnas y banda de cierre cobalto. Una sola llamada a la acción: «Pedir mi demo».
 * **Chat (`/<municipio>` o `/<negocio>`, operar):** cabecera con escudo o logo, hilo, campo de texto y panel lateral. En ordenador, ficha lateral con teléfono, horario, web y «Prueba a preguntar», y el chat como tarjeta elevada sobre `--fondo`; en móvil, el chat a pantalla completa. Trato de tú.
+* **Panel del negocio (`/panel`, revisar):** cabecera fija con logo, email y «Salir», y pestañas con subrayado del color de marca (Conversaciones, Citas, Solicitudes o Incidencias, Resumen). Bandeja en una sola tarjeta con filas; señales en píldoras (*Cita* en color, *Solicitud* suave, *Sin respuesta* neutra). Cifras en Geist Mono. Pensado primero para el móvil; «Descargar en Excel» en cada lista.
 * **Panel con contador:** cada incidencia o solicitud suma en el botón «Panel» (`.badge-pop`, 260 ms) y el botón se resalta hasta que se abre.
 
 ## Prohibido

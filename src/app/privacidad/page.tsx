@@ -62,6 +62,18 @@ export default function Privacidad() {
         cita, diríjase al ayuntamiento o negocio con el que la reservó.
       </p>
 
+      <h2>Conversaciones con un asistente en servicio</h2>
+      <p>
+        Cuando el asistente ya está en servicio para un ayuntamiento o un negocio (no en las demostraciones), las
+        conversaciones se guardan para que ese ayuntamiento o negocio pueda leerlas en su panel, devolver las
+        llamadas que le piden y mejorar las respuestas. Se guardan los mensajes, la fecha y, si los da para una
+        solicitud o una cita, el nombre y el teléfono. El responsable es ese ayuntamiento o negocio; el titular
+        de esta web actúa como encargado del tratamiento y los guarda en servidores de la Unión Europea
+        (Supabase). Solo acceden las personas que ese ayuntamiento o negocio autoriza. Las conversaciones y las
+        solicitudes se borran solas a los 30 días. Para ejercer sus derechos, diríjase a ese ayuntamiento o
+        negocio.
+      </p>
+
       <h2>Base legal y conservación</h2>
       <p>
         El interés legítimo en mostrar y mejorar el servicio, y su consentimiento cuando nos contacta. Los

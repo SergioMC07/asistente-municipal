@@ -10,6 +10,8 @@ export const MAX_HISTORY = 20;
 
 export const chatRequestSchema = z.object({
   slug: z.string().regex(SLUG_RE),
+  /** Id de la conversación (lo crea el navegador) para guardarla en el panel. */
+  conversacion: z.string().uuid().optional(),
   messages: z
     .array(
       z.object({

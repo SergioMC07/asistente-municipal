@@ -3,20 +3,11 @@
 import { CalendarBlank, Copy, Phone, Prohibit, X } from '@phosphor-icons/react/dist/ssr';
 import { useRouter } from 'next/navigation';
 import { useEffect, useMemo, useState, type FormEvent, type ReactNode } from 'react';
+import type { DatosAgenda } from '@/lib/citas/vista';
 
-type CitaVista = {
-  id: string;
-  tipo: string;
-  inicio: string;
-  nombre: string;
-  telefono: string;
-  nota?: string | null;
-  origen: 'asistente' | 'manual';
-  etiqueta: string;
-  dia: string;
-};
-type BloqueoVista = { id: string; etiqueta: string; motivo?: string | null };
-type Libre = { fecha: string; hora: string; etiqueta: string };
+type Real = Extract<DatosAgenda, { estado: 'real' }>;
+type CitaVista = Real['citas'][number];
+type Libre = Real['libres'][number];
 
 const diaLargo = new Intl.DateTimeFormat('es-ES', {
   timeZone: 'UTC',
@@ -49,20 +40,19 @@ const boton =
   'press inline-flex items-center justify-center gap-1.5 rounded-full bg-cobalt px-4 py-2.5 font-semibold text-cobalt-on shadow-btn disabled:opacity-50';
 
 export function GestionApp({
-  slug,
-  token,
-  citas,
-  bloqueos,
-  libres,
-  hoy,
+  api,
+  feed: rutaFeed,
+  datos,
+  className = 'mx-auto max-w-2xl px-5 py-6',
 }: {
-  slug: string;
-  token: string;
-  citas: CitaVista[];
-  bloqueos: BloqueoVista[];
-  libres: Libre[];
-  hoy: string;
+  /** Ruta de las acciones (con el token del enlace secreto o con la sesión del panel). */
+  api: string;
+  /** Ruta del calendario suscribible. */
+  feed: string;
+  datos: Real;
+  className?: string;
 }) {
+  const { citas, bloqueos, libres, hoy } = datos;
   const router = useRouter();
   const [ocupado, setOcupado] = useState(false);
   const [mensaje, setMensaje] = useState<{ ok: boolean; texto: string } | null>(null);
@@ -84,7 +74,7 @@ export function GestionApp({
     setOcupado(true);
     setMensaje(null);
     try {
-      const res = await fetch(`/api/gestion/${slug}?t=${encodeURIComponent(token)}`, {
+      const res = await fetch(api, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(cuerpo),
@@ -128,11 +118,11 @@ export function GestionApp({
   // La dirección del calendario depende del dominio: se calcula ya en el navegador.
   const [feed, setFeed] = useState('');
   useEffect(() => {
-    setFeed(`${window.location.origin}/api/gestion/${slug}/calendario?t=${token}`);
-  }, [slug, token]);
+    setFeed(`${window.location.origin}${rutaFeed}`);
+  }, [rutaFeed]);
 
   return (
-    <main className="mx-auto max-w-2xl space-y-5 px-5 py-6">
+    <div className={`space-y-5 ${className}`}>
       {mensaje && (
         <p
           role="status"
@@ -307,6 +297,6 @@ export function GestionApp({
           </button>
         </div>
       </Bloque>
-    </main>
+    </div>
   );
 }

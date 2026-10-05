@@ -43,6 +43,13 @@ export const puebloSchema = z.object({
   /** Páginas de la web municipal de las que salió la ficha. */
   fuentes: z.array(z.string()).default([]),
   generadoEl: z.string(),
+  /**
+   * Cliente real con panel: se guardan sus conversaciones y estos emails
+   * entran en /panel. Sin este bloque, la ficha es una demo.
+   */
+  panel: z
+    .object({ emails: z.array(z.string().email().transform((e) => e.toLowerCase())).min(1) })
+    .optional(),
   /** Agenda de citas: si existe, el asistente ofrece huecos libres y reserva. */
   citas: agendaSchema.optional(),
   /** Mensajes del vídeo de la demo (`npm run video`), adaptados al pueblo. */
@@ -75,6 +82,15 @@ export async function getPueblo(slug: string): Promise<Pueblo | null> {
   } catch {
     return null;
   }
+}
+
+/** Todas las fichas válidas (para el acceso al panel por email). */
+export async function listarPueblos(): Promise<Pueblo[]> {
+  const files = await fs.readdir(PUEBLOS_DIR).catch(() => [] as string[]);
+  const pueblos = await Promise.all(
+    files.filter((f) => f.endsWith('.json')).map((f) => getPueblo(f.replace(/\.json$/, '')))
+  );
+  return pueblos.filter((p): p is Pueblo => p !== null);
 }
 
 /** Convierte "Villanueva de la Cañada" en "villanueva-de-la-canada". */

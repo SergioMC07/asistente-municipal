@@ -122,6 +122,31 @@ Si la ficha tiene un bloque `citas`, el asistente **ofrece huecos libres y reser
 
 Generar otro enlace con `npm run gestion` invalida el anterior. Las citas y los bloqueos se borran solos 30 días después (tarea nocturna de `citas.sql`).
 
+## Panel del negocio
+
+`/panel`: lo que ha pasado con el asistente de un cliente real, desde el móvil y sin contraseñas. El negocio escribe su email, recibe un enlace (15 minutos) y queda dentro 30 días.
+
+* **Conversaciones:** cada conversación con lo que preguntó el cliente y cómo acabó (*Cita*, *Solicitud* o *Sin respuesta*), con filtros. Al abrirla se ve entera, con un botón para llamar si dejó teléfono.
+* **Citas:** la misma agenda de `/gestion` (apuntar, cancelar, bloquear, calendario), con la sesión del panel.
+* **Solicitudes** (o **Incidencias** en un ayuntamiento): la lista de llamadas pendientes con nombre y teléfono, y el botón *Marcar hecho*.
+* **Resumen (30 días):** conversaciones, cuántas fuera de horario, citas, solicitudes, de qué preguntan y **lo que no supo responder**, para añadirlo a la ficha.
+* Cada lista se descarga **en Excel** (CSV con `;`, que Excel en español abre directamente).
+
+Solo se guardan las conversaciones de las fichas con `panel`; las demos nunca. Con panel, el chat no lleva la banda de demostración ni el botón *Panel*, avisa de que la conversación se guarda 30 días y, para una solicitud, pide nombre y teléfono. Todo se borra solo a los 30 días (tarea nocturna de `citas.sql`).
+
+### Dar acceso a un cliente
+
+1. Supabase y Resend configurados (ver *Activar citas reales*) y, en Vercel, `PANEL_SECRET`: una cadena aleatoria de 32 caracteres o más (por ejemplo, `openssl rand -base64 48`). Si cambia, se cierran todas las sesiones.
+2. En su ficha, los emails que pueden entrar:
+
+   ```json
+   "panel": { "emails": ["direccion@autoescuela.es"] }
+   ```
+
+3. Commit, push y que entre en `https://<tu-dominio>/panel`. Quitar un email de la ficha le quita el acceso al momento.
+
+En local, sin Resend, el enlace sale en la pantalla y en la terminal.
+
 ## Prospectos
 
 En [`prospectos/`](prospectos/README.md) hay dos listas: [`ayuntamientos/`](prospectos/ayuntamientos/README.md) (11 pueblos de Madrid) y [`empresas/`](prospectos/empresas/README.md) (5 autoescuelas y academias de Valencia). Cada carpeta tiene los datos de contacto, cómo abordarlo, el mensaje listo para pegar y su vídeo. Cada lista tiene su `GUION.md`.

@@ -7,6 +7,8 @@
 // falla y se prueba la plaza siguiente hasta llenar la capacidad.
 // Sin Supabase configurado (desarrollo y tests) se usa una agenda en memoria.
 
+import { supabaseConfig } from '@/lib/supabase';
+
 export type Cita = {
   id: string;
   slug: string;
@@ -164,9 +166,8 @@ const global = globalThis as unknown as { __atiendeCitas?: MemoryStore };
  * agendas en modo real se comportan como demo.
  */
 export function citasStore(): CitasStore | null {
-  const url = process.env.SUPABASE_URL?.replace(/\/$/, '');
-  const key = process.env.SUPABASE_SERVICE_KEY;
-  if (url && key) return new SupabaseStore(url, key);
+  const cfg = supabaseConfig();
+  if (cfg) return new SupabaseStore(cfg.url, cfg.key);
   if (process.env.NODE_ENV !== 'production') return (global.__atiendeCitas ??= new MemoryStore());
   return null;
 }

@@ -4,6 +4,7 @@
 import { tokenValido } from '@/lib/citas/gestion';
 import { ics } from '@/lib/citas/ics';
 import { citasStore } from '@/lib/citas/store';
+import { calendarioValido } from '@/lib/panel/sesion';
 import { getPueblo } from '@/lib/pueblo';
 
 export const runtime = 'nodejs';
@@ -12,7 +13,9 @@ export const dynamic = 'force-dynamic';
 export async function GET(req: Request, { params }: { params: { slug: string } }) {
   const pueblo = await getPueblo(params.slug);
   const token = new URL(req.url).searchParams.get('t');
-  if (!pueblo || !tokenValido(pueblo, token)) return new Response('Enlace no válido.', { status: 403 });
+  // Vale el enlace secreto de gestión o el token de calendario del panel.
+  const valido = !!pueblo && (tokenValido(pueblo, token) || calendarioValido(pueblo.slug, token));
+  if (!pueblo || !valido) return new Response('Enlace no válido.', { status: 403 });
   const store = citasStore();
   if (!store) return new Response('Agenda no activada.', { status: 409 });
 

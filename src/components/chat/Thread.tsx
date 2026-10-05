@@ -30,12 +30,14 @@ function Bubble({
   nombre,
   escudoUrl,
   onRetry,
+  real,
 }: {
   message: Message;
   streaming: boolean;
   nombre: string;
   escudoUrl?: string;
   onRetry?: () => void;
+  real?: boolean;
 }) {
   if (message.role === 'user') {
     return (
@@ -71,7 +73,7 @@ function Bubble({
                 ) : s.kind === 'cita' ? (
                   <CitaCard key={i} data={s.data} negocio={nombre} />
                 ) : (
-                  <IncidenciaCard key={i} data={s.data} />
+                  <IncidenciaCard key={i} data={s.data} real={real} />
                 )
               )}
             </div>
@@ -107,6 +109,7 @@ export function Thread({
   onRetry,
   className = '',
   chipsClassName = '',
+  real = false,
 }: {
   messages: Message[];
   loading: boolean;
@@ -118,6 +121,8 @@ export function Thread({
   className?: string;
   /** Clases para las preguntas sugeridas (p. ej. ocultarlas si ya están en la ficha lateral). */
   chipsClassName?: string;
+  /** Cliente real: las tarjetas no llevan la nota de demostración. */
+  real?: boolean;
 }) {
   const scrollRef = useRef<HTMLDivElement>(null);
 
@@ -150,6 +155,7 @@ export function Thread({
           nombre={nombre}
           escudoUrl={escudoUrl}
           onRetry={m.error && i === messages.length - 1 ? onRetry : undefined}
+          real={real}
         />
       ))}
 

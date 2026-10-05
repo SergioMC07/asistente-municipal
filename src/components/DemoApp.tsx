@@ -26,6 +26,8 @@ type Props = {
   sugerencias: string[];
   contact: ContactConfig;
   textos: Textos;
+  /** Cliente real: sin banda de demostración y con aviso de que se guarda la conversación. */
+  real?: boolean;
 };
 
 function Dato({ icon, label, children }: { icon: ReactNode; label: string; children: ReactNode }) {
@@ -41,12 +43,12 @@ function Dato({ icon, label, children }: { icon: ReactNode; label: string; child
 }
 
 export function DemoApp(props: Props) {
-  const { slug, nombre, subtitulo, escudoUrl, color, telefono, horario, web, fecha, sugerencias, contact, textos } =
+  const { slug, nombre, subtitulo, escudoUrl, color, telefono, horario, web, fecha, sugerencias, contact, textos, real } =
     props;
   const chat = useChat(slug, textos.saludo);
   const negocio = textos.tipo === 'negocio';
   const [panelOpen, setPanelOpen] = useState(false);
-  const [bannerOpen, setBannerOpen] = useState(true);
+  const [bannerOpen, setBannerOpen] = useState(!real);
   // Cuántas solicitudes o incidencias ha visto ya en el panel: las nuevas se resaltan.
   const [vistos, setVistos] = useState(0);
 
@@ -169,30 +171,32 @@ export function DemoApp(props: Props) {
                 Asistente 24 horas
               </p>
             </div>
-            <button
-              type="button"
-              onClick={abrirPanel}
-              aria-label={
-                nuevos
-                  ? `Panel: ${registros} ${registros === 1 ? `${registro} nueva` : `${registrosPlural} nuevas`}`
-                  : 'Panel'
-              }
-              className={`press flex shrink-0 items-center gap-1.5 rounded-full border-[1.5px] bg-surface px-3 py-1.5 text-sm font-semibold text-cobalt-text transition-[border-color,box-shadow] duration-200 [@media(hover:hover)]:hover:bg-cobalt-soft ${
-                nuevos ? 'border-cobalt shadow-[0_0_0_4px_var(--cobalt-soft)]' : 'border-line-strong shadow-btn'
-              }`}
-            >
-              <ChartBar size={16} weight="bold" aria-hidden />
-              Panel
-              {registros > 0 && (
-                <span
-                  key={registros}
-                  aria-hidden
-                  className="badge-pop -mr-1 flex h-5 min-w-5 items-center justify-center rounded-full bg-cobalt px-1.5 font-mono text-[11px] font-semibold tabular-nums text-cobalt-on"
-                >
-                  {registros}
-                </span>
-              )}
-            </button>
+            {!real && (
+              <button
+                type="button"
+                onClick={abrirPanel}
+                aria-label={
+                  nuevos
+                    ? `Panel: ${registros} ${registros === 1 ? `${registro} nueva` : `${registrosPlural} nuevas`}`
+                    : 'Panel'
+                }
+                className={`press flex shrink-0 items-center gap-1.5 rounded-full border-[1.5px] bg-surface px-3 py-1.5 text-sm font-semibold text-cobalt-text transition-[border-color,box-shadow] duration-200 [@media(hover:hover)]:hover:bg-cobalt-soft ${
+                  nuevos ? 'border-cobalt shadow-[0_0_0_4px_var(--cobalt-soft)]' : 'border-line-strong shadow-btn'
+                }`}
+              >
+                <ChartBar size={16} weight="bold" aria-hidden />
+                Panel
+                {registros > 0 && (
+                  <span
+                    key={registros}
+                    aria-hidden
+                    className="badge-pop -mr-1 flex h-5 min-w-5 items-center justify-center rounded-full bg-cobalt px-1.5 font-mono text-[11px] font-semibold tabular-nums text-cobalt-on"
+                  >
+                    {registros}
+                  </span>
+                )}
+              </button>
+            )}
           </header>
 
           <Thread
@@ -204,6 +208,7 @@ export function DemoApp(props: Props) {
             sugerencias={sugerencias}
             onSend={chat.send}
             onRetry={chat.retry}
+            real={real}
             chipsClassName={sugerencias.length > 0 ? 'lg:hidden' : ''}
           />
 
@@ -232,6 +237,7 @@ export function DemoApp(props: Props) {
                   Emergencias: <strong className="text-ink">112</strong>.{' '}
                 </>
               )}
+              {real && <>Las conversaciones se guardan 30 días para que {textos.titulo} pueda atenderte. </>}
               <a href="/privacidad" className="underline">
                 Privacidad
               </a>

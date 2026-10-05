@@ -6,7 +6,11 @@ import { isRealVisitor, notify } from '@/lib/notify';
 import { getPueblo } from '@/lib/pueblo';
 import { createRateLimiter } from '@/lib/rate-limit';
 import { ejecutarHerramienta, herramientasCitas } from '@/lib/citas/herramientas';
+import { telefonoValido } from '@/lib/citas/agenda';
 import { citasStore } from '@/lib/citas/store';
+import { extractCitas, extractIncidencias } from '@/lib/incidencia';
+import { panelStore } from '@/lib/panel/datos';
+import { sinRespuesta } from '@/lib/panel/resumen';
 
 export const runtime = 'nodejs';
 export const dynamic = 'force-dynamic';
@@ -65,6 +69,7 @@ export async function POST(req: Request) {
 
   // Primer mensaje de una conversación: aviso al comercial (si está configurado).
   const aviso =
+    !pueblo.panel &&
     history.filter((m) => m.role === 'user').length === 1 &&
     isRealVisitor(req.headers.get('user-agent'))
       ? notify(`Demo de ${pueblo.nombre}`, `Primer mensaje: ${history[history.length - 1].content}`)
@@ -72,6 +77,7 @@ export async function POST(req: Request) {
 
   const openai = new OpenAI({ apiKey });
   const ip = clientIp(req);
+  const conversacionId = parsed.data.conversacion;
   const herramientas = pueblo.citas ? herramientasCitas(pueblo) : undefined;
   const messages: OpenAI.Chat.Completions.ChatCompletionMessageParam[] = [
     {
@@ -111,7 +117,9 @@ export async function POST(req: Request) {
     async start(controller) {
       // Si la persona cierra la página a mitad, se deja de escribir sin errores.
       let cerrado = false;
+      let respuesta = '';
       const escribir = (t: string) => {
+        respuesta += t;
         if (cerrado) return;
         try {
           controller.enqueue(encoder.encode(t));
@@ -161,6 +169,12 @@ export async function POST(req: Request) {
         console.error('Error durante la respuesta en streaming:', err);
         escribir('\n\n(Se ha cortado la respuesta. Inténtalo de nuevo.)');
       } finally {
+        // Clientes reales: se guarda el turno para su panel (nunca en las demos).
+        if (pueblo.panel && conversacionId) {
+          await guardarTurno(pueblo.slug, conversacionId, history, respuesta).catch((err) =>
+            console.error('No se pudo guardar la conversación:', err)
+          );
+        }
         if (!cerrado) {
           try {
             controller.close();
@@ -179,4 +193,45 @@ export async function POST(req: Request) {
       'Cache-Control': 'no-store',
     },
   });
+}
+
+/** Guarda el turno, sus señales y las solicitudes o incidencias que contiene. */
+async function guardarTurno(
+  slug: string,
+  conversacionId: string,
+  history: { role: string; content: string }[],
+  respuesta: string
+) {
+  const store = panelStore();
+  if (!store || !respuesta.trim()) return;
+  const registros = extractIncidencias(respuesta);
+  const citas = extractCitas(respuesta);
+  await store.guardarTurno({
+    slug,
+    conversacionId,
+    canal: 'web',
+    // En la web no se sabe quién escribe hasta que deja su nombre en una cita o solicitud.
+    nombre: citas.find((c) => !c.demo)?.nombre ?? registros.find((r) => r.nombre)?.nombre ?? null,
+    esPrimera: history.filter((m) => m.role === 'user').length === 1,
+    usuario: history[history.length - 1].content,
+    respuesta,
+    senales: {
+      cita: citas.length > 0,
+      registro: registros.length > 0,
+      sinRespuesta: sinRespuesta(respuesta),
+    },
+    ahora: new Date(),
+  });
+  for (const r of registros) {
+    await store.registrar({
+      slug,
+      conversacion_id: conversacionId,
+      clase: r.clase,
+      tipo: r.tipo,
+      lugar: r.lugar,
+      detalle: r.detalle,
+      nombre: r.nombre ?? null,
+      telefono: r.telefono ? (telefonoValido(r.telefono) ?? r.telefono) : null,
+    });
+  }
 }

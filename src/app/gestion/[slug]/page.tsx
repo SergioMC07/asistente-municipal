@@ -1,9 +1,8 @@
 import type { Metadata } from 'next';
 import { GestionApp } from '@/components/GestionApp';
 import { Escudo } from '@/components/chat/Escudo';
-import { etiquetaHueco, fechaMadrid, huecosLibres } from '@/lib/citas/agenda';
 import { tokenValido } from '@/lib/citas/gestion';
-import { citasStore } from '@/lib/citas/store';
+import { datosAgenda } from '@/lib/citas/vista';
 import { textos } from '@/lib/entidad';
 import { marcaStyle } from '@/lib/marca';
 import { getPueblo } from '@/lib/pueblo';
@@ -32,9 +31,8 @@ export default async function Gestion({ params, searchParams }: Props) {
   if (!pueblo || !tokenValido(pueblo, searchParams.t)) {
     return <Aviso titulo="Enlace no válido" texto="Revisa que has copiado el enlace completo o pide uno nuevo." />;
   }
-  const agenda = pueblo.citas!;
-  const store = citasStore();
-  if (agenda.modo !== 'real' || !store) {
+  const datos = await datosAgenda(pueblo);
+  if (datos.estado !== 'real') {
     return (
       <Aviso
         titulo="Agenda en modo demostración"
@@ -42,15 +40,6 @@ export default async function Gestion({ params, searchParams }: Props) {
       />
     );
   }
-
-  const ahora = new Date();
-  const hasta = new Date(ahora.getTime() + (agenda.dias + 1) * 86_400_000);
-  const desdeHoy = new Date(`${fechaMadrid(ahora).fecha}T00:00:00Z`);
-  const [citas, bloqueos] = await Promise.all([
-    store.confirmadas(pueblo.slug, desdeHoy, hasta),
-    store.bloqueos(pueblo.slug, ahora, hasta),
-  ]);
-  const libres = huecosLibres(agenda, ahora, citas, bloqueos);
 
   const t = textos(pueblo);
   return (
@@ -64,19 +53,13 @@ export default async function Gestion({ params, searchParams }: Props) {
           </div>
         </div>
       </header>
-      <GestionApp
-        slug={pueblo.slug}
-        token={searchParams.t!}
-        citas={citas
-          .filter((c) => new Date(c.fin) > ahora)
-          .map((c) => ({ ...c, etiqueta: etiquetaHueco(new Date(c.inicio)), dia: fechaMadrid(new Date(c.inicio)).fecha }))}
-        bloqueos={bloqueos.map((b) => ({
-          ...b,
-          etiqueta: `${etiquetaHueco(new Date(b.inicio)).replace(' a las ', ', de ')} a ${fechaMadrid(new Date(b.fin)).hora}`,
-        }))}
-        libres={libres.map(({ fecha, hora, etiqueta }) => ({ fecha, hora, etiqueta }))}
-        hoy={fechaMadrid(ahora).fecha}
-      />
+      <main>
+        <GestionApp
+          api={`/api/gestion/${pueblo.slug}?t=${encodeURIComponent(searchParams.t!)}`}
+          feed={`/api/gestion/${pueblo.slug}/calendario?t=${encodeURIComponent(searchParams.t!)}`}
+          datos={datos}
+        />
+      </main>
     </div>
   );
 }

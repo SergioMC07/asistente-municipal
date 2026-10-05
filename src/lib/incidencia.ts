@@ -10,8 +10,19 @@
 
 import type { Clase } from '@/lib/entidad';
 
-/** En una solicitud, `lugar` guarda cuándo le viene bien al cliente. */
-export type Incidencia = { clase: Clase; tipo: string; lugar: string; detalle: string };
+/**
+ * En una solicitud, `lugar` guarda cuándo le viene bien al cliente. Con
+ * clientes reales, la solicitud lleva además nombre y teléfono:
+ * [[SOLICITUD: qué | cuándo | detalle | nombre | teléfono]].
+ */
+export type Incidencia = {
+  clase: Clase;
+  tipo: string;
+  lugar: string;
+  detalle: string;
+  nombre?: string;
+  telefono?: string;
+};
 
 export type CitaMarca = {
   id: string;
@@ -32,6 +43,18 @@ const INCIDENCIA_RE = /\[\[(INCIDENCIA|SOLICITUD):\s*([^|\]]+?)\s*\|\s*([^|\]]+?
 const CITA_RE = /\[\[CITA:\s*([^\]]+?)\s*\]\]/g;
 
 type Coincidencia = { index: number; length: number; segment: Segment };
+
+function datosRegistro(etiqueta: string, tipo: string, lugar: string, resto: string): Incidencia {
+  const [detalle, nombre, telefono] = resto.split('|').map((x) => x.trim());
+  return {
+    clase: (etiqueta === 'SOLICITUD' ? 'solicitud' : 'incidencia') as Clase,
+    tipo: tipo.trim(),
+    lugar: lugar.trim(),
+    detalle: detalle ?? '',
+    ...(nombre ? { nombre } : {}),
+    ...(telefono ? { telefono } : {}),
+  };
+}
 
 function citas(source: string): Coincidencia[] {
   return [...source.matchAll(CITA_RE)].flatMap((m) => {
@@ -65,12 +88,7 @@ export function splitIncidencias(text: string, streaming = false): Segment[] {
       length: match[0].length,
       segment: {
         kind: 'incidencia' as const,
-        data: {
-          clase: (match[1] === 'SOLICITUD' ? 'solicitud' : 'incidencia') as Clase,
-          tipo: match[2].trim(),
-          lugar: match[3].trim(),
-          detalle: match[4].trim(),
-        },
+        data: datosRegistro(match[1], match[2], match[3], match[4]),
       },
     })),
     ...citas(source),

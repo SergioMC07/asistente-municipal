@@ -5,6 +5,7 @@ import { madridAUtc } from '@/lib/citas/agenda';
 import { tokenValido } from '@/lib/citas/gestion';
 import { reservar } from '@/lib/citas/servicio';
 import { citasStore } from '@/lib/citas/store';
+import { negocioDeSesion } from '@/lib/panel/sesion';
 import { getPueblo } from '@/lib/pueblo';
 
 export const runtime = 'nodejs';
@@ -30,7 +31,8 @@ const accionSchema = z.discriminatedUnion('accion', [
 export async function POST(req: Request, { params }: { params: { slug: string } }) {
   const pueblo = await getPueblo(params.slug);
   const token = new URL(req.url).searchParams.get('t');
-  if (!pueblo || !tokenValido(pueblo, token)) {
+  // Con el enlace secreto de gestión o con la sesión del panel.
+  if (!pueblo || !(tokenValido(pueblo, token) || (await negocioDeSesion(pueblo.slug)))) {
     return Response.json({ error: 'Enlace no válido.' }, { status: 403 });
   }
   const store = citasStore();

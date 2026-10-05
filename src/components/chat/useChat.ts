@@ -35,6 +35,30 @@ function save(key: string, messages: Message[]) {
   }
 }
 
+function nuevoId(): string {
+  const c: Crypto = crypto;
+  if (typeof c.randomUUID === 'function') return c.randomUUID();
+  // Navegadores antiguos: UUID v4 con getRandomValues.
+  const b = c.getRandomValues(new Uint8Array(16));
+  b[6] = (b[6] & 0x0f) | 0x40;
+  b[8] = (b[8] & 0x3f) | 0x80;
+  const h = [...b].map((x) => x.toString(16).padStart(2, '0')).join('');
+  return `${h.slice(0, 8)}-${h.slice(8, 12)}-${h.slice(12, 16)}-${h.slice(16, 20)}-${h.slice(20)}`;
+}
+
+/** Id de la conversación: se guarda con ella para que el panel la agrupe. */
+function idConversacion(key: string, nueva = false): string {
+  try {
+    const guardado = nueva ? null : sessionStorage.getItem(`${key}:id`);
+    if (guardado) return guardado;
+    const id = nuevoId();
+    sessionStorage.setItem(`${key}:id`, id);
+    return id;
+  } catch {
+    return nuevoId();
+  }
+}
+
 export function useChat(slug: string, saludo: string, storageKey = `atiende:${slug}`) {
   const [messages, setMessages] = useState<Message[]>(() => [greeting(saludo)]);
   const [loading, setLoading] = useState(false);
@@ -75,7 +99,7 @@ export function useChat(slug: string, saludo: string, storageKey = `atiende:${sl
         const res = await fetch('/api/chat', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ slug, messages: history }),
+          body: JSON.stringify({ slug, messages: history, conversacion: idConversacion(storageKey) }),
         });
 
         if (!res.ok || !res.body) {
@@ -100,7 +124,7 @@ export function useChat(slug: string, saludo: string, storageKey = `atiende:${sl
         setLoading(false);
       }
     },
-    [loading, messages, slug]
+    [loading, messages, slug, storageKey]
   );
 
   const retry = useCallback(() => {
@@ -110,7 +134,10 @@ export function useChat(slug: string, saludo: string, storageKey = `atiende:${sl
     send(messages[idx].content, messages.slice(0, idx));
   }, [messages, send]);
 
-  const reset = useCallback(() => setMessages([greeting(saludo)]), [saludo]);
+  const reset = useCallback(() => {
+    idConversacion(storageKey, true);
+    setMessages([greeting(saludo)]);
+  }, [saludo, storageKey]);
 
   return { messages, loading, send, retry, reset };
 }

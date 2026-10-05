@@ -12,7 +12,7 @@ export function Hora({ at, className = '' }: { at: number; className?: string })
     setText(new Date(at).toLocaleTimeString('es-ES', { hour: '2-digit', minute: '2-digit' }));
   }, [at]);
   return (
-    <time dateTime={new Date(at).toISOString()} className={`font-mono tabular-nums ${className}`}>
+    <time dateTime={new Date(at).toISOString()} suppressHydrationWarning className={`font-mono tabular-nums ${className}`}>
       {text || ' '}
     </time>
   );
