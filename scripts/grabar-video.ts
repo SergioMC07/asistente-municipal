@@ -152,7 +152,10 @@ async function main() {
   const pueblo = await getPueblo(args.slug);
   if (!pueblo) throw new Error(`No existe data/pueblos/${args.slug}.json`);
 
-  const base = (args.url || process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3000').replace(/\/$/, '');
+  // Acepta la web (https://x.vercel.app) o el enlace de la demo (https://x.vercel.app/chinchon).
+  const base = (args.url || process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3000')
+    .replace(/\/+$/, '')
+    .replace(new RegExp(`/${pueblo.slug}$`), '');
   const demoUrl = `${base}/${pueblo.slug}`;
   // El escenario se sirve en el mismo origen que la demo para que el navegador
   // deje cargarla dentro (sin bloqueos entre orígenes ni de red local).
