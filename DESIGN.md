@@ -4,7 +4,7 @@ Institucional y cercano. El mundo visual sale del **azulejo de las placas de cal
 
 ## Color
 
-Tokens en `src/app/globals.css` (OKLCH), con modo oscuro automático por `prefers-color-scheme`. Tailwind los expone como `canvas`, `surface`, `sunken`, `ink`, `muted`, `line`, `cobalt` (`strong`, `text`, `soft`, `on`), `danger` y `ok`.
+Tokens en `src/app/globals.css` (OKLCH), siempre en modo claro (`color-scheme: light`), aunque el dispositivo esté en modo oscuro. Tailwind los expone como `canvas`, `surface`, `sunken`, `ink`, `muted`, `line`, `cobalt` (`strong`, `text`, `soft`, `on`), `danger` y `ok`.
 
 * **Un solo acento:** cobalto. Botones principales, mensajes del vecino, enlaces y sello.
 * **Neutros fríos**, tintados hacia el cobalto. Nada de crema ni de negro puro.

@@ -87,7 +87,7 @@ En [`prospectos/`](prospectos/README.md) hay dos listas: [`ayuntamientos/`](pros
 
 * Sistema visual en [`DESIGN.md`](DESIGN.md) y contexto de producto en [`PRODUCT.md`](PRODUCT.md).
 * La landing (`/`) enseña el chat de Villaejemplo funcionando en la primera pantalla.
-* Modo oscuro automático según el ajuste del dispositivo.
+* Siempre en modo claro, aunque el dispositivo esté en modo oscuro.
 * Skills de diseño instaladas en `.claude/skills/`: `emil-design-eng` (Emil Kowalski, MIT), `taste-skill` (Leonxlnx, MIT) e `impeccable` (Paul Bakaus, Apache 2.0).
 
 ## Qué ve el alcalde
