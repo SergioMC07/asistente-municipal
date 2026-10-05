@@ -11,17 +11,17 @@
   color-scheme: light;
   --canvas: oklch(0.982 0.004 255);
   --surface: oklch(0.996 0.002 255);
-  --sunken: oklch(0.955 0.008 258);
+  --sunken: oklch(0.94 0.01 258);
   --ink: oklch(0.24 0.035 258);
   --muted: oklch(0.46 0.03 258);
-  --line: oklch(0.9 0.012 258);
+  --line: oklch(0.86 0.014 258);
   --cobalt: oklch(0.44 0.16 263);
   --cobalt-strong: oklch(0.38 0.15 263);
   --cobalt-text: oklch(0.44 0.16 263);
   --cobalt-soft: oklch(0.945 0.03 263);
   --on-cobalt: oklch(0.985 0.006 263);
   /* Fondo de la demo en ordenador: un tinte muy suave del color de la demo. */
-  --fondo: oklch(0.965 0.016 263);
+  --fondo: oklch(0.925 0.014 260);
   --danger: oklch(0.52 0.18 27);
   --ok: oklch(0.6 0.14 155);
   --shadow: 0 1px 2px oklch(0.24 0.035 258 / 0.06), 0 8px 24px oklch(0.24 0.035 258 / 0.06);

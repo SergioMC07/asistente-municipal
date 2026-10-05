@@ -159,7 +159,7 @@ export function DemoApp(props: Props) {
           </p>
         </aside>
 
-        <main className="flex min-h-0 w-full max-w-2xl flex-col bg-canvas sm:border-x sm:border-line lg:overflow-hidden lg:rounded-[22px] lg:border lg:shadow-soft">
+        <main className="flex min-h-0 w-full max-w-2xl flex-col bg-sunken sm:border-x sm:border-line lg:overflow-hidden lg:rounded-[22px] lg:border lg:shadow-soft">
           <header className="flex items-center gap-3 border-b border-line bg-surface px-4 py-3">
             <Escudo nombre={nombre} url={escudoUrl} />
             <div className="min-w-0 flex-1">

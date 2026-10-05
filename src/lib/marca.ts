@@ -14,6 +14,6 @@ export function marcaStyle(color?: string): CSSProperties | undefined {
     '--cobalt-strong': `color-mix(in oklch, ${color} 82%, black)`,
     '--cobalt-text': `color-mix(in oklch, ${color} 86%, black)`,
     '--cobalt-soft': `color-mix(in oklch, ${color} 9%, white)`,
-    '--fondo': `color-mix(in oklch, ${color} 4%, white)`,
+    '--fondo': `color-mix(in oklch, ${color} 5%, oklch(0.925 0.008 258))`,
   } as CSSProperties;
 }
