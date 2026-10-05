@@ -1,6 +1,6 @@
 # Guion para empresas (autoescuelas y academias)
 
-A un negocio pequeño se le vende mejor **en persona**: entras con la demo de su negocio abierta en el móvil y se la enseñas. Si no puedes ir, llama.
+A un negocio pequeño se le vende mejor **en persona**: entras con la demo de su negocio abierta en el móvil y se la enseñas. Si no puedes ir, llama. Para la visita paso a paso (recepción, demo, cierre y cómo hablar), mira [VISITA.md](VISITA.md).
 
 **Antes de ir:**
 - Ve a media mañana o a primera hora de la tarde, cuando no tienen alumnos en la puerta. Evita la hora punta de las clases.
@@ -40,7 +40,7 @@ En academias: «Un alumno que se queda todo el curso son 600–900 €.»
 ## 5. Pegas habituales
 
 - **«Ya tenemos WhatsApp.»**
-  > «Este contesta solo, a las once de la noche, y os deja la solicitud hecha. Lo podemos poner en vuestro mismo WhatsApp.»
+  > «Y lo seguís teniendo. Esto contesta solo, a las once de la noche, y os deja la solicitud hecha.» (WhatsApp automático aún no está listo: no lo prometas con fecha.)
 - **«La gente prefiere hablar con una persona.»**
   > «Por eso no sustituye a nadie: contesta lo básico y os pasa a la persona interesada para que la llaméis vosotros.»
 - **«¿Y si dice algo mal?»**
