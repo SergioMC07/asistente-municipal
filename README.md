@@ -44,12 +44,12 @@ Graba la demo en un móvil simulado con las respuestas reales del asistente:
 
 1. Dos preguntas sugeridas de la ficha.
 2. Una pregunta que no está en la ficha, para enseñar que no se inventa nada.
-3. Una incidencia.
-4. El panel.
+3. Una incidencia (o una solicitud, en un negocio).
+4. El panel: el cajón del chat y, desde «Ver el panel completo», el panel de demostración con sus conversaciones, incidencias o solicitudes y el resumen del mes.
 
 Deja en `prospectos/ayuntamientos/<slug>/video/` o `prospectos/empresas/<slug>/video/` (no se sube a GitHub):
 
-* `atentia-<slug>.mp4`: el vídeo, de algo más de un minuto, con rótulos, portada y cierre con tu WhatsApp.
+* `atentia-<slug>.mp4`: el vídeo, de minuto y medio, con rótulos, portada y cierre con tu WhatsApp.
 * `miniatura.gif`: 7 segundos animados para poner en el correo.
 * `portada.png`: imagen con botón de reproducir.
 
@@ -58,6 +58,7 @@ Opciones:
 * `--desconocida "..."`: pregunta que no está en la ficha. Por defecto, la recogida de muebles.
 * `--incidencia "..."`: aviso con qué pasa y dónde.
 * `--marca "..."`: etiqueta fija, por ejemplo «Borrador».
+* `--publica https://...`: la dirección que se lee en el vídeo, si grabas contra `npm run dev` (por defecto, la de `--url`).
 
 Para grabar todos los pueblos de una vez:
 

@@ -5,7 +5,8 @@
 //   npm run video -- chinchon --url https://tu-proyecto.vercel.app
 //
 // Abre la demo en un móvil simulado, escribe las preguntas, espera las
-// respuestas reales del asistente, registra una incidencia y abre el panel.
+// respuestas reales del asistente, registra una incidencia y enseña el panel
+// de demostración (conversaciones, incidencias o solicitudes y resumen).
 // Deja en prospectos/ayuntamientos/<slug>/video/ (o prospectos/empresas/…) el MP4, una miniatura GIF y una portada para el correo.
 //
 // Opciones:
@@ -13,6 +14,8 @@
 //   --desconocida  pregunta que NO está en la ficha, para enseñar que no inventa
 //   --incidencia   aviso de incidencia con qué pasa y dónde
 //   --marca        texto en una etiqueta fija (p. ej. "Vista previa")
+//   --publica      dirección que se muestra en el vídeo, si se graba en local
+//                  (por defecto la de --url)
 //
 // La primera vez: npx playwright install chromium
 
@@ -28,7 +31,7 @@ const W = 1280;
 const H = 720;
 const FONTS = path.join(process.cwd(), 'node_modules/geist/dist/fonts/geist-sans');
 
-type Args = { slug?: string; url?: string; desconocida?: string; incidencia?: string; marca?: string };
+type Args = { slug?: string; url?: string; desconocida?: string; incidencia?: string; marca?: string; publica?: string };
 
 function parseArgs(argv: string[]): Args {
   const args: Record<string, string | undefined> = {};
@@ -76,16 +79,19 @@ function escenario(o: {
   lema: string;
   color: string;
   demoUrl: string;
+  /** Dirección que se lee en pantalla (la pública, aunque se grabe en local). */
+  publica: string;
   telefono: string;
   pasos: number;
   marca?: string;
+  cierre: string;
 }) {
-  const host = o.demoUrl.replace(/^https?:\/\//, '');
+  const host = o.publica.replace(/^https?:\/\//, '');
   return `<!doctype html><html lang="es"><head><meta charset="utf-8"><style>
 @font-face{font-family:Geist;src:url(fonts/Geist-Regular.woff2) format('woff2');font-weight:400}
 @font-face{font-family:Geist;src:url(fonts/Geist-Medium.woff2) format('woff2');font-weight:500}
 @font-face{font-family:Geist;src:url(fonts/Geist-SemiBold.woff2) format('woff2');font-weight:600}
-:root{--cobalt:${o.color};--ink:#15171c;--muted:#5b616d;--canvas:#f4f3ef;--line:#dedcd4;--ease:cubic-bezier(.22,1,.36,1)}
+:root{--cobalt:${o.color};--ink:oklch(0.24 0.035 258);--muted:oklch(0.46 0.03 258);--canvas:color-mix(in oklch, ${o.color} 5%, oklch(0.925 0.008 258));--line:oklch(0.86 0.014 258);--ease:cubic-bezier(.22,1,.36,1)}
 *{box-sizing:border-box}
 body{margin:0;width:${W}px;height:${H}px;overflow:hidden;background:var(--canvas);color:var(--ink);font-family:Geist,system-ui,sans-serif;-webkit-font-smoothing:antialiased}
 .brand{position:absolute;top:44px;left:104px;display:flex;align-items:center;gap:10px;font-weight:600;font-size:17px}
@@ -100,7 +106,7 @@ h1{font-size:46px;line-height:1.08;letter-spacing:-.035em;font-weight:600;margin
 .steps i{width:34px;height:4px;border-radius:2px;background:var(--line);transition:background 300ms ease}
 .steps i.on{background:var(--cobalt)}
 .foot{position:absolute;bottom:40px;left:104px;font-size:15px;color:var(--muted)}
-.phone{width:380px;height:660px;border-radius:46px;background:#101114;padding:10px;box-shadow:0 34px 70px -24px rgba(18,32,70,.4)}
+.phone{width:380px;height:660px;border-radius:46px;background:oklch(0.2 0.02 258);padding:10px;box-shadow:0 34px 70px -24px oklch(0.24 0.035 258 / .45)}
 .phone iframe{width:100%;height:100%;border:0;border-radius:36px;background:#fff}
 .card{position:absolute;inset:0;z-index:30;background:var(--cobalt);color:#fff;display:flex;flex-direction:column;justify-content:center;padding:0 104px;transition:opacity 450ms ease}
 .card.hide{opacity:0;pointer-events:none}
@@ -133,7 +139,7 @@ h1{font-size:46px;line-height:1.08;letter-spacing:-.035em;font-weight:600;margin
 </div>
 <div class="card hide" id="outro">
   <span class="mono">A</span>
-  <h1>Pruébelo usted, como un vecino.</h1>
+  <h1>${esc(o.cierre)}</h1>
   <p class="url">${esc(host)}</p>
   <p>WhatsApp ${esc(o.telefono)}</p>
 </div>
@@ -198,8 +204,14 @@ async function main() {
           incidencia: true,
         },
         {
-          titulo: 'Y tú ves qué te preguntan.',
-          texto: 'Consultas y solicitudes, ordenadas en tu panel.',
+          titulo: 'Y tú lo ves todo en tu panel.',
+          texto: 'Quién ha escrito, a quién llamar y las citas, desde el móvil.',
+          panel: 'abrir' as const,
+        },
+        {
+          titulo: 'Cada contacto, listo para llamar.',
+          texto: 'Y un resumen con lo que más preguntan y lo que no supo responder.',
+          panel: 'resumen' as const,
         },
       ]
     : [
@@ -225,8 +237,14 @@ async function main() {
           incidencia: true,
         },
         {
-          titulo: 'Y usted sabe qué preguntan sus vecinos.',
-          texto: 'Consultas e incidencias, ordenadas en el panel del ayuntamiento.',
+          titulo: 'Y el ayuntamiento lo ve todo.',
+          texto: 'Qué preguntan los vecinos, día a día, en su panel.',
+          panel: 'abrir' as const,
+        },
+        {
+          titulo: 'Incidencias y resumen del mes.',
+          texto: 'Cada aviso con su estado, y lo que el asistente no supo responder.',
+          panel: 'resumen' as const,
         },
       ];
 
@@ -261,9 +279,11 @@ async function main() {
         color: pueblo.color ?? '#1D4AA5',
         lema: negocio ? 'Asistente 24 horas para tus alumnos' : 'Asistente 24 horas para vecinos y visitantes',
         demoUrl,
+        publica: args.publica ? `${args.publica.replace(/\/+$/, '')}/${pueblo.slug}` : demoUrl,
         telefono: formatPhone(contactWhatsapp()),
         pasos: pasos.length,
         marca: args.marca,
+        cierre: negocio ? 'Pruébalo tú, como un alumno.' : 'Pruébelo usted, como un vecino.',
       }),
     });
   });
@@ -328,7 +348,20 @@ async function main() {
     return demo.locator('.leading-relaxed').last().innerText().catch(() => '');
   };
 
+  const panelUrl = `${base}/panel/demo/${pueblo.slug}`;
+  const desplazar = (top: number) =>
+    demo
+      .locator('body')
+      .evaluate((_, y) => window.scrollTo({ top: y, behavior: 'smooth' }), top)
+      .catch(() => {});
+  const pulsar = async (objetivo: Locator) => {
+    await moveTo(objetivo);
+    await tap();
+    await objetivo.click();
+  };
+
   let marcaGif = 0;
+  let captura: Buffer | null = null;
   for (const [i, paso] of pasos.entries()) {
     await page.evaluate(([i, t, x]) => (window as any).caption(i, t, x), [i, paso.titulo, paso.texto] as const);
     await sleep(1300);
@@ -340,19 +373,42 @@ async function main() {
         console.warn('  ! No ha salido la tarjeta de incidencia o solicitud: revisa el vídeo o cambia --incidencia');
       }
       await sleep(Math.min(7500, Math.max(2800, 1800 + texto.length * 28)));
-    } else {
-      const boton = demo.getByRole('button', { name: 'Panel' });
-      await moveTo(boton);
+      // Portada del correo: la conversación con la tarjeta de incidencia o solicitud.
+      if (paso.incidencia) captura = await page.screenshot({ type: 'png' });
+    } else if (paso.panel === 'abrir') {
+      // El cajón «Panel» del chat y, desde él, el panel completo de demostración.
+      await pulsar(demo.getByRole('button', { name: /^Panel/ }));
+      await sleep(2200);
+      const completo = demo.getByRole('link', { name: 'Ver el panel completo' });
+      await moveTo(completo);
       await tap();
-      await boton.click();
-      await sleep(300);
+      // El enlace abre otra pestaña: aquí se carga en el mismo móvil.
+      await page.evaluate((url) => {
+        document.querySelector('iframe')!.src = url;
+      }, panelUrl);
+      await demo.getByRole('heading', { name: 'Conversaciones' }).waitFor({ timeout: 30_000 });
       await page.evaluate(() => (window as any).moveCursor(760, 600));
-      await sleep(4700);
+      await sleep(2600);
+      await desplazar(420);
+      await sleep(2600);
+      await desplazar(0);
+      await sleep(900);
+    } else if (paso.panel === 'resumen') {
+      const registros = demo.getByRole('link', { name: new RegExp(`^${t.clase === 'solicitud' ? 'Solicitudes' : 'Incidencias'}`) });
+      await pulsar(registros);
+      await demo.getByRole('heading', { name: t.clase === 'solicitud' ? 'Solicitudes' : 'Incidencias' }).waitFor({ timeout: 30_000 });
+      await page.evaluate(() => (window as any).moveCursor(760, 600));
+      await sleep(3200);
+      await pulsar(demo.getByRole('link', { name: 'Resumen' }));
+      await demo.getByRole('heading', { name: 'Resumen' }).waitFor({ timeout: 30_000 });
+      await page.evaluate(() => (window as any).moveCursor(760, 600));
+      await sleep(2200);
+      await desplazar(520);
+      await sleep(3000);
     }
   }
 
-  // Captura para la portada del correo, con el panel abierto.
-  const captura = await page.screenshot({ type: 'png' });
+  captura ??= await page.screenshot({ type: 'png' });
   await page.evaluate(() => (window as any).card('outro', true));
   await sleep(4800);
 
@@ -377,7 +433,7 @@ async function main() {
   await portada.setContent(`<body style="margin:0;position:relative">
     <img src="data:image/png;base64,${captura.toString('base64')}" style="display:block;width:${W}px">
     <div style="position:absolute;inset:0;display:grid;place-items:center;background:rgba(10,20,45,.18)">
-      <div style="width:116px;height:116px;border-radius:50%;background:#1D4AA5;display:grid;place-items:center;box-shadow:0 18px 40px -10px rgba(0,0,0,.45)">
+      <div style="width:116px;height:116px;border-radius:50%;background:${pueblo.color ?? '#1D4AA5'};display:grid;place-items:center;box-shadow:0 18px 40px -10px rgba(0,0,0,.45)">
         <svg width="44" height="50" viewBox="0 0 44 50"><path d="M6 4l34 21L6 46z" fill="#fff"/></svg>
       </div>
     </div></body>`);
