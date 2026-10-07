@@ -4,9 +4,9 @@
   "provincia": "Madrid",
   "web": "https://manzanareselreal.es/",
   "telefono": "918 530 009",
-  "ficha": "## Ayuntamiento\n- Dirección: Plaza del Pueblo, 1. 28410 Manzanares El Real (Madrid).\n- Teléfono: 918 530 009.\n- Centro de Atención Ciudadana: Camino de la Peña Sacra, 62. Teléfono 918 530 009.\n- Web municipal: https://manzanareselreal.es/\n\n## Cómo llegar\n- En autobús desde Madrid: línea 724, desde el intercambiador de Plaza de Castilla. El viaje dura unos 55 minutos. Conviene confirmar horarios en la web del Consorcio de Transportes de Madrid (crtm.es).\n\n## Castillo de los Mendoza\n- Castillo del siglo XV, el mejor conservado de la Comunidad de Madrid, con visitas guiadas.\n- Horario: de martes a viernes, de 10:00 a 17:30; sábados, domingos y festivos, de 10:00 a 18:00. Los horarios pueden cambiar según la temporada: conviene confirmarlos en https://castillomanzanareselreal.com/\n\n## Fiestas\n- Fiestas patronales de verano: en 2026 fueron del 30 de julio al 3 de agosto.\n- Fiestas en honor a Nuestra Señora de la Peña Sacra, patrona del municipio: empiezan el primer sábado de Pentecostés.\n- Fiestas del Cristo de la Nave: a mediados de septiembre.\n\n## Emergencias\n- Emergencias: 112.\n",
+  "ficha": "## Ayuntamiento\n- Dirección: Plaza del Pueblo, 1. 28410 Manzanares El Real (Madrid).\n- Teléfono: 918 530 009.\n- Horario de atención al público: lunes a viernes, de 8:30 a 13:30.\n- Centro de Atención Ciudadana: Camino de la Peña Sacra, 62. Teléfono 918 530 009.\n- Web municipal: https://manzanareselreal.es/\n\n## Cómo llegar\n- En autobús desde Madrid: línea 724, desde el intercambiador de Plaza de Castilla. El viaje dura unos 55 minutos. Conviene confirmar horarios en la web del Consorcio de Transportes de Madrid (crtm.es).\n\n## Castillo de los Mendoza\n- Castillo del siglo XV, el mejor conservado de la Comunidad de Madrid.\n- AHORA ESTÁ CERRADO AL PÚBLICO: cerró el 6 de enero de 2025, cuando terminó el contrato con la Comunidad de Madrid y volvió a sus propietarios, la Casa Ducal del Infantado. Por dentro no se puede visitar; por fuera, sí.\n- Su reapertura está en trámite: la Comisión de Patrimonio estudia el expediente el 7 de octubre de 2026 y después hará falta la licencia municipal; los propietarios calculan unos dos meses más. Cuando reabra, el ayuntamiento lo anunciará en su web.\n\n## Fiestas\n- Fiestas patronales de verano: en 2026 fueron del 30 de julio al 3 de agosto.\n- Fiestas en honor a Nuestra Señora de la Peña Sacra, patrona del municipio: empiezan el primer sábado de Pentecostés.\n- Fiestas del Cristo de la Nave: a mediados de septiembre.\n\n## Emergencias\n- Emergencias: 112.\n",
   "sugerencias": [
-    "¿Qué horario tiene el castillo?",
+    "¿Se puede visitar el castillo?",
     "¿Cómo llego en autobús desde Madrid?",
     "¿Cuándo son las fiestas del Cristo de la Nave?",
     "Hay una farola rota en mi calle"
@@ -18,8 +18,9 @@
     "https://moovitapp.com/index/en/public_transit-line-724-Madrid-21-775617-676757-4",
     "https://manzanareselreal.es/wp-content/uploads/2026/05/ACTA-PLENO-EXTRAORDINARIO-22-DE-ABRIL-DE-2026.pdf"
   ],
-  "generadoEl": "2026-10-05T00:00:00.000Z",
+  "generadoEl": "2026-10-07T09:00:00.000Z",
   "demo": {
     "incidencia": "La farola de la Plaza del Pueblo, junto al número 3, no se enciende por la noche"
-  }
+  },
+  "horario": "Lunes a viernes, de 8:30 a 13:30"
 }

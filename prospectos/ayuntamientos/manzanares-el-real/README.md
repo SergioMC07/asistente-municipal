@@ -16,7 +16,7 @@
 | Teléfono | **918 530 009** |
 | Correo | No encontrado: pídelo en la llamada |
 | Dirección | Plaza del Pueblo, 1. 28410 Manzanares El Real |
-| Horario | No encontrado |
+| Horario | Lunes a viernes, de 8:30 a 13:30 |
 | Alcalde/sa | Julián Nieva Delgado |
 | Habitantes | unos 9.500 |
 | Web | https://manzanareselreal.es/ |
@@ -31,7 +31,7 @@
 
 ## Llamada
 
-**Por qué les interesa:** Mucho turismo de fin de semana por el castillo de los Mendoza y La Pedriza: el asistente responde horarios del castillo, cómo llegar y fiestas cuando la oficina está cerrada.
+**Por qué les interesa:** Mucho turismo de fin de semana por La Pedriza y el castillo de los Mendoza. **Ojo: el castillo está cerrado al público desde enero de 2025** (volvió a la Casa Ducal del Infantado) y su reapertura está en trámite: la Comisión de Patrimonio lo estudia el 7 de octubre de 2026 y después falta la licencia municipal, unos dos meses. Es el tema del pueblo: muchos visitantes preguntan si se puede visitar, y el asistente lo responde al día. Cuando reabra, lo sabrá en cuanto el ayuntamiento lo cambie en su panel.
 
 Guion completo y respuestas a pegas: [../GUION.md](../GUION.md).
 
@@ -41,7 +41,7 @@ Guion completo y respuestas a pegas: [../GUION.md](../GUION.md).
 
 **Con el alcalde o el concejal:**
 
-> «He preparado, con la información de la web del ayuntamiento, un asistente que responde a vecinos y visitantes a cualquier hora, por ejemplo “¿Qué horario tiene el castillo?”, y recoge avisos como una farola fundida. ¿Qué es lo que más les preguntan los vecinos por teléfono?»
+> «He preparado, con la información de la web del ayuntamiento, un asistente que responde a vecinos y visitantes a cualquier hora, por ejemplo “¿Se puede visitar el castillo?”, y recoge avisos como una farola fundida. ¿Qué es lo que más les preguntan los vecinos por teléfono?»
 
 ## Correo (después de la llamada)
 

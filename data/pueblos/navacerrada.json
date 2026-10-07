@@ -5,7 +5,7 @@
   "web": "https://www.aytonavacerrada.org/",
   "telefono": "918 560 006",
   "horario": "Lunes a viernes, de 9:00 a 14:00",
-  "ficha": "## Ayuntamiento\n- Dirección: Plaza de los Ángeles, 1. 28491 Navacerrada (Madrid).\n- Teléfono: 918 560 006.\n- Horario de atención: lunes a viernes, de 9:00 a 14:00.\n- Sede electrónica: https://aytonavacerrada.sedelectronica.es\n- Web municipal: https://www.aytonavacerrada.org/\n\n## Turismo\n- Casa de Guías – Turismo: Paseo de los Españoles, 11. Teléfono 608 128 845.\n- Horario: de jueves a domingo, de 10:00 a 14:00.\n\n## Cómo llegar\n- En autobús: línea 691, desde el intercambiador de Moncloa (Madrid), con parada en Navacerrada pueblo y continuación hasta Valdesquí según temporada. El ayuntamiento publica los cambios de horario en su web; horarios en crtm.es.\n\n## Fiestas\n- Fiestas de San Antonio de Padua: en junio (en 2026, 12 y 13 de junio).\n- Fiestas patronales en honor a la Natividad de Nuestra Señora: en 2026, del 4 al 8 de septiembre.\n\n## Emergencias\n- Emergencias: 112.\n",
+  "ficha": "## Ayuntamiento\n- Dirección: Plaza de los Ángeles, 1. 28491 Navacerrada (Madrid).\n- Teléfono: 918 560 006.\n- Horario de atención: lunes a viernes, de 9:00 a 14:00. En verano cambia (de 9:30 a 14:00, y los lunes también de 18:00 a 21:00). Algunos servicios requieren cita previa.\n- Sede electrónica: https://aytonavacerrada.sedelectronica.es\n- Web municipal: https://www.aytonavacerrada.org/\n\n## Turismo\n- Casa de Guías – Turismo: Paseo de los Españoles, 11. Teléfono 608 128 845.\n- Horario: de jueves a domingo, de 10:00 a 14:00.\n\n## Cómo llegar\n- En autobús: línea 691, desde el intercambiador de Moncloa (Madrid), con parada en Navacerrada pueblo y continuación hasta Valdesquí según temporada. El ayuntamiento publica los cambios de horario en su web; horarios en crtm.es.\n\n## Fiestas\n- Fiestas de San Antonio de Padua: en junio (en 2026, 12 y 13 de junio).\n- Fiestas patronales en honor a la Natividad de Nuestra Señora: en 2026, del 4 al 8 de septiembre.\n\n## Emergencias\n- Emergencias: 112.\n",
   "sugerencias": [
     "¿Qué horario tiene el ayuntamiento?",
     "¿Cómo llego en autobús desde Madrid?",
@@ -19,7 +19,7 @@
     "https://www.aytonavacerrada.org/fiestas-patronales-2026/",
     "https://www.bocm.es/boletin/CM_Orden_BOCM/2023/06/29/BOCM-20230629-53.PDF"
   ],
-  "generadoEl": "2026-10-05T00:00:00.000Z",
+  "generadoEl": "2026-10-07T09:00:00.000Z",
   "demo": {
     "incidencia": "La farola de la Plaza de los Ángeles, junto al número 3, no se enciende por la noche"
   }

@@ -6,7 +6,7 @@
   "telefono": "918 525 740",
   "email": "info@cercedilla.es",
   "horario": "Lunes a viernes, de 9:00 a 14:00",
-  "ficha": "## Ayuntamiento\n- Dirección: Plaza Mayor, 1. 28470 Cercedilla (Madrid).\n- Teléfono: 918 525 740.\n- Email: info@cercedilla.es\n- Horario de atención: lunes a viernes, de 9:00 a 14:00.\n- Web municipal: https://cercedilla.es/\n\n## Cómo llegar\n- En tren: línea C-8 de Cercanías, con final en Cercedilla. Hay un tren aproximadamente cada 30 minutos en el tramo principal; conviene consultar horarios en la web de Renfe Cercanías.\n- En autobús: línea 684, desde el intercambiador de Moncloa (Madrid), por Guadarrama. Unos 75 minutos de viaje. Horarios en crtm.es.\n\n## Turismo\n- Oficina de Turismo: en el Museo del Esquí «Paquito Fernández Ochoa», Plaza Mayor, 3. Los horarios cambian según la temporada; se publican en la web municipal.\n- Qué ver: iglesia de San Sebastián, ermita de Santa María, iglesia de Nuestra Señora del Carmen, la calzada romana que unía Segovia con Titulcia y el valle de la Fuenfría, en el Parque Nacional de la Sierra de Guadarrama.\n- Centro de Educación Ambiental Valle de la Fuenfría: información para rutas por el valle.\n\n## Fiestas\n- Fiestas patronales en honor a la Natividad de Nuestra Señora: en 2026, del 29 de agosto al 13 de septiembre, con encierros, música y la romería.\n\n## Emergencias\n- Emergencias: 112.\n",
+  "ficha": "## Ayuntamiento\n- Dirección: Plaza Mayor, 1. 28470 Cercedilla (Madrid).\n- Teléfono: 918 525 740.\n- Email: info@cercedilla.es\n- Horario de atención: lunes a viernes, de 9:00 a 14:00.\n- Web municipal: https://cercedilla.es/\n\n## Cómo llegar\n- En tren: Cercanías Madrid, línea C-8 (ramal C-8b, que pasa por Chamartín, Atocha y Villalba), con final en Cercedilla. Hay un tren aproximadamente cada 30 minutos en el tramo principal; conviene consultar horarios en la web de Renfe Cercanías.\n- En autobús: línea 684, desde el intercambiador de Moncloa (Madrid), por Guadarrama. Unos 75 minutos de viaje. Horarios en crtm.es.\n\n## Turismo\n- Oficina de Turismo: en el Museo del Esquí «Paquito Fernández Ochoa», Plaza Mayor, 3. Los horarios cambian según la temporada; se publican en la web municipal.\n- Qué ver: iglesia de San Sebastián, ermita de Santa María, iglesia de Nuestra Señora del Carmen, la calzada romana que unía Segovia con Titulcia y el valle de la Fuenfría, en el Parque Nacional de la Sierra de Guadarrama.\n- Centro de Educación Ambiental Valle de la Fuenfría: información para rutas por el valle.\n\n## Fiestas\n- Fiestas patronales en honor a la Natividad de Nuestra Señora: a finales de agosto y comienzos de septiembre (en 2026, los actos religiosos fueron del 30 de agosto al 8 de septiembre), con encierros, música y la romería del 8 de septiembre hasta la ermita de Santa María.\n- Fiestas de San Sebastián: en enero (en 2026, del 10 al 20 de enero).\n\n## Emergencias\n- Emergencias: 112.\n",
   "sugerencias": [
     "¿Cómo llego en tren desde Madrid?",
     "¿Dónde está la oficina de turismo?",
@@ -21,7 +21,7 @@
     "https://cercedilla.es/horario-de-verano-de-la-oficina-de-turismo-museo-del-esqui-de-cercedilla/",
     "https://www.madrid.org/monumentoscercanias/cercedilla.html"
   ],
-  "generadoEl": "2026-10-05T00:00:00.000Z",
+  "generadoEl": "2026-10-07T09:00:00.000Z",
   "demo": {
     "incidencia": "La farola de la Plaza Mayor, junto al número 5, no se enciende por la noche"
   }

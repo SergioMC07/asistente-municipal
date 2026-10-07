@@ -16,7 +16,7 @@
 | Teléfono | **918 940 004** |
 | Correo | correo@ciudad-chinchon.com |
 | Dirección | Plaza Mayor, 3. 28370 Chinchón |
-| Horario | Lunes a viernes, de 9:00 a 15:00, con cita previa |
+| Horario | Lunes a viernes, de 9:00 a 14:00 (recepción: 918 940 084) |
 | Alcalde/sa | Juan Antonio Vega Expósito |
 | Habitantes | unos 5.500 |
 | Web | https://www.ciudad-chinchon.com/ |
