@@ -26,7 +26,7 @@
 **Comprueba antes de escribir o llamar:**
 
 - Alcalde: José Vicente Anaya Roig sale en directorios; confírmalo.
-- Correo de alcaldía: en directorios aparece alcalde@ayora.es; el general es registro@ayora.es.
+- Correo: el correo va a alcalde@ayora.es; el general es registro@ayora.es.
 - Horario de atención del ayuntamiento: no lo he encontrado.
 
 **Competencia en Valencia:** la Diputació ofrece a los pueblos el asistente «ALI» de Alicante (orientado a trámites de la sede electrónica) y prepara asistentes con el proyecto Revital-IA; CivitPhone ya está en 12 municipios. Pregunta: «¿Están en el programa de la Diputación?». Si dicen que sí, preséntalo como complemento: responde sobre el pueblo (turismo, horarios, fiestas), da cita previa y tiene panel, y está listo ya.

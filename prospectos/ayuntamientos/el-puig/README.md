@@ -16,7 +16,7 @@
 | Correo | alcaldia@elpuig.org |
 | Dirección | Plaça de l'Ajuntament, 1. 46540 El Puig de Santa Maria |
 | Horario | No encontrado |
-| Alcalde/sa | Marc Oriola Pla (PSOE), por el pacto de alternancia con Compromís (confírmalo) |
+| Alcalde/sa | Marc Oriola Pla (PSOE), por el pacto de alternancia con Compromís |
 | Habitantes | unos 9.500 |
 | Web | https://www.elpuig.es/ |
 | Demo | https://asistente-municipal.vercel.app/el-puig |
@@ -25,7 +25,6 @@
 
 **Comprueba antes de escribir o llamar:**
 
-- Alcalde: hasta 2025 fue Vicent Porta (Compromís); por el pacto, la alcaldía pasó al PSOE. Marc Oriola Pla aparece como alcalde: confírmalo.
 - Horario de atención del ayuntamiento: no lo he encontrado.
 - También existe secretaria@elpuig.org para poner en copia.
 

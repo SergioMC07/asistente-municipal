@@ -13,10 +13,10 @@
 | | |
 |---|---|
 | Teléfono | **962 350 014** |
-| Correo | No confirmado: pídelo en la llamada |
+| Correo | info@bocairent.es |
 | Dirección | Plaça de l'Ajuntament, 20. 46880 Bocairent |
 | Horario | No encontrado |
-| Alcalde/sa | No confirmado: en 2023 tomó posesión Eliseu Alegre Bolet y en 2024 aparece Xavier Molina Martí firmando como alcalde |
+| Alcalde/sa | Xavier Molina Martí |
 | Habitantes | unos 4.100 |
 | Web | https://www.bocairent.es/ |
 | Demo | https://asistente-municipal.vercel.app/bocairent |
@@ -25,8 +25,7 @@
 
 **Comprueba antes de escribir o llamar:**
 
-- Alcalde: los datos no coinciden (Eliseu Alegre en 2023, Xavier Molina en 2024). Pregunta en la llamada.
-- Correo: no lo he encontrado en la web oficial; en directorios aparece correo@bocairent.es. Pídelo en la llamada.
+- Correo: info@bocairent.es es el general; pide el de alcaldía en la llamada.
 - Horario de atención del ayuntamiento: no lo he encontrado.
 - Teléfono 962 350 014 y dirección: salen de directorios, no de la web municipal.
 

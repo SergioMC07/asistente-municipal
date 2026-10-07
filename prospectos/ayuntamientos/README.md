@@ -27,7 +27,7 @@ Datos de búsquedas del 7 de octubre de 2026. En Valencia hay más competencia: 
 | # | Pueblo | Habitantes | Teléfono | Alcalde/sa | Demo |
 |---|---|---|---|---|---|
 | 1 | [Simat de la Valldigna](simat-de-la-valldigna/README.md) | unos 3.300 | 962 810 007 | Sebastián Mahiques Morant | [/simat-de-la-valldigna](https://asistente-municipal.vercel.app/simat-de-la-valldigna) |
-| 2 | [Bocairent](bocairent/README.md) | unos 4.100 | 962 350 014 | Por confirmar | [/bocairent](https://asistente-municipal.vercel.app/bocairent) |
+| 2 | [Bocairent](bocairent/README.md) | unos 4.100 | 962 350 014 | Xavier Molina Martí | [/bocairent](https://asistente-municipal.vercel.app/bocairent) |
 | 3 | [Moixent](moixent/README.md) | unos 4.400 | 962 295 010 | Guillermo Jorques Lladosa | [/moixent](https://asistente-municipal.vercel.app/moixent) |
 | 4 | [Ayora](ayora/README.md) | unos 5.200 | 962 191 025 | José Vicente Anaya Roig | [/ayora](https://asistente-municipal.vercel.app/ayora) |
 | 5 | [El Puig de Santa Maria](el-puig/README.md) | unos 9.500 | 961 470 003 | Marc Oriola Pla | [/el-puig](https://asistente-municipal.vercel.app/el-puig) |

@@ -25,7 +25,7 @@
 
 **Comprueba antes de escribir o llamar:**
 
-- Correo: en directorios aparece albaida@albaida.org, pero la web es albaida.es. Pídelo en la llamada.
+- Correo de alcaldía: alcaldia@albaida.es (de la web municipal).
 - Teléfono y dirección: salen de directorios; confírmalos.
 - Horario de atención del ayuntamiento: no lo he encontrado.
 
@@ -45,11 +45,11 @@ Guion completo y respuestas a pegas: [../GUION.md](../GUION.md).
 
 **Con el alcalde o el concejal:**
 
-> «Responde a vecinos y visitantes a cualquier hora, por ejemplo “¿Cuándo es la Entrada de Moros i Cristians?”, da cita previa y recoge avisos como una farola fundida. ¿Qué es lo que más les preguntan por teléfono?»
+> «Responde a vecinos y visitantes a cualquier hora, por ejemplo “¿Qué horario tiene el Museo de Títeres?”, da cita previa y recoge avisos como una farola fundida. ¿Qué es lo que más les preguntan por teléfono?»
 
 ## Imagen para el correo
 
-`atentia-albaida.jpg`: el asistente respondiendo «¿Cuándo es la Entrada de Moros i Cristians?» a las 23:40.
+`atentia-albaida.jpg`: el asistente respondiendo «¿Qué horario tiene el Museo de Títeres?» a las 23:40.
 
 ## Vídeo
 
