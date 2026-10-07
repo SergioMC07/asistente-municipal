@@ -1,0 +1,63 @@
+{
+  "slug": "el-puig",
+  "nombre": "El Puig de Santa Maria",
+  "provincia": "Valencia",
+  "web": "https://www.elpuig.es/",
+  "telefono": "961 470 003",
+  "email": "alcaldia@elpuig.org",
+  "ficha": "## Ayuntamiento\n- Dirección: Plaça de l'Ajuntament, 1. 46540 El Puig de Santa Maria (Valencia).\n- Teléfono: 961 470 003.\n- Sede electrónica: https://ayuntamientodeelpuig.sedelectronica.es\n- Web municipal: https://www.elpuig.es/\n\n## Turismo\n- Tourist Info El Puig: avenida de la Estación, s/n (Centro Cívico).\n- Teléfonos: 961 959 029 y 607 229 712. Email: elpuig@touristinfo.net\n- Horario: de lunes a sábado, de 10:00 a 14:00.\n\n## Real Monasterio de Santa María del Puig\n- Visitas guiadas: de martes a sábado, a las 10:00, 11:00, 12:00, 16:00 y 17:00; domingos y festivos, a las 12:00. Los lunes está cerrado.\n- Entrada: 4 € por persona.\n- Contacto: 961 470 200 o mercedariospuig@gmail.com\n- Dentro está el Museo de la Imprenta y de las Artes Gráficas, el más importante de España en su género. La entrada es gratuita, tanto libre como guiada.\n\n## Otras visitas\n- Refugios y trincheras de la Guerra Civil: en 2026 hay visitas guiadas por 1 €. Información en la Tourist Info.\n- Playa del Puig.\n\n## Cómo llegar\n- En tren: línea C6 de Cercanías (València Nord - Castelló), parada en El Puig. Unos 30 minutos desde Valencia, con un tren más o menos cada hora. Conviene consultar horarios en renfe.com o en la app de Cercanías.\n\n## Fiestas\n- Fiestas de la Mare de Déu del Puig: el primer domingo y lunes de septiembre (en 2026, el 6 y 7 de septiembre), alrededor del monasterio. Hay misa solemne presidida por el arzobispo de Valencia, procesión, traca desde la calle Mayor hasta la explanada del monasterio, mascletà, castillo de fuegos y la Noche de las Paellas.\n\n## Emergencias\n- Emergencias: 112.\n",
+  "sugerencias": [
+    "¿Qué horario tiene el monasterio?",
+    "¿Cómo llego en tren desde Valencia?",
+    "¿Cuándo son las fiestas de la Mare de Déu?",
+    "Hay una farola rota en mi calle"
+  ],
+  "fuentes": [
+    "https://www.valenciabonita.es/2022/02/11/real-monasterio-de-santa-maria-de-el-puig/",
+    "https://www.valenciabonita.es/2022/02/11/museo-de-la-imprenta-y-de-las-artes-graficas/",
+    "https://www.valenciabonita.es/2026/02/11/refugios-y-trincheras-el-puig-visitas-guiadas-2026/",
+    "https://turisme.dival.es/en/destino/el-puig-de-santa-maria/",
+    "https://guides.travel.sygic.com/production/en/El_Puig",
+    "https://www.festivalesdeespana.com/festival/fiestas-de-la-mare-de-deu-del-puig-el-puig-de-santa-maria",
+    "https://www.todoslosayuntamientos.es/comunidad-valenciana/valencia/puig-de-santa-maria-el",
+    "https://valenciaplaza.com/valenciaplaza/noticia29383"
+  ],
+  "generadoEl": "2026-10-07T09:00:00.000Z",
+  "demo": {
+    "incidencia": "La farola de la calle Mayor, junto al número 8, no se enciende por la noche"
+  },
+  "citas": {
+    "tipos": [
+      "Cita previa en el ayuntamiento"
+    ],
+    "duracion": 15,
+    "horario": {
+      "1": [
+        "09:00-14:00"
+      ],
+      "2": [
+        "09:00-14:00"
+      ],
+      "3": [
+        "09:00-14:00"
+      ],
+      "4": [
+        "09:00-14:00"
+      ],
+      "5": [
+        "09:00-14:00"
+      ]
+    },
+    "capacidad": 1,
+    "antelacion": 120,
+    "dias": 14,
+    "cerrado": [
+      "2026-10-09",
+      "2026-10-12",
+      "2026-12-08",
+      "2026-12-25"
+    ],
+    "lugar": "el ayuntamiento, Plaça de l'Ajuntament, 1",
+    "modo": "demo"
+  }
+}

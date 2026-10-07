@@ -1,0 +1,63 @@
+{
+  "slug": "albaida",
+  "nombre": "Albaida",
+  "provincia": "Valencia",
+  "web": "https://www.albaida.es/",
+  "telefono": "962 900 960",
+  "ficha": "## Ayuntamiento\n- Dirección: Plaça Major, 7. 46860 Albaida (Valencia).\n- Teléfono: 962 900 960.\n- Web municipal: https://www.albaida.es/\n\n## Turismo\n- Tourist Info Albaida: Plaça del Pintor Segrelles, 19.\n- Teléfonos: 962 390 186 y 607 201 970. Email: albaida@touristinfo.net\n- Horario de invierno: miércoles, jueves y viernes, de 10:00 a 18:00; sábados y domingos, de 10:00 a 14:00. Lunes, martes y festivos, cerrada.\n\n## Qué visitar\n- Museo Internacional de Títeres de Albaida (MITA): en un ala del Palau dels Milà i Aragó, en la plaza de la Vila. Inaugurado en 1997, tiene salas de exposición, un pequeño taller para manejar títeres y una sala de proyecciones. Horario: martes y miércoles, de 10:00 a 14:00; jueves, viernes y sábado, de 10:00 a 14:00 y de 16:00 a 19:00; domingos, de 10:00 a 14:00. Lunes y festivos, cerrado. Entrada: adultos 3 €; menores de 18 años, 2 €. Conviene reservar o llamar antes a la Tourist Info (962 390 186). Email: mita@albaida.es. Web: http://www.museutitelles.com/\n- Palau dels Milà i Aragó: palacio histórico en la plaza de la Vila.\n- Casa-Museu José Segrelles: la casa que construyó el pintor, con la mayor colección de su obra. Plaça del Pintor Segrelles, 13. Visitas con cita previa en el 606 364 831, de 10:00 a 13:00. Entrada: 3 €.\n- 2025 fue el Año José Segrelles, por los 140 años del nacimiento del pintor.\n\n## Cómo llegar\n- En tren: la línea Xàtiva - Alcoi está cortada por obras de renovación. Renfe pone autobuses alternativos entre Xàtiva y Alcoi, con parada en la estación de Albaida. Conviene consultar horarios en renfe.com.\n\n## Fiestas de Moros i Cristians 2026\n- Fiestas patronales y de Moros i Cristians en honor a la Mare de Déu del Remei, del 29 de septiembre al 11 de octubre de 2026.\n- 7 de octubre: día de la Mare de Déu del Remei, patrona.\n- 8 de octubre: Nit de l'Olla, con pasacalle y fiesta en la calle.\n- 9 de octubre: por la mañana, entrada de bandas; a las 17:00, la gran Entrada de Moros i Cristians.\n- 10 de octubre: diana, Entrada infantil a mediodía y, por la tarde, ofrenda de flores a la Mare de Déu del Remei.\n- 11 de octubre: desfile por la mañana y Ambaixades por la tarde y la noche.\n- Conviene confirmar los horarios en el programa oficial de fiestas.\n\n## Emergencias\n- Emergencias: 112.\n",
+  "sugerencias": [
+    "¿Cuándo es la Entrada de Moros i Cristians?",
+    "¿Qué horario tiene el Museo de Títeres?",
+    "¿Dónde está la oficina de turismo?",
+    "Hay una farola rota en mi calle"
+  ],
+  "fuentes": [
+    "https://www.comunitatvalenciana.com/es/valencia/albaida/eventos/fiestas-patronales-y-de-moros-y-cristianos-de-albaida-2026",
+    "https://www.festivalesdeespana.com/festival/festes-de-moros-i-cristians-d-albaida-albaida",
+    "https://www.comunitatvalenciana.com/es/valencia/albaida/museos/museu-internacional-de-titelles-d-albaida-mita",
+    "https://www.comunitatvalenciana.com/es/valencia/albaida/oficinas-de-turismo/tourist-info-albaida",
+    "https://turisme.dival.es/en/?p=91002",
+    "https://valenciaplaza.com/arte-museos-fotografia-valencia-comunitat-valenciana/albaida-declara-2025-como-ano-jose-segrelles",
+    "https://alicanteplaza.es/alicanteplaza/alcoy-el-comtat/obras-del-tren-alcoy-xativa-el-lunes-empieza-el-autobus-alternativo-con-126-servicios-a-la-semana",
+    "https://www.ayuntamiento.es/albaida/",
+    "https://www.eldebate.com/espana/comunidad-valenciana/valencia/20231216/pp-alia-psoe-pueblo-valencia-echar-alcalde-compromis_160865.html"
+  ],
+  "generadoEl": "2026-10-07T09:00:00.000Z",
+  "demo": {
+    "incidencia": "La farola de la plaza de la Vila, junto al número 6, no se enciende por la noche"
+  },
+  "citas": {
+    "tipos": [
+      "Cita previa en el ayuntamiento"
+    ],
+    "duracion": 15,
+    "horario": {
+      "1": [
+        "09:00-14:00"
+      ],
+      "2": [
+        "09:00-14:00"
+      ],
+      "3": [
+        "09:00-14:00"
+      ],
+      "4": [
+        "09:00-14:00"
+      ],
+      "5": [
+        "09:00-14:00"
+      ]
+    },
+    "capacidad": 1,
+    "antelacion": 120,
+    "dias": 14,
+    "cerrado": [
+      "2026-10-09",
+      "2026-10-12",
+      "2026-12-08",
+      "2026-12-25"
+    ],
+    "lugar": "el ayuntamiento, Plaça Major, 7",
+    "modo": "demo"
+  }
+}

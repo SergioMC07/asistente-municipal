@@ -1,0 +1,61 @@
+{
+  "slug": "simat-de-la-valldigna",
+  "nombre": "Simat de la Valldigna",
+  "provincia": "Valencia",
+  "web": "https://www.simat.org/",
+  "telefono": "962 810 007",
+  "email": "simat@simat.org",
+  "ficha": "## Ayuntamiento\n- Dirección: Plaça de la Constitució, 1. 46750 Simat de la Valldigna (Valencia).\n- Teléfono: 962 810 007.\n- Email: simat@simat.org\n- Web municipal: https://www.simat.org/\n- Otros teléfonos: Policía Local 606 984 751; Centro de Salud 962 829 875; Guardia Civil 962 810 017.\n\n## Turismo\n- Tourist Info Simat de la Valldigna: Passeig 9 d'Octubre, s/n.\n- Teléfono: 962 810 920. Email: simatv@touristinfo.net y turisme@simat.org\n- Horario: de martes a domingo, de 9:00 a 14:00.\n- Web de turismo: https://www.turismesimat.com/\n\n## Monasterio de Santa María de la Valldigna\n- Monasterio cisterciense fundado en 1298 por el rey Jaime II.\n- Visita libre del 16 de septiembre al 14 de junio: de martes a domingo, de 10:00 a 18:00. En verano el horario cambia: conviene consultarlo en turismesimat.com.\n- La entrada es libre y gratuita, sin reserva.\n- Visitas guiadas gratuitas para particulares: sábados y domingos, a las 11:00 en valenciano y a las 12:00 en castellano. Hay que reservar en el 961 832 930, por WhatsApp en el 618 020 272 o en monestirvalldigna@gva.es\n\n## Cómo llegar\n- En autobús: la línea L1 une Simat con la estación intermodal de Gandia (unos 67 minutos), de lunes a sábado. Los domingos no hay servicio.\n\n## Fiestas\n- Fiestas patronales a principios de agosto (en 2026, del 4 al 7 de agosto): el 4, los Santets de la Pedra; el 5, la Mare de Déu de Gràcia; el 6, el Santíssim Crist de la Fe. Hay bous al carrer, verbenas, la Nit del Foc, procesiones y bandas de música. El 7 hay un desfile de farolillos hechos con cáscara de melón.\n\n## Emergencias\n- Emergencias: 112.\n",
+  "sugerencias": [
+    "¿Qué horario tiene el monasterio?",
+    "¿Hay visitas guiadas al monasterio?",
+    "¿Cuándo son las fiestas patronales?",
+    "Hay una farola rota en mi calle"
+  ],
+  "fuentes": [
+    "https://www.valenciabonita.es/2018/08/28/real-monasterio-de-santa-maria-de-valldigna/",
+    "https://www.comunitatvalenciana.com/es/valencia/simat-de-la-valldigna/eventos/visitas-guiadas-al-monasterio-de-la-valldigna",
+    "https://www.comunitatvalenciana.com/es/valencia/simat-de-la-valldigna/oficinas-de-turismo/tourist-info-simat-de-la-valldigna",
+    "https://www.turismesimat.com/simat/Web_php/index.php?contenido=fichaComercial&id=33&idContacto=129&mode=list&order=asc&lang=4",
+    "https://www.festivalesdeespana.com/festival/festes-patronals-de-simat-de-la-valldigna-simat-de-la-valldigna",
+    "https://appassets.mvtdev.com/map/149/l/1669/372918834.pdf"
+  ],
+  "generadoEl": "2026-10-07T09:00:00.000Z",
+  "demo": {
+    "incidencia": "La farola de la plaza de la Constitución, junto al número 2, no se enciende por la noche"
+  },
+  "citas": {
+    "tipos": [
+      "Cita previa en el ayuntamiento"
+    ],
+    "duracion": 15,
+    "horario": {
+      "1": [
+        "09:00-14:00"
+      ],
+      "2": [
+        "09:00-14:00"
+      ],
+      "3": [
+        "09:00-14:00"
+      ],
+      "4": [
+        "09:00-14:00"
+      ],
+      "5": [
+        "09:00-14:00"
+      ]
+    },
+    "capacidad": 1,
+    "antelacion": 120,
+    "dias": 14,
+    "cerrado": [
+      "2026-10-09",
+      "2026-10-12",
+      "2026-12-08",
+      "2026-12-25"
+    ],
+    "lugar": "el ayuntamiento, Plaça de la Constitució, 1",
+    "modo": "demo"
+  }
+}

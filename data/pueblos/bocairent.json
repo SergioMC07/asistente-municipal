@@ -1,0 +1,61 @@
+{
+  "slug": "bocairent",
+  "nombre": "Bocairent",
+  "provincia": "Valencia",
+  "web": "https://www.bocairent.es/",
+  "telefono": "962 350 014",
+  "ficha": "## Ayuntamiento\n- Dirección: Plaça de l'Ajuntament, 20. 46880 Bocairent (Valencia).\n- Teléfono: 962 350 014.\n- Web municipal: https://www.bocairent.es/\n\n## Turismo\n- Tourist Info Bocairent: Plaça de l'Ajuntament, 2.\n- Teléfono: 962 905 062. Email: bocairent@touristinfo.net\n- Horario de invierno: de martes a domingo, de 10:00 a 14:00, y de martes a sábado, de 16:00 a 18:00. Conviene confirmarlo antes de ir, porque cambia según la temporada.\n\n## Qué visitar\n- Barrio medieval: el casco antiguo, de calles estrechas y empinadas, es conjunto histórico-artístico.\n- Les Covetes dels Moros: cuevas artificiales con ventanas excavadas en mitad de un cortado de roca, a unos 300 metros del casco antiguo.\n- Plaza de toros excavada en la roca.\n- Cava de Sant Blai: antiguo pozo de nieve.\n- Monasterio rupestre: en 2026 se visita los domingos y festivos de 11:00 a 13:30, con visita guiada de 3 €.\n- Museos: Museo Arqueológico Municipal «Vicent Casanova», Museo de Oficios y Costumbres, Museo Festero (de los Moros i Cristians) y Museo Paleontológico.\n\n## Cómo llegar\n- En autobús desde Valencia hay varios servicios diarios (unos 80 km, alrededor de 1 h 45 min).\n- En tren, la estación más cercana es la de Ontinyent (línea Xàtiva - Alcoi). La línea está en obras y Renfe pone autobuses alternativos: conviene consultar renfe.com.\n\n## Fiestas\n- Moros i Cristians en honor a Sant Blai, patrón del pueblo, a principios de febrero. En 2026 fueron del 6 al 11 de febrero, con la Entrada, el Ball del Moro, las procesiones, la arcabucería, las embajadas y el Despojo del Moro. Participan nueve filaes: Espanyoletos, Granaders, Contrabandistes, Terç de Zuavos, Estudiants, Moros Vells, Marrocs, Moros Marins y Mosqueters.\n- Les Candeletes: el novenario que abre las fiestas, del 23 al 31 de enero.\n- Las fechas de 2027 las publica el ayuntamiento; también se pueden preguntar en la Tourist Info.\n\n## Emergencias\n- Emergencias: 112.\n",
+  "sugerencias": [
+    "¿Cuándo son los Moros i Cristians?",
+    "¿Qué se puede visitar en Bocairent?",
+    "¿Qué horario tiene la oficina de turismo?",
+    "Hay una farola rota en mi calle"
+  ],
+  "fuentes": [
+    "https://www.comunitatvalenciana.com/es/valencia/bocairent/oficinas-de-turismo/tourist-info-bocairent",
+    "https://www.valenciabonita.es/2016/09/22/les-covetes-dels-moros-de-bocairent-un-gran-tesoro-bocairenti/",
+    "https://www.valenciabonita.es/2018/12/26/monestir-de-bocairent/",
+    "https://www.valenciabonita.es/2026/01/26/fiestas-moros-y-cristianos-bocairent-2026/",
+    "https://www.omio.es/autobuses/valencia/bocairente-34ao9",
+    "https://alicanteplaza.es/alicanteplaza/alcoy-el-comtat/las-obras-del-tren-alcoy-xativa-se-alargan-nueve-meses-se-preve-su-finalizacion-en-septiembre-de-2027",
+    "https://www.caminodelcid.org/servicios/ayuntamiento-de-bocairent-2106223"
+  ],
+  "generadoEl": "2026-10-07T09:00:00.000Z",
+  "demo": {
+    "incidencia": "La farola de la plaza del Ayuntamiento, junto al número 4, no se enciende por la noche"
+  },
+  "citas": {
+    "tipos": [
+      "Cita previa en el ayuntamiento"
+    ],
+    "duracion": 15,
+    "horario": {
+      "1": [
+        "09:00-14:00"
+      ],
+      "2": [
+        "09:00-14:00"
+      ],
+      "3": [
+        "09:00-14:00"
+      ],
+      "4": [
+        "09:00-14:00"
+      ],
+      "5": [
+        "09:00-14:00"
+      ]
+    },
+    "capacidad": 1,
+    "antelacion": 120,
+    "dias": 14,
+    "cerrado": [
+      "2026-10-09",
+      "2026-10-12",
+      "2026-12-08",
+      "2026-12-25"
+    ],
+    "lugar": "el ayuntamiento, Plaça de l'Ajuntament, 20",
+    "modo": "demo"
+  }
+}

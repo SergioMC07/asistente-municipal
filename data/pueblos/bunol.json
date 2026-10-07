@@ -1,0 +1,63 @@
+{
+  "slug": "bunol",
+  "nombre": "Buñol",
+  "provincia": "Valencia",
+  "web": "https://www.bunyol.es/",
+  "telefono": "962 500 151",
+  "email": "ayuntamiento@bunyol.es",
+  "ficha": "## Ayuntamiento\n- Dirección: calle Cid, 20. 46360 Buñol (Valencia).\n- Teléfono: 962 500 151.\n- Email: ayuntamiento@bunyol.es\n- Registro de entrada: de 9:00 a 14:00.\n- Web municipal: https://www.bunyol.es/\n\n## Turismo\n- Tourist Info Buñol: acceso a la plaza del Molino Galán.\n- Teléfonos: 962 503 886 y 653 672 174. Email: turismo@bunyol.es y bunol@touristinfo.net\n- Horario: de miércoles a viernes, de 10:30 a 14:00; sábados y domingos, de 10:00 a 14:00.\n\n## La Tomatina\n- Se celebra el último miércoles de agosto. En 2026 fue el 26 de agosto y cumplió 80 años.\n- La batalla empieza a las 12:00, cuando los camiones entran en la plaza del Pueblo, y termina a las 13:00 con un segundo disparo.\n- Para participar hace falta entrada, que se compra con antelación.\n\n## Qué visitar\n- Castillo de Buñol: uno de los pocos castillos que siguen habitados. El ayuntamiento organiza visitas guiadas, algunas teatralizadas y gratuitas con inscripción previa (por ejemplo, el 20 y el 27 de septiembre de 2026, de 11:00 a 13:00). Para horarios y reservas, la Tourist Info.\n\n## Cómo llegar\n- En tren: línea C3 de Cercanías desde València Nord, alrededor de una hora de viaje. Conviene consultar horarios en renfe.com o en la app de Cercanías.\n\n## Fiestas\n- Fiestas patronales la última semana de agosto, en honor a San Luis Bertrán y la Virgen de los Desamparados, con procesiones, concursos gastronómicos y verbenas. En 2026 fueron del 24 al 30 de agosto.\n\n## Emergencias\n- Emergencias: 112.\n",
+  "sugerencias": [
+    "¿Cuándo es la Tomatina?",
+    "¿Cómo llego en tren desde Valencia?",
+    "¿Se puede visitar el castillo?",
+    "Hay una farola rota en mi calle"
+  ],
+  "fuentes": [
+    "https://www.que.es/2026/08/18/tomatina-de-bunol-2026/",
+    "https://www.comunitatvalenciana.com/es/valencia/bunol/oficines-de-turisme/tourist-info-bunol",
+    "https://www.valenciabonita.es/2026/09/15/visitas-castillo-de-bunol-septiembre-2026/",
+    "https://www.valenciabonita.es/2017/02/10/castillo-de-bunol/",
+    "https://en.wikipedia.org/wiki/Cercan%C3%ADas_Valencia",
+    "https://www.valenciabonita.es/2026/08/10/programa-fiestas-de-bunol-2026/",
+    "https://www.elperiodic.com/pvalencia/ayuntamiento-bunol-ofertara-cerca-plazas-verano-para-favorecer-conciliacion-familiar-durante-vacaciones-escolares_1079146",
+    "https://esopiniones.com/valencia/ayuntamiento-de-bunol-278000"
+  ],
+  "generadoEl": "2026-10-07T09:00:00.000Z",
+  "demo": {
+    "incidencia": "La farola de la plaza del Pueblo, junto al número 3, no se enciende por la noche"
+  },
+  "citas": {
+    "tipos": [
+      "Cita previa en el ayuntamiento"
+    ],
+    "duracion": 15,
+    "horario": {
+      "1": [
+        "09:00-14:00"
+      ],
+      "2": [
+        "09:00-14:00"
+      ],
+      "3": [
+        "09:00-14:00"
+      ],
+      "4": [
+        "09:00-14:00"
+      ],
+      "5": [
+        "09:00-14:00"
+      ]
+    },
+    "capacidad": 1,
+    "antelacion": 120,
+    "dias": 14,
+    "cerrado": [
+      "2026-10-09",
+      "2026-10-12",
+      "2026-12-08",
+      "2026-12-25"
+    ],
+    "lugar": "el ayuntamiento, calle Cid, 20",
+    "modo": "demo"
+  }
+}

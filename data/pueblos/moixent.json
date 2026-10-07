@@ -1,0 +1,61 @@
+{
+  "slug": "moixent",
+  "nombre": "Moixent",
+  "provincia": "Valencia",
+  "web": "https://www.moixent.es/",
+  "telefono": "962 295 010",
+  "email": "ayto.moixent@moixent.es",
+  "ficha": "## Ayuntamiento\n- Dirección: Plaça Major, 1. 46640 Moixent / Mogente (Valencia).\n- Teléfono: 962 295 010.\n- Email: ayto.moixent@moixent.es\n- Sede electrónica: https://moixent.sedelectronica.es\n- Web municipal: https://www.moixent.es/\n\n## Turismo\n- Tourist Info Moixent: calle Poeta Gabriel Vila, 7.\n- Teléfono: 690 115 083. Email: moixent@touristinfo.net\n- Horario: viernes y sábados, de 10:00 a 14:00 y de 16:00 a 18:00; domingos y festivos, de 10:00 a 14:00. Cerrada el último domingo de cada mes, el 24, 25 y 31 de diciembre y el 1 y 6 de enero.\n\n## La Bastida de les Alcusses\n- Poblado íbero del siglo IV a. C., donde se encontró el Guerrero de Moixent.\n- Horario: de martes a sábado, de 10:00 a 14:00, y por la tarde de 16:00 a 18:00 (de octubre a abril) o de 18:00 a 20:00 (de mayo a septiembre). Domingos y festivos, de 10:00 a 14:00. Cerrada el 24, 25 y 31 de diciembre y el 1 y 6 de enero.\n- Visitas guiadas: de miércoles a domingo, de 10:30 a 14:00, con reserva previa por teléfono: 687 836 717 o 687 836 545. Email: labastida@moixent.es\n- En septiembre se celebran las Jornadas de puertas abiertas (en 2026, la XIX edición fue el 19 y 20 de septiembre).\n\n## Cómo llegar\n- En tren: la línea C2 de Cercanías (València Nord - Xàtiva - Moixent) para en Moixent. Conviene consultar horarios en renfe.com o en la app de Cercanías, porque puede haber cambios por obras.\n\n## Fiestas\n- Fiestas patronales en agosto, en honor al Santísimo Cristo del Monte Calvario y las Santas Reliquias: toros en cuerda, verbenas, procesión al Calvario y fuegos artificiales.\n\n## Emergencias\n- Emergencias: 112.\n",
+  "sugerencias": [
+    "¿Qué horario tiene la Bastida de les Alcusses?",
+    "¿Cómo llego en tren desde Valencia?",
+    "¿Qué horario tiene la oficina de turismo?",
+    "Hay una farola rota en mi calle"
+  ],
+  "fuentes": [
+    "https://www.comunitatvalenciana.com/es/valencia/moixent-mogente/monumentos/bastida-de-les-alcusses",
+    "https://www.valenciabonita.es/2026/09/07/jornada-puertas-abiertas-la-bastida-de-les-alcusses-2026/",
+    "https://www.comunitatvalenciana.com/es/valencia/moixent-mogente/oficinas-de-turismo/tourist-info-moixent",
+    "https://www.redtransporte.com/valencia/cercanias-renfe/linea-c-2.html",
+    "https://www.todoslosayuntamientos.es/comunidad-valenciana/valencia/moixent",
+    "https://www.festivalesdeespana.com/festival/fiestas-patronales-de-moixent-cristo-del-monte-calvario-y-santas-reliquias-moixent"
+  ],
+  "generadoEl": "2026-10-07T09:00:00.000Z",
+  "demo": {
+    "incidencia": "La farola de la Plaça Major, junto al número 5, no se enciende por la noche"
+  },
+  "citas": {
+    "tipos": [
+      "Cita previa en el ayuntamiento"
+    ],
+    "duracion": 15,
+    "horario": {
+      "1": [
+        "09:00-14:00"
+      ],
+      "2": [
+        "09:00-14:00"
+      ],
+      "3": [
+        "09:00-14:00"
+      ],
+      "4": [
+        "09:00-14:00"
+      ],
+      "5": [
+        "09:00-14:00"
+      ]
+    },
+    "capacidad": 1,
+    "antelacion": 120,
+    "dias": 14,
+    "cerrado": [
+      "2026-10-09",
+      "2026-10-12",
+      "2026-12-08",
+      "2026-12-25"
+    ],
+    "lugar": "el ayuntamiento, Plaça Major, 1",
+    "modo": "demo"
+  }
+}

@@ -1,0 +1,62 @@
+{
+  "slug": "ayora",
+  "nombre": "Ayora",
+  "provincia": "Valencia",
+  "web": "https://www.ayora.es/",
+  "telefono": "962 191 025",
+  "email": "registro@ayora.es",
+  "ficha": "## Ayuntamiento\n- Dirección: calle Marquesa de Zenete, 60. 46620 Ayora (Valencia).\n- Teléfonos: 962 191 025 y 961 890 002.\n- Email: registro@ayora.es\n- Sede electrónica: https://ayora.sedelectronica.es\n- Web municipal: https://www.ayora.es/\n\n## Turismo\n- Oficina de Turismo: calle Virgen del Rosario, 35.\n- Teléfonos: 961 890 658 y 676 546 110. Email: oficinaturismo@ayora.es\n- Horario: de lunes a domingo, de 9:00 a 14:00.\n\n## Qué visitar\n- Castillo de Ayora: fortaleza de origen islámico que domina el pueblo, con vistas sobre el valle. Ha reabierto tras una nueva fase de obras. Se visita con cita previa en la Oficina de Turismo. En verano ha habido visitas nocturnas.\n- Castellar de Meca: poblado íbero excavado en la roca, Bien de Interés Cultural, uno de los yacimientos más importantes de la Comunitat Valenciana.\n- Iglesia de Nuestra Señora de la Asunción: templo gótico-renacentista, Monumento Histórico-Artístico.\n- Paraje de la Hunde y Pico Palomera: ruta circular de unos 9 km, con un arco de piedra natural y miradores.\n\n## Fiestas\n- Fiestas patronales de la Asunción y Toros de Ayora: del 6 al 15 de agosto. Empiezan con el Encierro del Torico, un pasacalle nocturno de las peñas con las reinas de las fiestas y la banda de música. Alternan días de toros (con despertà a las 7:00) con verbenas. El 15 de agosto hay ofrenda de flores y procesión de la Virgen, y un castillo de fuegos artificiales cierra las fiestas.\n- En mayo hay también fiestas de toros populares.\n\n## Emergencias\n- Emergencias: 112.\n",
+  "sugerencias": [
+    "¿Se puede visitar el castillo?",
+    "¿Cuándo son las fiestas de agosto?",
+    "¿Qué es el Castellar de Meca?",
+    "Hay una farola rota en mi calle"
+  ],
+  "fuentes": [
+    "https://www.comunitatvalenciana.com/es/valencia/ayora/monumentos/castillo-de-ayora",
+    "https://www.comunitatvalenciana.com/es/valencia/ayora/tourist-offices/tourist-info-ayora",
+    "https://www.valenciabonita.es/2025/09/05/ayora/",
+    "https://www.valenciabonita.es/2026/08/05/castillo-ayora-visitas-nocturnas-agosto-2026/",
+    "https://www.comunitatvalenciana.com/es/valencia/ayora/fiestas/fiestas-patronales-de-nuestra-senora-de-la-asuncion-toros-de-ayora",
+    "https://www.valencia.es/es/-/infociudad-ayuntamiento-de-ayora",
+    "https://ayora.portaldelcomerciante.com/es/aviso/view"
+  ],
+  "generadoEl": "2026-10-07T09:00:00.000Z",
+  "demo": {
+    "incidencia": "La farola de la calle Marquesa de Zenete, junto al número 12, no se enciende por la noche"
+  },
+  "citas": {
+    "tipos": [
+      "Cita previa en el ayuntamiento"
+    ],
+    "duracion": 15,
+    "horario": {
+      "1": [
+        "09:00-14:00"
+      ],
+      "2": [
+        "09:00-14:00"
+      ],
+      "3": [
+        "09:00-14:00"
+      ],
+      "4": [
+        "09:00-14:00"
+      ],
+      "5": [
+        "09:00-14:00"
+      ]
+    },
+    "capacidad": 1,
+    "antelacion": 120,
+    "dias": 14,
+    "cerrado": [
+      "2026-10-09",
+      "2026-10-12",
+      "2026-12-08",
+      "2026-12-25"
+    ],
+    "lugar": "el ayuntamiento, calle Marquesa de Zenete, 60",
+    "modo": "demo"
+  }
+}

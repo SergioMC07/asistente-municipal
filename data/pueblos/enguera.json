@@ -1,0 +1,60 @@
+{
+  "slug": "enguera",
+  "nombre": "Enguera",
+  "provincia": "Valencia",
+  "web": "https://www.enguera.es/",
+  "telefono": "962 224 033",
+  "email": "ayuntamiento@enguera.es",
+  "ficha": "## Ayuntamiento\n- Dirección: calle Doctor Albiñana, 1. 46810 Enguera (Valencia).\n- Teléfono: 962 224 033.\n- Email: ayuntamiento@enguera.es\n- Web municipal: https://www.enguera.es/\n\n## Turismo\n- Tourist Info Enguera: calle Patriarcas, 4.\n- Horario de octubre a mayo: de lunes a viernes, de 8:00 a 15:00, y sábados, de 9:00 a 14:00. En verano puede cambiar: conviene confirmarlo.\n\n## Qué visitar\n- Iglesia parroquial de San Miguel Arcángel, del siglo XVI, con su gran escalinata en la fachada principal.\n- Antiguo convento de los Carmelitas Descalzos (iglesia de la Sagrada Familia). Allí está la sección de Etnología del Museo Arqueológico Municipal, con una casa recreada de finales del siglo XIX.\n- Museo Arqueológico Municipal: restos paleontológicos y arqueológicos de las excavaciones de la sierra de Enguera.\n- Otros museos: Museo Agrario, Museo Textil y Museo de Fotografía Antigua.\n- Ermitas de San Antonio de Padua, San Cristóbal y San Rafael.\n- Castillo de Enguera, sobre un cerro junto al pueblo, con buenas vistas.\n- Sierra de Enguera: rutas de senderismo y naturaleza.\n\n## Fiestas\n- Sant Gil, a principios de septiembre: desde 1862, las familias salen al campo a coger hinojo y hacen los «sangiles» (ramos, cruces, bastones y figuras decoradas con papel de colores). Los niños los bendicen en la plaza de la Iglesia y los llevan hasta el convento. Hay premios a los más largos y a los más originales, y una feria de turismo y artesanía. Información: 617 334 309 o enguerasangil@gmail.com\n- Las Danzas Enguerinas han sido declaradas Fiesta de Interés Turístico Local.\n\n## Emergencias\n- Emergencias: 112.\n",
+  "sugerencias": [
+    "¿Qué se puede visitar en Enguera?",
+    "¿Cuándo es Sant Gil?",
+    "¿Dónde está el ayuntamiento?",
+    "Hay una farola rota en mi calle"
+  ],
+  "fuentes": [
+    "https://turisme.dival.es/en/?p=90958",
+    "https://www.comunitatvalenciana.com/es/itinerarios/que-ver-en-enguera-en-un-dia",
+    "https://www.comunitatvalenciana.com/es/valencia/enguera/eventos/feria-san-gil",
+    "https://valencianews.es/cultura/las-danzas-enguerinas-obtienen-la-declaracion-de-fiesta-de-interes-turistico-local/",
+    "https://en.wikipedia.org/wiki/Enguera"
+  ],
+  "generadoEl": "2026-10-07T09:00:00.000Z",
+  "demo": {
+    "incidencia": "La farola de la plaza de la Iglesia, junto al número 3, no se enciende por la noche"
+  },
+  "citas": {
+    "tipos": [
+      "Cita previa en el ayuntamiento"
+    ],
+    "duracion": 15,
+    "horario": {
+      "1": [
+        "09:00-14:00"
+      ],
+      "2": [
+        "09:00-14:00"
+      ],
+      "3": [
+        "09:00-14:00"
+      ],
+      "4": [
+        "09:00-14:00"
+      ],
+      "5": [
+        "09:00-14:00"
+      ]
+    },
+    "capacidad": 1,
+    "antelacion": 120,
+    "dias": 14,
+    "cerrado": [
+      "2026-10-09",
+      "2026-10-12",
+      "2026-12-08",
+      "2026-12-25"
+    ],
+    "lugar": "el ayuntamiento, calle Doctor Albiñana, 1",
+    "modo": "demo"
+  }
+}

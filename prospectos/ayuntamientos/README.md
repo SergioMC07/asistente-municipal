@@ -20,6 +20,23 @@ Están ordenados por prioridad: primero los de más turismo y con datos más cla
 
 **Villarejo de Salvanés va el último a propósito**: en agosto de 2026 hubo protestas vecinales contra el alcalde. Lee la nota de su carpeta antes de llamar.
 
+## Valencia
+
+Datos de búsquedas del 7 de octubre de 2026. En Valencia hay más competencia: la Diputació ofrece a los pueblos el asistente «ALI» de Alicante y prepara asistentes con Revital-IA, y CivitPhone ya está en 12 municipios. En cada carpeta está cómo plantearlo.
+
+| # | Pueblo | Habitantes | Teléfono | Alcalde/sa | Demo |
+|---|---|---|---|---|---|
+| 1 | [Simat de la Valldigna](simat-de-la-valldigna/README.md) | unos 3.300 | 962 810 007 | Sebastián Mahiques Morant | [/simat-de-la-valldigna](https://asistente-municipal.vercel.app/simat-de-la-valldigna) |
+| 2 | [Bocairent](bocairent/README.md) | unos 4.100 | 962 350 014 | Por confirmar | [/bocairent](https://asistente-municipal.vercel.app/bocairent) |
+| 3 | [Moixent](moixent/README.md) | unos 4.400 | 962 295 010 | Guillermo Jorques Lladosa | [/moixent](https://asistente-municipal.vercel.app/moixent) |
+| 4 | [Ayora](ayora/README.md) | unos 5.200 | 962 191 025 | José Vicente Anaya Roig | [/ayora](https://asistente-municipal.vercel.app/ayora) |
+| 5 | [El Puig de Santa Maria](el-puig/README.md) | unos 9.500 | 961 470 003 | Marc Oriola Pla | [/el-puig](https://asistente-municipal.vercel.app/el-puig) |
+| 6 | [Buñol](bunol/README.md) | unos 9.900 | 962 500 151 | Virginia Sanz Ferrús | [/bunol](https://asistente-municipal.vercel.app/bunol) |
+| 7 | [Enguera](enguera/README.md) | unos 4.800 | 962 224 033 | Matilde Marín | [/enguera](https://asistente-municipal.vercel.app/enguera) |
+| 8 | [Albaida](albaida/README.md) | unos 6.300 | 962 900 960 | Juan Carlos Roses Guerola | [/albaida](https://asistente-municipal.vercel.app/albaida) |
+
+**Albaida va el último a propósito**: del 8 al 11 de octubre de 2026 está en plenas fiestas de Moros i Cristians. Escríbeles a partir del martes 13.
+
 ## Cómo trabajar cada pueblo
 
 1. Abre su demo y haz las preguntas de ejemplo. Si algo está mal, corrige `data/pueblos/<pueblo>.json`, sube el cambio y Vercel lo publica solo.
