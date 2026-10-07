@@ -22,5 +22,38 @@
   "demo": {
     "incidencia": "La farola de la Plaza del Pueblo, junto al número 3, no se enciende por la noche"
   },
-  "horario": "Lunes a viernes, de 8:30 a 13:30"
+  "horario": "Lunes a viernes, de 8:30 a 13:30",
+  "citas": {
+    "tipos": [
+      "Cita previa en el ayuntamiento"
+    ],
+    "duracion": 15,
+    "horario": {
+      "1": [
+        "08:30-13:30"
+      ],
+      "2": [
+        "08:30-13:30"
+      ],
+      "3": [
+        "08:30-13:30"
+      ],
+      "4": [
+        "08:30-13:30"
+      ],
+      "5": [
+        "08:30-13:30"
+      ]
+    },
+    "capacidad": 1,
+    "antelacion": 120,
+    "dias": 14,
+    "cerrado": [
+      "2026-10-12",
+      "2026-12-08",
+      "2026-12-25"
+    ],
+    "lugar": "el ayuntamiento, Plaza del Pueblo, 1",
+    "modo": "demo"
+  }
 }

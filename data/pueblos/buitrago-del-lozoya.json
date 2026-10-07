@@ -23,5 +23,38 @@
   "generadoEl": "2026-10-07T09:00:00.000Z",
   "demo": {
     "incidencia": "La farola de la Plaza Picasso, junto al número 2, no se enciende por la noche"
+  },
+  "citas": {
+    "tipos": [
+      "Cita previa en el ayuntamiento"
+    ],
+    "duracion": 15,
+    "horario": {
+      "1": [
+        "10:00-13:00"
+      ],
+      "2": [
+        "10:00-13:00"
+      ],
+      "3": [
+        "10:00-13:00"
+      ],
+      "4": [
+        "10:00-13:00"
+      ],
+      "5": [
+        "10:00-13:00"
+      ]
+    },
+    "capacidad": 1,
+    "antelacion": 120,
+    "dias": 14,
+    "cerrado": [
+      "2026-10-12",
+      "2026-12-08",
+      "2026-12-25"
+    ],
+    "lugar": "el ayuntamiento, Plaza Picasso, 1",
+    "modo": "demo"
   }
 }

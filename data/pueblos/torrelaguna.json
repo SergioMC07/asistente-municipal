@@ -24,5 +24,38 @@
   "generadoEl": "2026-10-07T09:00:00.000Z",
   "demo": {
     "incidencia": "La farola de la Plaza Mayor, junto al número 5, no se enciende por la noche"
+  },
+  "citas": {
+    "tipos": [
+      "Cita previa en el ayuntamiento"
+    ],
+    "duracion": 15,
+    "horario": {
+      "1": [
+        "09:00-14:00"
+      ],
+      "2": [
+        "09:00-14:00"
+      ],
+      "3": [
+        "09:00-14:00"
+      ],
+      "4": [
+        "09:00-14:00"
+      ],
+      "5": [
+        "09:00-14:00"
+      ]
+    },
+    "capacidad": 1,
+    "antelacion": 120,
+    "dias": 14,
+    "cerrado": [
+      "2026-10-12",
+      "2026-12-08",
+      "2026-12-25"
+    ],
+    "lugar": "la atención al público del ayuntamiento, ahora en la Oficina de Turismo, Plaza Mayor, 8",
+    "modo": "demo"
   }
 }
