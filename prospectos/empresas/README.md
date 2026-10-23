@@ -1,5 +1,7 @@
 # Empresas para visitar (Valencia)
 
+Para vender por teléfono con videollamada, sigue [TELEFONO.md](TELEFONO.md).
+
 Cada carpeta tiene los datos del negocio, cómo abordarlo, el mensaje para después y el comando para grabar su vídeo. El guion general está en [GUION.md](GUION.md).
 
 **Precio:** Tarifa 69 €/mes + IVA (web). Con WhatsApp, 99 €/mes + IVA. Primer mes gratis, sin permanencia.
