@@ -51,7 +51,7 @@ Publica precios muy detallados (práctica suelta, bono de 20, pack de 999 €) y
 - Panel: https://asistente-municipal.vercel.app/panel/demo/autoescuela-aurel
 ```
 
-Guion de la llamada: [../../empresas/TELEFONO.md](../../empresas/TELEFONO.md).
+Guion de la llamada: [../../empresas/TELEFONO.md](../../empresas/TELEFONO.md). Prompt ya rellenado: [PROMPT.md](PROMPT.md).
 
 ## Notas
 
