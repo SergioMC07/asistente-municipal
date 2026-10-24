@@ -1,0 +1,61 @@
+{
+  "slug": "impulse-english-academy",
+  "tipo": "negocio",
+  "nombre": "Impulse English Academy",
+  "sector": "academia de inglés",
+  "ciudad": "Madrid",
+  "saludo": "¡Hola! Soy el asistente de **Impulse English Academy** y te atiendo a cualquier hora.\n\nPregúntame por cursos, precios o la prueba de nivel, y si quieres apuntarte te ayudo a dejar tu solicitud.",
+  "web": "https://impulse-english.es/",
+  "telefono": "604 910 611",
+  "horario": "Lunes y miércoles, de 10:00 a 21:30; martes y jueves, de 15:30 a 21:30; viernes, de 13:30 a 19:30",
+  "citas": {
+    "tipos": [
+      "Prueba de nivel gratuita"
+    ],
+    "duracion": 30,
+    "horario": {
+      "1": [
+        "16:00-21:00"
+      ],
+      "2": [
+        "16:00-21:00"
+      ],
+      "3": [
+        "16:00-21:00"
+      ],
+      "4": [
+        "16:00-21:00"
+      ],
+      "5": [
+        "16:00-19:00"
+      ]
+    },
+    "lugar": "la academia, Av. de El Ferrol, 22",
+    "capacidad": 1,
+    "antelacion": 120,
+    "dias": 14,
+    "cerrado": [
+      "2026-11-09",
+      "2026-12-08",
+      "2026-12-25"
+    ],
+    "modo": "demo"
+  },
+  "ficha": "## Academia\n- Dirección: Av. de El Ferrol, 22. 28029 Madrid (La Vaguada, Barrio del Pilar).\n- Teléfono y WhatsApp: 604 910 611.\n- Web: https://impulse-english.es/\n- Horario: lunes y miércoles, de 10:00 a 21:30; martes y jueves, de 15:30 a 21:30; viernes, de 13:30 a 19:30. Sábados y domingos, cerrado.\n\n## Precios\n- Infantil: desde 64 € al mes.\n- Primaria: desde 83 € al mes.\n- Secundaria: desde 87 € al mes.\n- Adultos: desde 94 € al mes.\n- Clases particulares: 29 € la hora.\n- Matrícula: 45 €. Libro: hasta 40 €.\n\n## Cómo son las clases\n- Grupos de 7 a 10 alumnos.\n- Prueba de nivel gratuita de unos 25 minutos antes de empezar.\n",
+  "sugerencias": [
+    "¿Cuánto cuesta para adultos?",
+    "¿Hacéis prueba de nivel?",
+    "¿Qué horario tenéis?",
+    "Quiero apuntar a mi hijo"
+  ],
+  "fuentes": [
+    "https://impulse-english.es/",
+    "https://impulse-english.es/contacto/",
+    "https://impulse-english.es/academias-ingles-madrid/por-barrios/"
+  ],
+  "generadoEl": "2026-10-24T09:00:00.000Z",
+  "demo": {
+    "desconocida": "¿Preparáis el examen B2 First de Cambridge?",
+    "incidencia": "Quiero apuntar a mi hija de 9 años. ¿Me llamáis el lunes por la tarde?"
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "slug": "jump-into-english",
+  "tipo": "negocio",
+  "nombre": "Jump Into English",
+  "sector": "academia de inglés",
+  "ciudad": "Madrid",
+  "saludo": "¡Hola! Soy el asistente de **Jump Into English** y te atiendo a cualquier hora.\n\nPregúntame por cursos, precios o la prueba de nivel, y si quieres apuntarte te ayudo a dejar tu solicitud.",
+  "web": "https://jumpintoenglish.com/",
+  "telefono": "91 504 38 11",
+  "email": "info@jumpintoenglish.com",
+  "horario": "Atención al público: lunes a jueves, de 16:30 a 19:00",
+  "ficha": "## Academia\n- Dirección: C/ Juan Esplandiú, 9, local A. 28007 Madrid (Retiro, barrio de La Estrella).\n- Teléfono: 91 504 38 11.\n- Email: info@jumpintoenglish.com\n- Atención al público: lunes a jueves, de 16:30 a 19:00.\n- Web: https://jumpintoenglish.com/\n\n## Precios (curso 2025-2026; conviene confirmar los del curso actual)\n- Infantil (4 a 7 años): 75 € al mes o 200 € al trimestre.\n- Junior II: 90 € al mes.\n- Adultos (desde 18 años): 95 € al mes.\n- Cursos intensivos: 170 € al mes, con el material incluido. De lunes a jueves, 6 horas a la semana, de 9:30 a 11:00 o de 11:30 a 13:00.\n- Matrícula para alumnos nuevos: 20 €.\n",
+  "sugerencias": [
+    "¿Cuánto cuesta para adultos?",
+    "¿Tenéis cursos intensivos?",
+    "¿Dónde estáis?",
+    "Quiero apuntar a mi hijo"
+  ],
+  "fuentes": [
+    "https://jumpintoenglish.com/contacto/",
+    "https://jumpintoenglish.com/cursos-de-ingles-en-madrid/precios-cursos-ingles-madrid/",
+    "https://jumpintoenglish.com/cursos-de-ingles-en-madrid/cursos-intensivos-de-ingles/"
+  ],
+  "generadoEl": "2026-10-24T09:00:00.000Z",
+  "demo": {
+    "desconocida": "¿Hay clases los sábados?",
+    "incidencia": "Quiero apuntar a mi hijo de 6 años. ¿Me podéis llamar el miércoles a las 17:00?"
+  }
+}

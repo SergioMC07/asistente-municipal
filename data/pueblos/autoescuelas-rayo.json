@@ -1,0 +1,27 @@
+{
+  "slug": "autoescuelas-rayo",
+  "tipo": "negocio",
+  "nombre": "Autoescuelas Rayo",
+  "sector": "autoescuela",
+  "ciudad": "Madrid",
+  "saludo": "¡Hola! Soy el asistente de **Autoescuelas Rayo** y te atiendo a cualquier hora.\n\nPregúntame por precios, permisos o prácticas, y si quieres apuntarte te ayudo a dejar tu solicitud.",
+  "web": "https://autoescuelasrayo.com/",
+  "telefono": "91 303 11 66",
+  "ficha": "## Autoescuela\n- Sede principal: Av. de Rafael Alberti, 20. Madrid (Puente de Vallecas).\n- Otra sede: Av. de la Albufera, 264 (Vallecas).\n- Teléfono: 91 303 11 66.\n- Web: https://autoescuelasrayo.com/\n\n## Carné B (coche)\n- Pack todo incluido de 20 clases: 845 €. Los packs incluyen matrícula, teoría ilimitada y prácticas.\n- También hay packs de 3, 10 y 15 clases: precios en https://autoescuelasrayo.com/carnet-coche-vallecas/\n- Carné de coche automático: información en https://autoescuelasrayo.com/carnet-coche-automatico-madrid-vallecas/\n\n## Teórica intensiva\n- Cursos intensivos de teórica en fin de semana, de 8:00 a 15:30, en la sede de Rafael Alberti, 20.\n- Precio: 69 € para alumnos de la autoescuela y 89 € para no alumnos.\n- Hay convocatorias de septiembre a diciembre de 2026.\n",
+  "sugerencias": [
+    "¿Cuánto cuesta el pack de 20 clases?",
+    "¿Tenéis curso intensivo de teórica?",
+    "¿Dónde estáis?",
+    "Quiero apuntarme"
+  ],
+  "fuentes": [
+    "https://autoescuelasrayo.com/carnet-coche-vallecas/",
+    "https://autoescuelasrayo.com/cursos-intensivos-vallecas/",
+    "https://autoescuelasrayo.com/sede-avda-de-la-albufera-264/"
+  ],
+  "generadoEl": "2026-10-24T09:00:00.000Z",
+  "demo": {
+    "desconocida": "¿A qué hora abre la oficina el sábado?",
+    "incidencia": "Me interesa el intensivo de teórica de este fin de semana. ¿Me llamáis el jueves?"
+  }
+}

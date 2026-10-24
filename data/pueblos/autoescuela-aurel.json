@@ -1,0 +1,67 @@
+{
+  "slug": "autoescuela-aurel",
+  "tipo": "negocio",
+  "nombre": "Autoescuela Aurel",
+  "sector": "autoescuela",
+  "ciudad": "Madrid",
+  "saludo": "¡Hola! Soy el asistente de **Autoescuela Aurel** y te atiendo a cualquier hora.\n\nPregúntame por precios, permisos o prácticas, y si quieres apuntarte te ayudo a dejar tu solicitud.",
+  "web": "https://www.aurel.es/",
+  "telefono": "659 29 75 60",
+  "email": "info@aurel.es",
+  "horario": "Lunes a viernes, de 10:00 a 14:00 y de 16:30 a 20:30",
+  "citas": {
+    "tipos": [
+      "Información y matrícula"
+    ],
+    "duracion": 15,
+    "horario": {
+      "1": [
+        "10:00-14:00",
+        "16:30-20:30"
+      ],
+      "2": [
+        "10:00-14:00",
+        "16:30-20:30"
+      ],
+      "3": [
+        "10:00-14:00",
+        "16:30-20:30"
+      ],
+      "4": [
+        "10:00-14:00",
+        "16:30-20:30"
+      ],
+      "5": [
+        "10:00-14:00",
+        "16:30-20:30"
+      ]
+    },
+    "lugar": "la autoescuela, C/ Vallehermoso, 18",
+    "capacidad": 1,
+    "antelacion": 120,
+    "dias": 14,
+    "cerrado": [
+      "2026-11-09",
+      "2026-12-08",
+      "2026-12-25"
+    ],
+    "modo": "demo"
+  },
+  "ficha": "## Autoescuela\n- Dirección: C/ Vallehermoso, 18 (acceso por Rodríguez San Pedro, 14). 28015 Madrid (Chamberí).\n- Metro cercano: Quevedo, Bilbao, Argüelles y San Bernardo.\n- Teléfono: 659 29 75 60.\n- Email: info@aurel.es\n- Horario de oficina: lunes a viernes, de 10:00 a 14:00 y de 16:30 a 20:30. Sábados y domingos, cerrado.\n- Web: https://www.aurel.es/\n\n## Precios del carné B\n- Curso teórico: 59 € (promoción de lanzamiento para las primeras 100 matrículas; conviene confirmar si sigue).\n- Práctica suelta: 39,90 €.\n- Bono de 20 prácticas: 769 € (38,45 € cada una).\n- Pack todo incluido: 999 € (matrícula, 20 prácticas y tasa de examen). Conviene confirmar en la autoescuela qué incluye exactamente.\n- Gestión administrativa: 49,90 €.\n- Acompañamiento al examen práctico: 109 €.\n- Tasa oficial de la DGT: 94,05 € (no se cobra aparte si el plan ya la incluye).\n",
+  "sugerencias": [
+    "¿Cuánto cuesta el carné B?",
+    "¿Cuánto cuesta una práctica?",
+    "¿Dónde estáis?",
+    "Quiero apuntarme"
+  ],
+  "fuentes": [
+    "https://www.aurel.es/autoescuela-chamberi/",
+    "https://www.aurel.es/contacto/",
+    "https://www.instagram.com/aurelautoescuela/"
+  ],
+  "generadoEl": "2026-10-24T09:00:00.000Z",
+  "demo": {
+    "desconocida": "¿Tenéis clases en coche automático?",
+    "incidencia": "Quiero el pack de 999 €. ¿Me podéis llamar el martes por la tarde?"
+  }
+}

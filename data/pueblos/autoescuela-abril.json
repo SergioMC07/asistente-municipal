@@ -1,0 +1,66 @@
+{
+  "slug": "autoescuela-abril",
+  "tipo": "negocio",
+  "nombre": "Autoescuela Abril",
+  "sector": "autoescuela",
+  "ciudad": "Getafe",
+  "saludo": "¡Hola! Soy el asistente de **Autoescuela Abril** y te atiendo a cualquier hora.\n\nPregúntame por precios, permisos o prácticas, y si quieres apuntarte te ayudo a dejar tu solicitud.",
+  "web": "https://www.autoeabril.com/",
+  "telefono": "91 696 76 36",
+  "horario": "Lunes a jueves, de 9:30 a 13:30 y de 16:30 a 20:30; viernes, de 9:30 a 13:30 y de 16:00 a 20:00",
+  "citas": {
+    "tipos": [
+      "Información y matrícula"
+    ],
+    "duracion": 15,
+    "horario": {
+      "1": [
+        "09:30-13:30",
+        "16:30-20:30"
+      ],
+      "2": [
+        "09:30-13:30",
+        "16:30-20:30"
+      ],
+      "3": [
+        "09:30-13:30",
+        "16:30-20:30"
+      ],
+      "4": [
+        "09:30-13:30",
+        "16:30-20:30"
+      ],
+      "5": [
+        "09:30-13:30",
+        "16:00-20:00"
+      ]
+    },
+    "lugar": "la autoescuela, C/ Juan de la Cierva, 34",
+    "capacidad": 1,
+    "antelacion": 120,
+    "dias": 14,
+    "cerrado": [
+      "2026-11-09",
+      "2026-12-08",
+      "2026-12-25"
+    ],
+    "modo": "demo"
+  },
+  "ficha": "## Autoescuela\n- Centros en Getafe: C/ Juan de la Cierva, 34; C/ Los Sauces, 28 (Sector III); y C/ Magdalena, 17.\n- Teléfonos: 91 696 76 36 (Juan de la Cierva) y 91 681 14 99 (Magdalena).\n- Web: https://www.autoeabril.com/\n- Horario de oficina: lunes a jueves, de 9:30 a 13:30 y de 16:30 a 20:30; viernes, de 9:30 a 13:30 y de 16:00 a 20:00.\n\n## Clases\n- Clases teóricas online: de lunes a viernes, de 10:30 a 12:00, y de lunes a jueves, de 19:00 a 20:30.\n- Clases prácticas: se ajustan al horario del alumno.\n- Permisos: coche (B) y moto (AM, A1 y A2).\n- Los precios del carné B no están publicados: hay que preguntarlos en la autoescuela.\n",
+  "sugerencias": [
+    "¿Qué horario tienen las clases teóricas?",
+    "¿Dónde tenéis centros?",
+    "¿Cuánto cuesta el carné B?",
+    "Quiero apuntarme"
+  ],
+  "fuentes": [
+    "https://www.autoeabril.com/autoescuela-getafe-sector-3-madrid.aspx",
+    "https://www.autoeabril.com/autoescuela-getafe-madrid.aspx",
+    "https://www.paginasamarillas.es/f/getafe/autoescuela-abril_000501544_000000002.html"
+  ],
+  "generadoEl": "2026-10-24T09:00:00.000Z",
+  "demo": {
+    "desconocida": "¿Cuánto cuesta el carné B?",
+    "incidencia": "Quiero sacarme el carné B. ¿Me podéis llamar mañana por la tarde para darme precio?"
+  }
+}
